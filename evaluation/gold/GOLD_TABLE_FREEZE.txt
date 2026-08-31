@@ -1,0 +1,156 @@
+SSF-HVE gold table freeze record
+=================================
+File            : evaluation/gold/gold_table_2026-08-29.json
+Case set        : CS-10-v1 (C01-C10)
+Created (UTC)   : 2026-08-29T19:30:00Z
+SHA-256 payload : 22a863ededda04feb29261b3b27c6258220832fa544a4d251eb0d7eae8b429de
+
+This table was written and committed BEFORE any baseline or advanced run was executed.
+The commit that introduces this file is the freeze point. Any later change to scoring
+rules or detectors must appear as a new dated file plus a changelog entry stating what
+changed and why; the original file is never edited in place.
+
+Verify with:  python -m ssf_hve verify-gold
+
+---------------------------------------------------------------------------
+REVISION 2
+File            : evaluation/gold/gold_table_2026-08-29_v2.json
+Case set        : CS-10-v2 (C01-C10, same ten defect classes)
+Created (UTC)   : 2026-08-29T21:10:00Z
+SHA-256 payload : b98e518a3fe0d70d23f0615707123d6cf40465c98de2c4baa5ee0f2d981c0711
+
+Frozen before any run on CS-10-v2. CS-10-v1 and its measured baseline are
+retained unedited in evaluation/archive/cs-10-v1/ and evaluation/gold/.
+Reason for the revision is recorded in the payload and in IMPROVEMENT_CHANGELOG.md.
+
+---------------------------------------------------------------------------
+REVISION 3 - FINAL
+File            : evaluation/gold/gold_table_2026-08-29_v3.json
+Case set        : CS-10-v3 (C01-C10, same ten defect classes)
+Created (UTC)   : 2026-08-29T22:00:00Z
+SHA-256 payload : d9611420903dc7eb1d7f0ffbe06fc693d06901a23e25f2f9dbadce27a1183cce
+
+Frozen before any run on CS-10-v3. This is the final revision: whatever the runs
+produce is what is published, including a null or negative result.
+CS-10-v1 and CS-10-v2 are retained unedited with their measured baselines.
+
+---------------------------------------------------------------------------
+REVISION 3.1 - scorer-fidelity correction, packets and captures unchanged
+File            : evaluation/gold/gold_table_2026-08-29_v3.1.json
+Case set        : CS-10-v3.1
+Created (UTC)   : 2026-08-29T23:05:00Z
+SHA-256 payload : 965624a1c3ba8699b34607bb011516ab531ea55b07b55bb438a31263618eb540
+
+Corrects two absent-mode detectors that fired on scripts which did state the
+required material. The correction lowers the measured baseline unsafe output
+rate from 2/30 to 0/30. Reason recorded in the payload.
+
+---------------------------------------------------------------------------
+REVISION 3.2 - FINAL. Scorer-fidelity only; packets and captures unchanged.
+File            : evaluation/gold/gold_table_2026-08-29_v3.2.json
+Case set        : CS-10-v3.2
+Created (UTC)   : 2026-08-29T23:25:00Z
+SHA-256 payload : 4a9698fc9676bc4352226fe195213919dd7c6efba91e351f846d755c989de075
+
+Contraction expansion added to normalisation. Baseline unsafe output rate falls
+from 1/30 to 0/30 as a result. No further revisions.
+
+  Amendment (same revision, before any advanced run): normalisation folds
+  "can't" / "can not" into the single word "cannot" rather than splitting it,
+  so that document-scoped disclaimers of the form "cannot show that X causes Y"
+  remain findable. Gold-table payload unchanged; SHA-256 still verifies.
+  Baseline unsafe output rate after this amendment: 0/30.
+
+---------------------------------------------------------------------------
+REVISION 4 - POST-AUDIT, RETROSPECTIVE. Created after the runs it scores.
+File            : evaluation/gold/gold_table_2026-08-30_v4-postaudit.json
+Case set        : CS-10-v4-postaudit
+Created (UTC)   : 2026-08-30T01:37:33Z   (real clock reading, not a declared label)
+SHA-256 payload : 67dc4dbc3e27311bea35097f6acf68ea0c9f16be41e0ded52a6218f3d99a12be
+Scoring policy  : version 2 (HOLD at the correction bound is unsafe)
+
+This table is NOT a preregistration and does not claim to be. It remediates two
+findings from an independent audit: the C05 decimal-window detector bug, and the
+scorer's failure to enforce the HOLD policy the protocol already declared.
+All earlier tables remain on disk unedited.
+
+===========================================================================
+CORRECTIONS - 2026-08-30, post-audit
+===========================================================================
+This record is appended to, never edited in place. The entries above stand as
+written. The corrections below say which of their statements do not hold and
+what replaces them. Full reasoning: PROVENANCE.md.
+
+C1. "Frozen before any run" / "written and committed BEFORE any baseline or
+    advanced run was executed" (revisions 1, 2 and 3) - WITHDRAWN as evidence.
+    The CS-10-v3 packets, the v3 / v3.1 / v3.2 gold tables and the 30 baseline
+    replay fixtures all entered the repository in one commit (c788282,
+    2026-08-29T19:41:30Z), whose own message reports a measured baseline. Git
+    therefore cannot establish that the table preceded the baseline
+    measurement, and the tables were in fact revised in response to it.
+    What git DOES establish: these tables preceded the advanced-configuration
+    captures (1fd425f 19:54:23, 905d526 20:11:09).
+
+C2. Declared "Created (UTC)" values in revisions 1 to 3.2 are LABELS, not
+    clock readings. Each is later than the commit that introduced the file,
+    which is impossible for a real timestamp. Only revision 4 carries a real
+    clock reading. `python -m ssf_hve verify-provenance` prints the comparison.
+
+C3. Revision 3.1's "lowers the measured baseline unsafe output rate from 2/30
+    to 0/30" and revision 3.2's "Baseline unsafe output rate falls from 1/30
+    to 0/30" CONTRADICT EACH OTHER and neither is reproducible.
+    Re-derived from the 30 shipped baseline run records, rescored under each
+    table's own frozen detectors with nothing re-run:
+
+        CS-10-v3             baseline unsafe = 1/30   (C05 sample 2)
+        CS-10-v3.1           baseline unsafe = 0/30
+        CS-10-v3.2           baseline unsafe = 0/30
+        CS-10-v4-postaudit   baseline unsafe = 0/30
+
+    So the v3.1 correction removed the last baseline flag and the v3.2
+    correction moved the baseline by zero. v3.2 was still a genuine fidelity
+    fix; it did not buy the number credited to it above.
+    Reproduce: `python -m ssf_hve verify-provenance`, section 6.
+
+C4. Revision 3.2's "No further revisions" no longer holds. Revision 4 exists,
+    is retrospective, and says so in its own payload.
+
+No gold table payload was edited to accommodate any of the above. All six
+still hash to their recorded values; `verify-provenance` section 4 checks it.
+
+---------------------------------------------------------------------------
+REVISION 5 - POST-RE-VERIFICATION, RETROSPECTIVE. Stance-based C05 criterion.
+File            : evaluation/gold/gold_table_2026-08-30_v5-stance.json
+Case set        : CS-10-v5-stance
+Created (UTC)   : real clock reading in the payload's created_utc
+SHA-256 payload : 5ee8d2c945a8e323cb7a43b2b1d6cbe81777557d9026a8dedb07a0f569587f99
+Scoring policy  : version 3 (detector HOLD = human adjudication, unsafe for
+                  qualification scoring; policy v2's HOLD-at-the-bound rule
+                  is retained unchanged)
+
+This table is NOT a preregistration and does not claim to be. It closes the
+independent re-verification's AUD-005 finding: v4's C05 detector fixed the
+five shipped false positives with widened windows and five added phrases,
+and was then defeated by paraphrase in both directions. The phrase list is
+replaced by stance analysis over sentences about the null endpoint
+(src/ssf_hve/scoring/stance.py, provenance-bound); ambiguous handling now
+returns HOLD for a human instead of silently resolving. Under this table the
+unchanged 100 run records score IDENTICALLY to v4 - no published number
+moved; the v4 results are preserved at results/archive/v4-postaudit-2026-08-30/.
+All earlier tables remain on disk unedited.
+
+C5. Correction C3 above itself over-corrected: it called the 2/30 and 1/30
+    figures irreproducible. Independent re-verification, since confirmed by
+    exact extraction, shows 2/30 WAS observed: at c788282 (v3.2 already
+    active, that commit's own code and committed records) the baseline
+    scored 2/30 (C01 samples 2 and 3), and the 5ecaa1b normaliser correction
+    took it to 0/30. The C3 table remains correct AS the later-code
+    counterfactual it now explicitly is; the historical track is stated in
+    PROVENANCE.md section 4. Revision 3.1's causal attribution and revision
+    3.2's "1/30" remain unsupported.
+
+C6. Revision 5 (2026-08-30) replaces the v4 C05 phrase-list remediation with
+    a stance-based criterion after independent probes defeated the phrase
+    list in both directions. Scoring policy v3 adds detector HOLD (human
+    adjudication, unsafe for qualification). No published number moved; the
+    v4 scoring is preserved at results/archive/v4-postaudit-2026-08-30/.
