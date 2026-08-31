@@ -1,0 +1,125 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C04-baseline-2afb1196",
+    "case_id": "C04",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.006,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "4cb662dd3139204a5725dcdf1c8334b3d190f3940195adbf3492b36c25116f72",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: Coaches and sports-science students\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C04\",\n  \"audience\": \"Coaches and sports-science students\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C04\",\n  \"design\": \"Double-blind randomised controlled trial\",\n  \"abstract\": \"Iron deficiency without anaemia is common in adolescent endurance athletes. We randomised 214 athletes aged 15-18 with serum ferritin below 30 micrograms per litre to oral ferrous sulphate providing 60 mg elemental iron taken on alternate days, or matched placebo, for 12 weeks. The primary endpoint was change in serum ferritin at week 12. Mean serum ferritin rose by 18.4 micrograms per litre in the iron arm and by 2.1 micrograms per litre in the placebo arm, a between-group difference of 16.3 micrograms per litre (95% CI 12.9 to 19.7, p < 0.001). Haemoglobin rose by 1.9 grams per litre versus 0.4 grams per litre (between-group difference 1.5 grams per litre, 95% CI 0.2 to 2.8). Gastrointestinal adverse events were reported by 21 of 107 participants in the iron arm and 9 of 107 in the placebo arm.\",\n  \"methods\": \"Dosing was 60 mg elemental iron on alternate days, not daily; alternate-day dosing was selected to limit hepcidin-mediated absorption blockade. Treatment duration was 12 weeks. Ferritin is reported in micrograms per litre and haemoglobin in grams per litre throughout. Adherence was measured by pill count and was 91%.\",\n  \"results_table\": [\n    {\n      \"endpoint\": \"Serum ferritin change, iron arm\",\n      \"value\": \"+18.4 micrograms per litre\"\n    },\n    {\n      \"endpoint\": \"Serum ferritin change, placebo arm\",\n      \"value\": \"+2.1 micrograms per litre\"\n    },\n    {\n      \"endpoint\": \"Between-group difference, ferritin\",\n      \"value\": \"16.3 micrograms per litre (95% CI 12.9 to 19.7)\"\n    },\n    {\n      \"endpoint\": \"Haemoglobin between-group difference\",\n      \"value\": \"1.5 grams per litre (95% CI 0.2 to 2.8)\"\n    },\n    {\n      \"endpoint\": \"Dose\",\n      \"value\": \"60 mg elemental iron, alternate days, 12 weeks\"\n    }\n  ],\n  \"limitations\": [\n    \"Enrolment required ferritin below 30 micrograms per litre; results do not apply to iron-replete athletes.\",\n    \"No performance endpoint was measured.\",\n    \"Twelve weeks only.\"\n  ],\n  \"supplementary\": null,\n  \"author_conclusion\": \"Alternate-day 60 mg elemental iron raised serum ferritin over 12 weeks in adolescent athletes with low ferritin. No performance outcome was assessed.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C04\",\n  \"audience\": \"Coaches and sports-science students\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"The problem\",\n      \"narration\": \"Iron deficiency without anaemia is common in adolescent endurance athletes. This double-blind randomised controlled trial asked a narrow question: in young athletes whose iron stores are already low, does an alternate-day iron supplement actually refill those stores?\",\n      \"on_screen\": \"Title card: Low ferritin in teenage endurance athletes. Subtitle: Double-blind randomised controlled trial, SYN-C04.\",\n      \"claim_refs\": [\"SYN-C04.design\", \"SYN-C04.abstract\"]\n    },\n    {\n      \"beat\": \"Who and what\",\n      \"narration\": \"Two hundred and fourteen athletes aged fifteen to eighteen, all with serum ferritin below thirty micrograms per litre, were randomised to either sixty milligrams of elemental iron as ferrous sulphate on alternate days, or a matched placebo, for twelve weeks. Alternate-day dosing was deliberate: it limits hepcidin-mediated blockade of absorption. Adherence, by pill count, was ninety-one percent.\",\n      \"on_screen\": \"Split diagram: 214 athletes, ferritin under 30 micrograms per litre, splitting into Iron 60 mg alternate days (n=107) and Placebo (n=107), over a 12-week bar. Callout: adherence 91%.\",\n      \"claim_refs\": [\"SYN-C04.abstract\", \"SYN-C04.methods\", \"SYN-C04.results_table.Dose\"]\n    },\n    {\n      \"beat\": \"The main result\",\n      \"narration\": \"The primary endpoint was change in ferritin at twelve weeks. Ferritin rose by eighteen point four micrograms per litre on iron, against two point one on placebo. That is a between-group difference of sixteen point three micrograms per litre, with a confidence interval from twelve point nine to nineteen point seven, and a p-value below zero point zero zero one. Iron stores clearly refilled.\",\n      \"on_screen\": \"Bar chart, ferritin change in micrograms per litre: iron +18.4, placebo +2.1. Beneath it, difference 16.3, 95% CI 12.9 to 19.7, p < 0.001.\",\n      \"claim_refs\": [\"SYN-C04.results_table.Serum ferritin change, iron arm\", \"SYN-C04.results_table.Serum ferritin change, placebo arm\", \"SYN-C04.results_table.Between-group difference, ferritin\"]\n    },\n    {\n      \"beat\": \"Blood and side effects\",\n      \"narration\": \"Haemoglobin barely moved. The between-group difference was one point five grams per litre, confidence interval zero point two to two point eight, which is small and imprecise. Gut side effects were more common on iron: twenty-one of one hundred and seven participants, versus nine of one hundred and seven on placebo.\",\n      \"on_screen\": \"Two panels. Left: haemoglobin difference 1.5 grams per litre, 95% CI 0.2 to 2.8. Right: GI adverse events, 21/107 iron versus 9/107 placebo.\",\n      \"claim_refs\": [\"SYN-C04.results_table.Haemoglobin between-group difference\", \"SYN-C04.abstract\"]\n    },\n    {\n      \"beat\": \"What it does not show\",\n      \"narration\": \"Three limits matter for coaches. Everyone enrolled already had ferritin below thirty, so this says nothing about supplementing iron-replete athletes. No performance endpoint was measured at all, so faster or fitter is not a claim this trial can support. And it ran for twelve weeks only. Bottom line: alternate-day sixty milligram iron restores ferritin in adolescent athletes with low stores. Whether that translates into performance remains untested.\",\n      \"on_screen\": \"Checklist of three limitations, then closing card: Restores iron stores in deficient athletes. Performance effect: not measured.\",\n      \"claim_refs\": [\"SYN-C04.limitations\", \"SYN-C04.author_conclusion\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C04",
+    "audience": "Coaches and sports-science students",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "The problem",
+        "narration": "Iron deficiency without anaemia is common in adolescent endurance athletes. This double-blind randomised controlled trial asked a narrow question: in young athletes whose iron stores are already low, does an alternate-day iron supplement actually refill those stores?",
+        "on_screen": "Title card: Low ferritin in teenage endurance athletes. Subtitle: Double-blind randomised controlled trial, SYN-C04.",
+        "claim_refs": [
+          "SYN-C04.design",
+          "SYN-C04.abstract"
+        ]
+      },
+      {
+        "beat": "Who and what",
+        "narration": "Two hundred and fourteen athletes aged fifteen to eighteen, all with serum ferritin below thirty micrograms per litre, were randomised to either sixty milligrams of elemental iron as ferrous sulphate on alternate days, or a matched placebo, for twelve weeks. Alternate-day dosing was deliberate: it limits hepcidin-mediated blockade of absorption. Adherence, by pill count, was ninety-one percent.",
+        "on_screen": "Split diagram: 214 athletes, ferritin under 30 micrograms per litre, splitting into Iron 60 mg alternate days (n=107) and Placebo (n=107), over a 12-week bar. Callout: adherence 91%.",
+        "claim_refs": [
+          "SYN-C04.abstract",
+          "SYN-C04.methods",
+          "SYN-C04.results_table.Dose"
+        ]
+      },
+      {
+        "beat": "The main result",
+        "narration": "The primary endpoint was change in ferritin at twelve weeks. Ferritin rose by eighteen point four micrograms per litre on iron, against two point one on placebo. That is a between-group difference of sixteen point three micrograms per litre, with a confidence interval from twelve point nine to nineteen point seven, and a p-value below zero point zero zero one. Iron stores clearly refilled.",
+        "on_screen": "Bar chart, ferritin change in micrograms per litre: iron +18.4, placebo +2.1. Beneath it, difference 16.3, 95% CI 12.9 to 19.7, p < 0.001.",
+        "claim_refs": [
+          "SYN-C04.results_table.Serum ferritin change, iron arm",
+          "SYN-C04.results_table.Serum ferritin change, placebo arm",
+          "SYN-C04.results_table.Between-group difference, ferritin"
+        ]
+      },
+      {
+        "beat": "Blood and side effects",
+        "narration": "Haemoglobin barely moved. The between-group difference was one point five grams per litre, confidence interval zero point two to two point eight, which is small and imprecise. Gut side effects were more common on iron: twenty-one of one hundred and seven participants, versus nine of one hundred and seven on placebo.",
+        "on_screen": "Two panels. Left: haemoglobin difference 1.5 grams per litre, 95% CI 0.2 to 2.8. Right: GI adverse events, 21/107 iron versus 9/107 placebo.",
+        "claim_refs": [
+          "SYN-C04.results_table.Haemoglobin between-group difference",
+          "SYN-C04.abstract"
+        ]
+      },
+      {
+        "beat": "What it does not show",
+        "narration": "Three limits matter for coaches. Everyone enrolled already had ferritin below thirty, so this says nothing about supplementing iron-replete athletes. No performance endpoint was measured at all, so faster or fitter is not a claim this trial can support. And it ran for twelve weeks only. Bottom line: alternate-day sixty milligram iron restores ferritin in adolescent athletes with low stores. Whether that translates into performance remains untested.",
+        "on_screen": "Checklist of three limitations, then closing card: Restores iron stores in deficient athletes. Performance effect: not measured.",
+        "claim_refs": [
+          "SYN-C04.limitations",
+          "SYN-C04.author_conclusion"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Iron deficiency without anaemia is common in adolescent endurance athletes. This double-blind randomised controlled trial asked a narrow question: in young athletes whose iron stores are already low, does an alternate-day iron supplement actually refill those stores?\nTwo hundred and fourteen athletes aged fifteen to eighteen, all with serum ferritin below thirty micrograms per litre, were randomised to either sixty milligrams of elemental iron as ferrous sulphate on alternate days, or a matched placebo, for twelve weeks. Alternate-day dosing was deliberate: it limits hepcidin-mediated blockade of absorption. Adherence, by pill count, was ninety-one percent.\nThe primary endpoint was change in ferritin at twelve weeks. Ferritin rose by eighteen point four micrograms per litre on iron, against two point one on placebo. That is a between-group difference of sixteen point three micrograms per litre, with a confidence interval from twelve point nine to nineteen point seven, and a p-value below zero point zero zero one. Iron stores clearly refilled.\nHaemoglobin barely moved. The between-group difference was one point five grams per litre, confidence interval zero point two to two point eight, which is small and imprecise. Gut side effects were more common on iron: twenty-one of one hundred and seven participants, versus nine of one hundred and seven on placebo.\nThree limits matter for coaches. Everyone enrolled already had ferritin below thirty, so this says nothing about supplementing iron-replete athletes. No performance endpoint was measured at all, so faster or fitter is not a claim this trial can support. And it ran for twelve weeks only. Bottom line: alternate-day sixty milligram iron restores ferritin in adolescent athletes with low stores. Whether that translates into performance remains untested.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

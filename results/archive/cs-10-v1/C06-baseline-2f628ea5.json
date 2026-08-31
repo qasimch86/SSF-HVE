@@ -1,0 +1,134 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C06-baseline-2f628ea5",
+    "case_id": "C06",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.006,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "072243983af476a6b58e7149fc24f9f55715ee50d9f07de29314e8234aa79425",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C06\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C06\",\n  \"design\": \"Controlled preclinical transfer experiment\",\n  \"abstract\": \"Faecal microbiota transfer from lean to obese donors has been proposed to improve metabolic phenotype. We transferred microbiota from lean donor mice into germ-free recipients and measured fat mass at 8 weeks. Recipients of lean-donor microbiota gained 24% less fat mass than recipients of obese-donor microbiota (p = 0.003, n = 20 per group). Main-text analyses are limited to the primary donor pair. Extended analyses across all four donor pairs, including the diet-matched control arm, are reported in Supplementary Table S3 and Supplementary Figure S2.\",\n  \"methods\": \"Germ-free C57BL/6J recipients were colonised at 6 weeks and maintained on a standardised chow diet. The main text reports donor pair 1 only. See supplementary materials for donor pairs 2-4 and for the diet-matched control.\",\n  \"results_table\": [\n    {\n      \"location\": \"Main text\",\n      \"finding\": \"Donor pair 1: lean-donor recipients gained 24% less fat mass (p = 0.003)\"\n    }\n  ],\n  \"supplementary\": {\n    \"S3\": \"Across all four donor pairs the effect was inconsistent: donor pair 1, -24% (p = 0.003); donor pair 2, -6% (p = 0.41); donor pair 3, +3% (p = 0.72); donor pair 4, -19% (p = 0.04). Pooled across pairs the difference was -11% (95% CI -23% to +1%), which does not exclude no effect.\",\n    \"S2\": \"In the diet-matched control arm, in which recipients were pair-fed to equalise intake, the difference in fat mass between lean-donor and obese-donor recipients was not significant (-4%, p = 0.55), indicating that a substantial part of the main-text effect is attributable to differences in food intake rather than to the transferred microbiota.\"\n  },\n  \"limitations\": [\n    \"The main-text result is one donor pair of four.\",\n    \"Pooled across all donor pairs the effect does not exclude no effect (95% CI -23% to +1%).\",\n    \"The diet-matched control shows the effect largely disappears when food intake is equalised.\"\n  ],\n  \"author_conclusion\": \"The headline transfer effect is donor-pair dependent and is substantially attenuated when food intake is controlled. See supplementary materials.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C06\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"The idea\",\n      \"narration\": \"Your gut is home to trillions of bacteria, and there's a popular idea that transplanting them from a lean animal into another one could make it leaner too. A mouse experiment put that idea to the test — and the answer is more complicated than the headline.\",\n      \"on_screen\": \"Title card: 'Can gut bacteria make you lean?' Simple animation of gut microbes moving from one mouse to another.\",\n      \"claim_refs\": [\"study_id: SYN-C06\", \"design: Controlled preclinical transfer experiment\", \"abstract\"]\n    },\n    {\n      \"beat\": \"The headline number\",\n      \"narration\": \"Researchers used germ-free mice — mice raised with no gut bacteria of their own — and colonised them with microbes from either a lean donor or an obese donor. Eight weeks later, the lean-donor group had gained twenty-four percent less fat. Twenty mice per group, and statistically significant.\",\n      \"on_screen\": \"Two mouse groups side by side; bar chart showing -24% fat mass; caption 'p = 0.003, n = 20 per group'.\",\n      \"claim_refs\": [\"methods\", \"results_table[0]\", \"abstract\"]\n    },\n    {\n      \"beat\": \"But that's one donor pair\",\n      \"narration\": \"Here's the catch. That number comes from just one pair of donors. The team actually tested four, and the results were all over the place: minus six percent, plus three percent, minus nineteen percent. Only two of the four showed a clear effect.\",\n      \"on_screen\": \"Four bars appear: -24%, -6%, +3%, -19%, with p-values. The first bar is highlighted, then the other three fade in.\",\n      \"claim_refs\": [\"supplementary.S3\", \"limitations[0]\"]\n    },\n    {\n      \"beat\": \"Pooling the evidence\",\n      \"narration\": \"Put all four together and the average effect shrinks to about eleven percent, with a margin of error wide enough to include no effect at all.\",\n      \"on_screen\": \"Pooled estimate -11% with error bar spanning -23% to +1%, crossing a marked zero line.\",\n      \"claim_refs\": [\"supplementary.S3\", \"limitations[1]\"]\n    },\n    {\n      \"beat\": \"It was mostly the food\",\n      \"narration\": \"And there's a bigger twist. When the researchers fed both groups exactly the same amount of food, the difference almost vanished — four percent, not statistically significant. So much of the original effect wasn't the bacteria at all. It was how much the mice ate.\",\n      \"on_screen\": \"Food bowls equalised between the two groups; the -24% bar collapses to -4% labelled 'not significant'.\",\n      \"claim_refs\": [\"supplementary.S2\", \"limitations[2]\"]\n    },\n    {\n      \"beat\": \"What to take away\",\n      \"narration\": \"The authors are clear: the effect depends on which donor you pick, and it largely fades once eating is controlled. It's a reminder that a striking headline figure can rest on one slice of a study — and the supplementary material is often where the real story lives.\",\n      \"on_screen\": \"Text on screen: 'Donor-dependent. Attenuated when food intake is controlled.' Then: 'Check the supplementary data.'\",\n      \"claim_refs\": [\"author_conclusion\", \"limitations\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C06",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "The idea",
+        "narration": "Your gut is home to trillions of bacteria, and there's a popular idea that transplanting them from a lean animal into another one could make it leaner too. A mouse experiment put that idea to the test — and the answer is more complicated than the headline.",
+        "on_screen": "Title card: 'Can gut bacteria make you lean?' Simple animation of gut microbes moving from one mouse to another.",
+        "claim_refs": [
+          "study_id: SYN-C06",
+          "design: Controlled preclinical transfer experiment",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "The headline number",
+        "narration": "Researchers used germ-free mice — mice raised with no gut bacteria of their own — and colonised them with microbes from either a lean donor or an obese donor. Eight weeks later, the lean-donor group had gained twenty-four percent less fat. Twenty mice per group, and statistically significant.",
+        "on_screen": "Two mouse groups side by side; bar chart showing -24% fat mass; caption 'p = 0.003, n = 20 per group'.",
+        "claim_refs": [
+          "methods",
+          "results_table[0]",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "But that's one donor pair",
+        "narration": "Here's the catch. That number comes from just one pair of donors. The team actually tested four, and the results were all over the place: minus six percent, plus three percent, minus nineteen percent. Only two of the four showed a clear effect.",
+        "on_screen": "Four bars appear: -24%, -6%, +3%, -19%, with p-values. The first bar is highlighted, then the other three fade in.",
+        "claim_refs": [
+          "supplementary.S3",
+          "limitations[0]"
+        ]
+      },
+      {
+        "beat": "Pooling the evidence",
+        "narration": "Put all four together and the average effect shrinks to about eleven percent, with a margin of error wide enough to include no effect at all.",
+        "on_screen": "Pooled estimate -11% with error bar spanning -23% to +1%, crossing a marked zero line.",
+        "claim_refs": [
+          "supplementary.S3",
+          "limitations[1]"
+        ]
+      },
+      {
+        "beat": "It was mostly the food",
+        "narration": "And there's a bigger twist. When the researchers fed both groups exactly the same amount of food, the difference almost vanished — four percent, not statistically significant. So much of the original effect wasn't the bacteria at all. It was how much the mice ate.",
+        "on_screen": "Food bowls equalised between the two groups; the -24% bar collapses to -4% labelled 'not significant'.",
+        "claim_refs": [
+          "supplementary.S2",
+          "limitations[2]"
+        ]
+      },
+      {
+        "beat": "What to take away",
+        "narration": "The authors are clear: the effect depends on which donor you pick, and it largely fades once eating is controlled. It's a reminder that a striking headline figure can rest on one slice of a study — and the supplementary material is often where the real story lives.",
+        "on_screen": "Text on screen: 'Donor-dependent. Attenuated when food intake is controlled.' Then: 'Check the supplementary data.'",
+        "claim_refs": [
+          "author_conclusion",
+          "limitations"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Your gut is home to trillions of bacteria, and there's a popular idea that transplanting them from a lean animal into another one could make it leaner too. A mouse experiment put that idea to the test — and the answer is more complicated than the headline.\nResearchers used germ-free mice — mice raised with no gut bacteria of their own — and colonised them with microbes from either a lean donor or an obese donor. Eight weeks later, the lean-donor group had gained twenty-four percent less fat. Twenty mice per group, and statistically significant.\nHere's the catch. That number comes from just one pair of donors. The team actually tested four, and the results were all over the place: minus six percent, plus three percent, minus nineteen percent. Only two of the four showed a clear effect.\nPut all four together and the average effect shrinks to about eleven percent, with a margin of error wide enough to include no effect at all.\nAnd there's a bigger twist. When the researchers fed both groups exactly the same amount of food, the difference almost vanished — four percent, not statistically significant. So much of the original effect wasn't the bacteria at all. It was how much the mice ate.\nThe authors are clear: the effect depends on which donor you pick, and it largely fades once eating is controlled. It's a reminder that a striking headline figure can rest on one slice of a study — and the supplementary material is often where the real story lives.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

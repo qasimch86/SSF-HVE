@@ -1,0 +1,133 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C03-baseline-efa951fa",
+    "case_id": "C03",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.006,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "0e8d9fc5c9126dc4e979122e31abbd0f514143af67418940e7fe82740b0c1652",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: School governors and parents\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C03\",\n  \"audience\": \"School governors and parents\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C03\",\n  \"design\": \"Cluster-allocated, unblinded before-after study\",\n  \"abstract\": \"We evaluated whether portable HEPA air cleaners reduce pupil absence attributed to respiratory illness. Twenty-two primary-school classrooms in one local authority received two portable HEPA units each; eighteen classrooms in the same authority continued without units. Allocation was made by school leadership according to available floor space and was not randomised. Absence attributed to respiratory illness fell from 4.9% to 3.6% of pupil-days in intervention classrooms and from 4.7% to 4.4% in comparison classrooms over a single 11-week winter term, a difference-in-differences of -1.0 percentage points (95% CI -1.9 to -0.1). Teachers and pupils were aware of the units; absence coding was performed by school office staff who were also aware. The study ran for one term in one authority during a single respiratory season.\",\n  \"methods\": \"Absence was extracted from school management-information systems using the existing respiratory-illness code. No laboratory confirmation of infection was obtained. Units were run during school hours at manufacturer setting 2. Classroom CO2 was logged but ventilation was not otherwise controlled and differed between arms at baseline.\",\n  \"results_table\": [\n    {\n      \"arm\": \"Intervention (22 classrooms)\",\n      \"pre\": \"4.9%\",\n      \"post\": \"3.6%\"\n    },\n    {\n      \"arm\": \"Comparison (18 classrooms)\",\n      \"pre\": \"4.7%\",\n      \"post\": \"4.4%\"\n    },\n    {\n      \"arm\": \"Difference-in-differences\",\n      \"pre\": \"-\",\n      \"post\": \"-1.0 pp (95% CI -1.9 to -0.1)\"\n    }\n  ],\n  \"limitations\": [\n    \"MATERIAL: Allocation was not randomised; schools chose their own arm by available floor space.\",\n    \"MATERIAL: The study was unblinded - staff recording absence knew which classrooms had units.\",\n    \"MATERIAL: A single 11-week term in one local authority during one respiratory season.\",\n    \"No laboratory confirmation of infection; the outcome is a school administrative code.\",\n    \"Baseline ventilation differed between arms.\"\n  ],\n  \"supplementary\": null,\n  \"author_conclusion\": \"Portable HEPA units were associated with a small reduction in coded respiratory absence in this unrandomised, unblinded single-term study. Randomised evaluation is needed.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C03\",\n  \"audience\": \"School governors and parents\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"The question\",\n      \"narration\": \"Can portable air cleaners keep more children in class? One local authority looked at that over a single winter term. Twenty-two primary classrooms were each given two portable HEPA units; eighteen other classrooms in the same authority carried on as usual.\",\n      \"on_screen\": \"Title: Do HEPA air cleaners cut respiratory absence? Split graphic: 22 classrooms with units, 18 without\",\n      \"claim_refs\": [\"design\", \"abstract\"]\n    },\n    {\n      \"beat\": \"What the numbers showed\",\n      \"narration\": \"In the classrooms with units, absence coded as respiratory illness fell from 4.9 to 3.6 percent of pupil-days. In the comparison classrooms it fell from 4.7 to 4.4 percent. After allowing for that background change, the difference was about one percentage point, with a range running from 1.9 points down to just 0.1.\",\n      \"on_screen\": \"Simple bar chart of before and after for both groups; caption: difference-in-differences -1.0 pp (95% CI -1.9 to -0.1)\",\n      \"claim_refs\": [\"results_table\", \"abstract\"]\n    },\n    {\n      \"beat\": \"How classrooms were chosen\",\n      \"narration\": \"Here is the important part. Classrooms were not allocated at random. School leaders decided which rooms got units, based on available floor space. So the two groups may have differed from the start, and they did: baseline ventilation was not the same in both.\",\n      \"on_screen\": \"Icon of a floor plan with a Chosen, not randomised label; note: baseline ventilation differed\",\n      \"claim_refs\": [\"limitations[0]\", \"limitations[4]\", \"methods\"]\n    },\n    {\n      \"beat\": \"Everyone knew\",\n      \"narration\": \"Nobody was blinded. Teachers and pupils could see the units, and the office staff entering the absence codes knew which classrooms had them. The outcome is an administrative code in the school system, not a lab-confirmed infection.\",\n      \"on_screen\": \"Screen showing an attendance code being entered; label: unblinded, no laboratory confirmation\",\n      \"claim_refs\": [\"limitations[1]\", \"limitations[3]\", \"methods\"]\n    },\n    {\n      \"beat\": \"One term, one place\",\n      \"narration\": \"And it ran for one eleven-week term, in one local authority, during one respiratory season. Absence swings a lot from term to term, so a single season cannot tell us much on its own.\",\n      \"on_screen\": \"Calendar strip highlighting a single 11-week winter term\",\n      \"claim_refs\": [\"limitations[2]\", \"abstract\"]\n    },\n    {\n      \"beat\": \"What to take from it\",\n      \"narration\": \"So: a small, encouraging signal, but not proof that the units caused the drop. The authors say the same, and call for a randomised trial. Treat this as a reason to watch the evidence, not a reason to commit to a purchase.\",\n      \"on_screen\": \"Summary card: Promising but not proof. Randomised evaluation needed.\",\n      \"claim_refs\": [\"author_conclusion\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C03",
+    "audience": "School governors and parents",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "The question",
+        "narration": "Can portable air cleaners keep more children in class? One local authority looked at that over a single winter term. Twenty-two primary classrooms were each given two portable HEPA units; eighteen other classrooms in the same authority carried on as usual.",
+        "on_screen": "Title: Do HEPA air cleaners cut respiratory absence? Split graphic: 22 classrooms with units, 18 without",
+        "claim_refs": [
+          "design",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "What the numbers showed",
+        "narration": "In the classrooms with units, absence coded as respiratory illness fell from 4.9 to 3.6 percent of pupil-days. In the comparison classrooms it fell from 4.7 to 4.4 percent. After allowing for that background change, the difference was about one percentage point, with a range running from 1.9 points down to just 0.1.",
+        "on_screen": "Simple bar chart of before and after for both groups; caption: difference-in-differences -1.0 pp (95% CI -1.9 to -0.1)",
+        "claim_refs": [
+          "results_table",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "How classrooms were chosen",
+        "narration": "Here is the important part. Classrooms were not allocated at random. School leaders decided which rooms got units, based on available floor space. So the two groups may have differed from the start, and they did: baseline ventilation was not the same in both.",
+        "on_screen": "Icon of a floor plan with a Chosen, not randomised label; note: baseline ventilation differed",
+        "claim_refs": [
+          "limitations[0]",
+          "limitations[4]",
+          "methods"
+        ]
+      },
+      {
+        "beat": "Everyone knew",
+        "narration": "Nobody was blinded. Teachers and pupils could see the units, and the office staff entering the absence codes knew which classrooms had them. The outcome is an administrative code in the school system, not a lab-confirmed infection.",
+        "on_screen": "Screen showing an attendance code being entered; label: unblinded, no laboratory confirmation",
+        "claim_refs": [
+          "limitations[1]",
+          "limitations[3]",
+          "methods"
+        ]
+      },
+      {
+        "beat": "One term, one place",
+        "narration": "And it ran for one eleven-week term, in one local authority, during one respiratory season. Absence swings a lot from term to term, so a single season cannot tell us much on its own.",
+        "on_screen": "Calendar strip highlighting a single 11-week winter term",
+        "claim_refs": [
+          "limitations[2]",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "What to take from it",
+        "narration": "So: a small, encouraging signal, but not proof that the units caused the drop. The authors say the same, and call for a randomised trial. Treat this as a reason to watch the evidence, not a reason to commit to a purchase.",
+        "on_screen": "Summary card: Promising but not proof. Randomised evaluation needed.",
+        "claim_refs": [
+          "author_conclusion"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Can portable air cleaners keep more children in class? One local authority looked at that over a single winter term. Twenty-two primary classrooms were each given two portable HEPA units; eighteen other classrooms in the same authority carried on as usual.\nIn the classrooms with units, absence coded as respiratory illness fell from 4.9 to 3.6 percent of pupil-days. In the comparison classrooms it fell from 4.7 to 4.4 percent. After allowing for that background change, the difference was about one percentage point, with a range running from 1.9 points down to just 0.1.\nHere is the important part. Classrooms were not allocated at random. School leaders decided which rooms got units, based on available floor space. So the two groups may have differed from the start, and they did: baseline ventilation was not the same in both.\nNobody was blinded. Teachers and pupils could see the units, and the office staff entering the absence codes knew which classrooms had them. The outcome is an administrative code in the school system, not a lab-confirmed infection.\nAnd it ran for one eleven-week term, in one local authority, during one respiratory season. Absence swings a lot from term to term, so a single season cannot tell us much on its own.\nSo: a small, encouraging signal, but not proof that the units caused the drop. The authors say the same, and call for a randomised trial. Treat this as a reason to watch the evidence, not a reason to commit to a purchase.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

@@ -1,0 +1,125 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C02-baseline-8005938f",
+    "case_id": "C02",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.006,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "1fc0be3cdaa7eb351cb2bba4545cf4fbc70ae5e4693aad80cc0ee944916954c7",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C02\",\n  \"design\": \"Randomised preclinical study in mice\",\n  \"abstract\": \"Accumulation of senescent cells contributes to tissue dysfunction in ageing. We tested whether intermittent administration of the senolytic combination D+Q clears senescent cells and improves physical function in aged mice. Male and female C57BL/6J mice aged 24 months (n = 96, 48 per sex) were randomised to D+Q or vehicle, dosed on 3 consecutive days every 14 days for 16 weeks. D+Q reduced p16INK4a-positive cell burden in inguinal adipose tissue by 41% relative to vehicle (p < 0.001) and improved rotarod latency by 22% (p = 0.004). Median remaining lifespan from the start of treatment increased from 21.4 to 26.9 weeks in treated animals (log-rank p = 0.01). No effect was observed on grip strength (p = 0.62). All work was conducted in mice; no human or non-human-primate participants were involved and no clinical trial has been performed with this schedule.\",\n  \"methods\": \"Animals were housed 4 per cage under a 12:12 light-dark cycle. Randomisation was performed by cage using a computer-generated sequence; outcome assessors were blinded to allocation. Doses were 5 mg/kg dasatinib and 50 mg/kg quercetin by oral gavage. The dosing schedule, route and mg/kg exposure used here have not been evaluated in humans and do not translate directly to a human dose.\",\n  \"results_table\": [\n    {\n      \"endpoint\": \"p16INK4a-positive cell burden, inguinal adipose\",\n      \"effect\": \"-41% vs vehicle\",\n      \"p\": \"<0.001\"\n    },\n    {\n      \"endpoint\": \"Rotarod latency\",\n      \"effect\": \"+22% vs vehicle\",\n      \"p\": \"0.004\"\n    },\n    {\n      \"endpoint\": \"Median remaining lifespan\",\n      \"effect\": \"21.4 -> 26.9 weeks\",\n      \"p\": \"0.01\"\n    },\n    {\n      \"endpoint\": \"Grip strength\",\n      \"effect\": \"no difference\",\n      \"p\": \"0.62\"\n    }\n  ],\n  \"limitations\": [\n    \"Findings are in a single inbred mouse strain at a single age.\",\n    \"No human data. The schedule has not been tested in humans.\",\n    \"Adipose tissue only; other tissues were not assessed.\",\n    \"Grip strength showed no benefit.\"\n  ],\n  \"supplementary\": null,\n  \"author_conclusion\": \"Intermittent D+Q reduced senescent-cell burden and improved one measure of physical function in aged mice. Human relevance is unknown and requires clinical evaluation.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"Hook: zombie cells\",\n      \"narration\": \"As bodies age, some cells stop dividing but refuse to die. Scientists call them senescent cells, and they build up in tissues and seem to make ageing worse. So what happens if you clear them out?\",\n      \"on_screen\": \"Animation of tissue with a few cells turning grey and lingering; title card: 'Senescent cells'\",\n      \"claim_refs\": [\"abstract: accumulation of senescent cells contributes to tissue dysfunction in ageing\"]\n    },\n    {\n      \"beat\": \"The study setup\",\n      \"narration\": \"A randomised study in mice tested exactly that. Ninety-six mice, half male and half female, all twenty-four months old, roughly the equivalent of old age. Each was randomly assigned to get a two-drug combination called D plus Q, dasatinib and quercetin, or a dummy treatment. Dosing was three days in a row, every two weeks, for sixteen weeks. The researchers scoring the results did not know which mice got what.\",\n      \"on_screen\": \"Split diagram: 96 mice icons dividing into two groups, D+Q vs vehicle; calendar strip showing 3 days on, then a gap, repeating; 'blinded assessors' stamp\",\n      \"claim_refs\": [\"design: randomised preclinical study in mice\", \"methods: randomisation by cage, blinded outcome assessors\", \"abstract: n = 96, 24 months, 3 consecutive days every 14 days for 16 weeks\"]\n    },\n    {\n      \"beat\": \"What improved\",\n      \"narration\": \"In fat tissue, the burden of senescent cells fell by forty-one percent compared with untreated mice. On a rotating-rod balance test, treated mice stayed on twenty-two percent longer. And they lived longer: from the start of treatment, the typical remaining lifespan rose from about twenty-one weeks to almost twenty-seven.\",\n      \"on_screen\": \"Three simple bar comparisons: senescent-cell burden -41%; rotarod latency +22%; median remaining lifespan 21.4 to 26.9 weeks\",\n      \"claim_refs\": [\"results_table: p16INK4a-positive cell burden, -41%, p<0.001\", \"results_table: rotarod latency, +22%, p=0.004\", \"results_table: median remaining lifespan, 21.4 to 26.9 weeks, p=0.01\"]\n    },\n    {\n      \"beat\": \"What did not\",\n      \"narration\": \"But not everything improved. Grip strength was no better than in untreated mice. Only fat tissue was examined, in one inbred mouse strain, at one age.\",\n      \"on_screen\": \"Grip strength bars level with each other, marked 'no difference'; small caption listing limitations\",\n      \"claim_refs\": [\"results_table: grip strength, no difference, p=0.62\", \"limitations: single inbred strain at a single age; adipose tissue only\"]\n    },\n    {\n      \"beat\": \"The catch\",\n      \"narration\": \"And the big caveat: this was mice. No people were involved, and this schedule and dose have never been tested in humans, so they do not translate into a human dose. It is a promising lead about how ageing might be slowed, not a treatment you can act on.\",\n      \"on_screen\": \"Mouse icon with a large 'MICE ONLY' label; crossed-out human silhouette; closing text: 'Not tested in humans'\",\n      \"claim_refs\": [\"abstract: all work conducted in mice, no clinical trial performed with this schedule\", \"methods: does not translate directly to a human dose\", \"author_conclusion: human relevance is unknown and requires clinical evaluation\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C02",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "Hook: zombie cells",
+        "narration": "As bodies age, some cells stop dividing but refuse to die. Scientists call them senescent cells, and they build up in tissues and seem to make ageing worse. So what happens if you clear them out?",
+        "on_screen": "Animation of tissue with a few cells turning grey and lingering; title card: 'Senescent cells'",
+        "claim_refs": [
+          "abstract: accumulation of senescent cells contributes to tissue dysfunction in ageing"
+        ]
+      },
+      {
+        "beat": "The study setup",
+        "narration": "A randomised study in mice tested exactly that. Ninety-six mice, half male and half female, all twenty-four months old, roughly the equivalent of old age. Each was randomly assigned to get a two-drug combination called D plus Q, dasatinib and quercetin, or a dummy treatment. Dosing was three days in a row, every two weeks, for sixteen weeks. The researchers scoring the results did not know which mice got what.",
+        "on_screen": "Split diagram: 96 mice icons dividing into two groups, D+Q vs vehicle; calendar strip showing 3 days on, then a gap, repeating; 'blinded assessors' stamp",
+        "claim_refs": [
+          "design: randomised preclinical study in mice",
+          "methods: randomisation by cage, blinded outcome assessors",
+          "abstract: n = 96, 24 months, 3 consecutive days every 14 days for 16 weeks"
+        ]
+      },
+      {
+        "beat": "What improved",
+        "narration": "In fat tissue, the burden of senescent cells fell by forty-one percent compared with untreated mice. On a rotating-rod balance test, treated mice stayed on twenty-two percent longer. And they lived longer: from the start of treatment, the typical remaining lifespan rose from about twenty-one weeks to almost twenty-seven.",
+        "on_screen": "Three simple bar comparisons: senescent-cell burden -41%; rotarod latency +22%; median remaining lifespan 21.4 to 26.9 weeks",
+        "claim_refs": [
+          "results_table: p16INK4a-positive cell burden, -41%, p<0.001",
+          "results_table: rotarod latency, +22%, p=0.004",
+          "results_table: median remaining lifespan, 21.4 to 26.9 weeks, p=0.01"
+        ]
+      },
+      {
+        "beat": "What did not",
+        "narration": "But not everything improved. Grip strength was no better than in untreated mice. Only fat tissue was examined, in one inbred mouse strain, at one age.",
+        "on_screen": "Grip strength bars level with each other, marked 'no difference'; small caption listing limitations",
+        "claim_refs": [
+          "results_table: grip strength, no difference, p=0.62",
+          "limitations: single inbred strain at a single age; adipose tissue only"
+        ]
+      },
+      {
+        "beat": "The catch",
+        "narration": "And the big caveat: this was mice. No people were involved, and this schedule and dose have never been tested in humans, so they do not translate into a human dose. It is a promising lead about how ageing might be slowed, not a treatment you can act on.",
+        "on_screen": "Mouse icon with a large 'MICE ONLY' label; crossed-out human silhouette; closing text: 'Not tested in humans'",
+        "claim_refs": [
+          "abstract: all work conducted in mice, no clinical trial performed with this schedule",
+          "methods: does not translate directly to a human dose",
+          "author_conclusion: human relevance is unknown and requires clinical evaluation"
+        ]
+      }
+    ]
+  },
+  "final_narration": "As bodies age, some cells stop dividing but refuse to die. Scientists call them senescent cells, and they build up in tissues and seem to make ageing worse. So what happens if you clear them out?\nA randomised study in mice tested exactly that. Ninety-six mice, half male and half female, all twenty-four months old, roughly the equivalent of old age. Each was randomly assigned to get a two-drug combination called D plus Q, dasatinib and quercetin, or a dummy treatment. Dosing was three days in a row, every two weeks, for sixteen weeks. The researchers scoring the results did not know which mice got what.\nIn fat tissue, the burden of senescent cells fell by forty-one percent compared with untreated mice. On a rotating-rod balance test, treated mice stayed on twenty-two percent longer. And they lived longer: from the start of treatment, the typical remaining lifespan rose from about twenty-one weeks to almost twenty-seven.\nBut not everything improved. Grip strength was no better than in untreated mice. Only fat tissue was examined, in one inbred mouse strain, at one age.\nAnd the big caveat: this was mice. No people were involved, and this schedule and dose have never been tested in humans, so they do not translate into a human dose. It is a promising lead about how ageing might be slowed, not a treatment you can act on.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

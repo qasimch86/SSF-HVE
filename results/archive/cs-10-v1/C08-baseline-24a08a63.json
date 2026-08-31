@@ -1,0 +1,132 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C08-baseline-24a08a63",
+    "case_id": "C08",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.009,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "c226e71fd3ad380c22d9979e73e345f0e4d9d1fd86a4dbefb1eb7d5abf8372a4",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C08\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C08\",\n  \"design\": \"Review with an explicitly bounded teaching analogy\",\n  \"abstract\": \"Memory T cells persist after infection and enable a faster secondary response. In this review we quantify persistence: in a cohort of 302 adults, antigen-specific memory CD8+ T cells against a defined viral epitope were detectable in 88% of participants at 5 years and in 61% at 12 years. Secondary expansion on re-exposure was 4.2-fold faster than the primary response.\",\n  \"teaching_analogy\": {\n    \"analogy\": \"Immune memory can be introduced as a filing cabinet: the body keeps a folder on a pathogen it has met, so it can act faster next time.\",\n    \"stated_limit\": \"THE ANALOGY BREAKS DOWN HERE, AND THE BREAKDOWN IS MATERIAL: a filing cabinet can be searched on demand and its folders do not decay, whereas immune memory cannot be queried, is not indexed, is not retrievable at will, and its cells decline over time. The analogy must not be extended to imply that the immune system can look up, recall on command, or permanently retain a record of every pathogen encountered. Doing so implies lifelong protection against everything previously met, which is false and clinically harmful.\",\n    \"safe_use\": \"Use the analogy only for the single idea that a prior encounter makes the next response faster.\"\n  },\n  \"methods\": \"Detection was by MHC-multimer staining; persistence figures are cohort-level and vary by pathogen and by individual.\",\n  \"results_table\": [\n    {\n      \"endpoint\": \"Memory CD8+ T cells detectable at 5 years\",\n      \"value\": \"88% of participants\"\n    },\n    {\n      \"endpoint\": \"Memory CD8+ T cells detectable at 12 years\",\n      \"value\": \"61% of participants\"\n    },\n    {\n      \"endpoint\": \"Secondary expansion speed\",\n      \"value\": \"4.2-fold faster than primary\"\n    }\n  ],\n  \"limitations\": [\n    \"Persistence varies by pathogen and by individual; these figures are for one defined viral epitope.\",\n    \"Detectable memory cells do not guarantee protection from disease.\",\n    \"The teaching analogy is valid only for the speed-of-response idea and must not be extended.\"\n  ],\n  \"supplementary\": null,\n  \"author_conclusion\": \"Memory T cells persist for years in most people and speed the secondary response. The filing-cabinet analogy is useful only within the stated limit.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C08\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"Hook: the second time is faster\",\n      \"narration\": \"You catch a virus. You get better. Years later you meet it again, and your body reacts much faster. That speed comes from memory T cells, immune cells that stay behind after an infection ends.\",\n      \"on_screen\": \"Timeline: first infection, recovery, re-exposure years later. Label the cells left behind as 'memory T cells'.\",\n      \"claim_refs\": [\"abstract: memory T cells persist and enable a faster secondary response\"]\n    },\n    {\n      \"beat\": \"The analogy, used narrowly\",\n      \"narration\": \"One way to picture this is a filing cabinet. Your body has met this pathogen before, so it keeps a folder on it and can act quicker next time. That is the one idea the picture is good for: a previous encounter makes the next response faster.\",\n      \"on_screen\": \"Simple filing cabinet with a single folder. Caption: 'Only means: seen it before, responds faster.'\",\n      \"claim_refs\": [\"teaching_analogy.analogy\", \"teaching_analogy.safe_use\"]\n    },\n    {\n      \"beat\": \"Where the analogy breaks down\",\n      \"narration\": \"But push that picture any further and it becomes wrong, in a way that matters. A filing cabinet can be searched whenever you like, and its folders sit there unchanged. Immune memory is not like that. You cannot look it up, it is not indexed, nothing can be recalled on command, and the cells themselves decline over time. So it does not mean lifelong protection against everything you have ever met.\",\n      \"on_screen\": \"The cabinet image cracks and fades. Three crossed-out labels: 'searchable', 'permanent', 'recall on demand'.\",\n      \"claim_refs\": [\"teaching_analogy.stated_limit\"]\n    },\n    {\n      \"beat\": \"What the numbers show\",\n      \"narration\": \"Here is what researchers actually measured. In a review of 302 adults tracking memory CD8 T cells against one defined viral target, those cells were still detectable in 88 percent of people after 5 years, and in 61 percent after 12 years. When the immune system was challenged again, its second response ramped up 4.2 times faster than the first.\",\n      \"on_screen\": \"Three figures appear in turn: 88% at 5 years; 61% at 12 years; 4.2x faster second response. Footer: 302 adults, one viral epitope, MHC-multimer staining.\",\n      \"claim_refs\": [\"results_table[0]\", \"results_table[1]\", \"results_table[2]\", \"methods\"]\n    },\n    {\n      \"beat\": \"The honest caveats\",\n      \"narration\": \"Two cautions. These figures are for one virus target and one group of people; how long memory lasts varies from pathogen to pathogen and from person to person. And detecting memory cells is not the same as being protected from illness.\",\n      \"on_screen\": \"Two bullet cards: 'Varies by pathogen and person' and 'Detectable is not the same as protected'.\",\n      \"claim_refs\": [\"limitations[0]\", \"limitations[1]\"]\n    },\n    {\n      \"beat\": \"Takeaway\",\n      \"narration\": \"So: memory T cells stick around for years in most people, and they make the next response faster. Faster, though, is the whole claim. Not a permanent, searchable record of everything you have ever fought off.\",\n      \"on_screen\": \"Text: 'Faster next time. Not forever, not on demand.'\",\n      \"claim_refs\": [\"author_conclusion\", \"limitations[2]\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C08",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "Hook: the second time is faster",
+        "narration": "You catch a virus. You get better. Years later you meet it again, and your body reacts much faster. That speed comes from memory T cells, immune cells that stay behind after an infection ends.",
+        "on_screen": "Timeline: first infection, recovery, re-exposure years later. Label the cells left behind as 'memory T cells'.",
+        "claim_refs": [
+          "abstract: memory T cells persist and enable a faster secondary response"
+        ]
+      },
+      {
+        "beat": "The analogy, used narrowly",
+        "narration": "One way to picture this is a filing cabinet. Your body has met this pathogen before, so it keeps a folder on it and can act quicker next time. That is the one idea the picture is good for: a previous encounter makes the next response faster.",
+        "on_screen": "Simple filing cabinet with a single folder. Caption: 'Only means: seen it before, responds faster.'",
+        "claim_refs": [
+          "teaching_analogy.analogy",
+          "teaching_analogy.safe_use"
+        ]
+      },
+      {
+        "beat": "Where the analogy breaks down",
+        "narration": "But push that picture any further and it becomes wrong, in a way that matters. A filing cabinet can be searched whenever you like, and its folders sit there unchanged. Immune memory is not like that. You cannot look it up, it is not indexed, nothing can be recalled on command, and the cells themselves decline over time. So it does not mean lifelong protection against everything you have ever met.",
+        "on_screen": "The cabinet image cracks and fades. Three crossed-out labels: 'searchable', 'permanent', 'recall on demand'.",
+        "claim_refs": [
+          "teaching_analogy.stated_limit"
+        ]
+      },
+      {
+        "beat": "What the numbers show",
+        "narration": "Here is what researchers actually measured. In a review of 302 adults tracking memory CD8 T cells against one defined viral target, those cells were still detectable in 88 percent of people after 5 years, and in 61 percent after 12 years. When the immune system was challenged again, its second response ramped up 4.2 times faster than the first.",
+        "on_screen": "Three figures appear in turn: 88% at 5 years; 61% at 12 years; 4.2x faster second response. Footer: 302 adults, one viral epitope, MHC-multimer staining.",
+        "claim_refs": [
+          "results_table[0]",
+          "results_table[1]",
+          "results_table[2]",
+          "methods"
+        ]
+      },
+      {
+        "beat": "The honest caveats",
+        "narration": "Two cautions. These figures are for one virus target and one group of people; how long memory lasts varies from pathogen to pathogen and from person to person. And detecting memory cells is not the same as being protected from illness.",
+        "on_screen": "Two bullet cards: 'Varies by pathogen and person' and 'Detectable is not the same as protected'.",
+        "claim_refs": [
+          "limitations[0]",
+          "limitations[1]"
+        ]
+      },
+      {
+        "beat": "Takeaway",
+        "narration": "So: memory T cells stick around for years in most people, and they make the next response faster. Faster, though, is the whole claim. Not a permanent, searchable record of everything you have ever fought off.",
+        "on_screen": "Text: 'Faster next time. Not forever, not on demand.'",
+        "claim_refs": [
+          "author_conclusion",
+          "limitations[2]"
+        ]
+      }
+    ]
+  },
+  "final_narration": "You catch a virus. You get better. Years later you meet it again, and your body reacts much faster. That speed comes from memory T cells, immune cells that stay behind after an infection ends.\nOne way to picture this is a filing cabinet. Your body has met this pathogen before, so it keeps a folder on it and can act quicker next time. That is the one idea the picture is good for: a previous encounter makes the next response faster.\nBut push that picture any further and it becomes wrong, in a way that matters. A filing cabinet can be searched whenever you like, and its folders sit there unchanged. Immune memory is not like that. You cannot look it up, it is not indexed, nothing can be recalled on command, and the cells themselves decline over time. So it does not mean lifelong protection against everything you have ever met.\nHere is what researchers actually measured. In a review of 302 adults tracking memory CD8 T cells against one defined viral target, those cells were still detectable in 88 percent of people after 5 years, and in 61 percent after 12 years. When the immune system was challenged again, its second response ramped up 4.2 times faster than the first.\nTwo cautions. These figures are for one virus target and one group of people; how long memory lasts varies from pathogen to pathogen and from person to person. And detecting memory cells is not the same as being protected from illness.\nSo: memory T cells stick around for years in most people, and they make the next response faster. Faster, though, is the whole claim. Not a permanent, searchable record of everything you have ever fought off.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

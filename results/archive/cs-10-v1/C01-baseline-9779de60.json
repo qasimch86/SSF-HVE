@@ -1,0 +1,123 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C01-baseline-9779de60",
+    "case_id": "C01",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.012,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "addeec992d96201abfa7a7521db65584c55fc095296c978cfc20769feed018bd",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C01\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C01\",\n  \"design\": \"Prospective observational cohort\",\n  \"abstract\": \"We examined whether night-to-night regularity of sleep timing is associated with incident cardiometabolic disease. In a prospective cohort of 41,208 adults aged 40-69 at enrolment, sleep timing was recorded by wrist accelerometry over a single 7-day window. Participants were assigned a Sleep Regularity Index (SRI) from 0 (fully irregular) to 100 (perfectly regular). Over a median 6.4 years of follow-up, 1,873 participants developed a first cardiometabolic event. Compared with the most regular quintile (SRI >= 82), the least regular quintile (SRI < 58) had a higher rate of incident events (hazard ratio 1.34, 95% CI 1.18-1.52) after adjustment for age, sex, body-mass index, smoking, deprivation index, shift work and average sleep duration. The association was attenuated but persisted after further adjustment for baseline depressive symptoms (HR 1.27, 95% CI 1.11-1.45). We observed a graded relationship across quintiles (p for trend = 0.002). These findings identify sleep-timing regularity as a candidate target for future intervention studies.\",\n  \"methods\": \"Accelerometry was worn for one 7-day period at a single time point; sleep timing was not re-measured during follow-up. Outcomes were ascertained by linkage to hospital admission and death records. No participant was assigned to a sleep schedule; no schedule was modified by the investigators. Reverse causation cannot be excluded, because undiagnosed disease at baseline may itself disturb sleep timing. Analyses were pre-registered.\",\n  \"results_table\": [\n    {\n      \"quintile\": \"Q1 most regular (SRI >= 82)\",\n      \"events\": 289,\n      \"hazard_ratio\": \"1.00 (reference)\"\n    },\n    {\n      \"quintile\": \"Q2\",\n      \"events\": 331,\n      \"hazard_ratio\": \"1.06 (0.90-1.24)\"\n    },\n    {\n      \"quintile\": \"Q3\",\n      \"events\": 367,\n      \"hazard_ratio\": \"1.13 (0.97-1.32)\"\n    },\n    {\n      \"quintile\": \"Q4\",\n      \"events\": 401,\n      \"hazard_ratio\": \"1.22 (1.05-1.42)\"\n    },\n    {\n      \"quintile\": \"Q5 least regular (SRI < 58)\",\n      \"events\": 485,\n      \"hazard_ratio\": \"1.34 (1.18-1.52)\"\n    }\n  ],\n  \"limitations\": [\n    \"Observational design; no randomisation and no intervention was applied.\",\n    \"Sleep timing measured once, over 7 days, and assumed stable across 6.4 years.\",\n    \"Residual confounding by unmeasured factors is possible.\",\n    \"Reverse causation cannot be excluded.\"\n  ],\n  \"supplementary\": null,\n  \"author_conclusion\": \"Irregular sleep timing is associated with incident cardiometabolic disease. Interventional studies are required to determine whether stabilising sleep timing alters risk.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C01\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"Hook\",\n      \"narration\": \"You have probably been told to get enough sleep. But a large study asks a different question: does it matter whether you go to bed and get up at roughly the same time every day?\",\n      \"on_screen\": \"A week of bedtimes drifting later and later on a calendar strip, beside a tidy, evenly spaced week.\",\n      \"claim_refs\": [\"abstract\"]\n    },\n    {\n      \"beat\": \"The study\",\n      \"narration\": \"Researchers followed just over forty-one thousand adults, aged forty to sixty-nine. Each wore a wrist monitor for one week, which was used to score how regular their sleep timing was, from zero for completely irregular to one hundred for perfectly regular.\",\n      \"on_screen\": \"41,208 adults; wrist accelerometer icon; a 0 to 100 Sleep Regularity Index dial.\",\n      \"claim_refs\": [\"study_id:SYN-C01\", \"design\", \"abstract\"]\n    },\n    {\n      \"beat\": \"What they found\",\n      \"narration\": \"Over about six and a half years, one thousand eight hundred and seventy-three people had a first heart or metabolic event. The least regular fifth of sleepers had a thirty-four percent higher rate than the most regular fifth, and the risk climbed step by step across the groups in between.\",\n      \"on_screen\": \"Bar chart of the five quintiles rising from 1.00 to 1.34, with confidence intervals shown.\",\n      \"claim_refs\": [\"results_table\", \"abstract\"]\n    },\n    {\n      \"beat\": \"The caveats\",\n      \"narration\": \"Here is the important part. Nobody was given a sleep schedule, so this shows a link, not proof of cause. Sleep was measured only once, and assumed to stay the same for years. Other unmeasured factors could explain some of it. And illness that had not yet been diagnosed might itself have been disturbing people's sleep.\",\n      \"on_screen\": \"Four caption cards: observational, measured once, residual confounding, reverse causation.\",\n      \"claim_refs\": [\"methods\", \"limitations\"]\n    },\n    {\n      \"beat\": \"Bottom line\",\n      \"narration\": \"So: irregular sleep timing travels with cardiometabolic disease, and the pattern held after accounting for things like age, weight, smoking, shift work and even depressive symptoms. Whether steadying your sleep actually lowers your risk is a question only a trial can answer.\",\n      \"on_screen\": \"Text: Association, not proof. Trials needed.\",\n      \"claim_refs\": [\"abstract\", \"author_conclusion\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C01",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "Hook",
+        "narration": "You have probably been told to get enough sleep. But a large study asks a different question: does it matter whether you go to bed and get up at roughly the same time every day?",
+        "on_screen": "A week of bedtimes drifting later and later on a calendar strip, beside a tidy, evenly spaced week.",
+        "claim_refs": [
+          "abstract"
+        ]
+      },
+      {
+        "beat": "The study",
+        "narration": "Researchers followed just over forty-one thousand adults, aged forty to sixty-nine. Each wore a wrist monitor for one week, which was used to score how regular their sleep timing was, from zero for completely irregular to one hundred for perfectly regular.",
+        "on_screen": "41,208 adults; wrist accelerometer icon; a 0 to 100 Sleep Regularity Index dial.",
+        "claim_refs": [
+          "study_id:SYN-C01",
+          "design",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "What they found",
+        "narration": "Over about six and a half years, one thousand eight hundred and seventy-three people had a first heart or metabolic event. The least regular fifth of sleepers had a thirty-four percent higher rate than the most regular fifth, and the risk climbed step by step across the groups in between.",
+        "on_screen": "Bar chart of the five quintiles rising from 1.00 to 1.34, with confidence intervals shown.",
+        "claim_refs": [
+          "results_table",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "The caveats",
+        "narration": "Here is the important part. Nobody was given a sleep schedule, so this shows a link, not proof of cause. Sleep was measured only once, and assumed to stay the same for years. Other unmeasured factors could explain some of it. And illness that had not yet been diagnosed might itself have been disturbing people's sleep.",
+        "on_screen": "Four caption cards: observational, measured once, residual confounding, reverse causation.",
+        "claim_refs": [
+          "methods",
+          "limitations"
+        ]
+      },
+      {
+        "beat": "Bottom line",
+        "narration": "So: irregular sleep timing travels with cardiometabolic disease, and the pattern held after accounting for things like age, weight, smoking, shift work and even depressive symptoms. Whether steadying your sleep actually lowers your risk is a question only a trial can answer.",
+        "on_screen": "Text: Association, not proof. Trials needed.",
+        "claim_refs": [
+          "abstract",
+          "author_conclusion"
+        ]
+      }
+    ]
+  },
+  "final_narration": "You have probably been told to get enough sleep. But a large study asks a different question: does it matter whether you go to bed and get up at roughly the same time every day?\nResearchers followed just over forty-one thousand adults, aged forty to sixty-nine. Each wore a wrist monitor for one week, which was used to score how regular their sleep timing was, from zero for completely irregular to one hundred for perfectly regular.\nOver about six and a half years, one thousand eight hundred and seventy-three people had a first heart or metabolic event. The least regular fifth of sleepers had a thirty-four percent higher rate than the most regular fifth, and the risk climbed step by step across the groups in between.\nHere is the important part. Nobody was given a sleep schedule, so this shows a link, not proof of cause. Sleep was measured only once, and assumed to stay the same for years. Other unmeasured factors could explain some of it. And illness that had not yet been diagnosed might itself have been disturbing people's sleep.\nSo: irregular sleep timing travels with cardiometabolic disease, and the pattern held after accounting for things like age, weight, smoking, shift work and even depressive symptoms. Whether steadying your sleep actually lowers your risk is a question only a trial can answer.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C09-baseline-7894687b",
+    "case_id": "C09",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T19:21:14Z",
+    "finished_utc": "2026-08-29T19:21:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.006,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "7c8480e1a3c29ff8be3d5197b3d4524d3c828b315be149d3f0962435ec609f39",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 90 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C09\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\n{\n  \"study_id\": \"SYN-C09\",\n  \"design\": \"Randomised primary-prevention trial\",\n  \"abstract\": \"In 9,842 adults at low baseline cardiovascular risk randomised to a statin or placebo for 4.1 years, first major cardiovascular events occurred in 121 of 4,921 participants on statin (2.46%) and in 209 of 4,921 on placebo (4.25%). This is a RELATIVE risk reduction of 42% and an ABSOLUTE risk reduction of 1.79 percentage points, corresponding to a number needed to treat of 56 over 4.1 years. The distinction is material: the population is low-risk, so a large relative reduction corresponds to a small absolute one.\",\n  \"methods\": \"TERMINOLOGY NOTE FOR ANY SPOKEN OR WRITTEN SUMMARY: the figure 42% is a RELATIVE risk reduction. Stating that the statin 'cuts your risk by 42%', 'reduces risk by 42%' or 'lowers heart attack risk by 42%' without the word relative, or without the absolute figure alongside, changes the meaning for a listener and materially overstates individual benefit. The permitted spoken forms are 'a 42% relative reduction' or 'about 1.8 percentage points in absolute terms' or both together.\",\n  \"results_table\": [\n    {\n      \"arm\": \"Statin\",\n      \"events\": \"121 / 4,921 (2.46%)\"\n    },\n    {\n      \"arm\": \"Placebo\",\n      \"events\": \"209 / 4,921 (4.25%)\"\n    },\n    {\n      \"metric\": \"Relative risk reduction\",\n      \"value\": \"42%\"\n    },\n    {\n      \"metric\": \"Absolute risk reduction\",\n      \"value\": \"1.79 percentage points\"\n    },\n    {\n      \"metric\": \"Number needed to treat\",\n      \"value\": \"56 over 4.1 years\"\n    }\n  ],\n  \"limitations\": [\n    \"Low-risk primary-prevention population; absolute benefit is small.\",\n    \"4.1 years of follow-up.\",\n    \"Adverse events are reported separately and are not summarised here.\"\n  ],\n  \"supplementary\": null,\n  \"author_conclusion\": \"A statin reduced first major cardiovascular events by 42% in relative terms and by 1.79 percentage points in absolute terms over 4.1 years in a low-risk population.\"\n}\n",
+      "response_text": "{\n  \"case_id\": \"C09\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 90,\n  \"beats\": [\n    {\n      \"beat\": \"The question\",\n      \"narration\": \"If you are healthy and at low risk of heart disease, does taking a statin help? A randomised trial followed 9,842 such adults for just over four years. Half took a statin, half took a placebo.\",\n      \"on_screen\": \"Title card: 9,842 low-risk adults, 4.1 years, statin vs placebo\",\n      \"claim_refs\": [\"design\", \"abstract\"]\n    },\n    {\n      \"beat\": \"What happened\",\n      \"narration\": \"Among the 4,921 people taking the statin, 121 had a first major cardiovascular event, such as a heart attack or stroke. That is 2.46 percent. Among the 4,921 on placebo, 209 people did, which is 4.25 percent.\",\n      \"on_screen\": \"Two-column table: Statin 121/4,921 (2.46%) | Placebo 209/4,921 (4.25%)\",\n      \"claim_refs\": [\"results_table[0]\", \"results_table[1]\"]\n    },\n    {\n      \"beat\": \"Two ways to state the same result\",\n      \"narration\": \"Here is where headlines often go wrong. Going from 4.25 percent down to 2.46 percent is a 42 percent relative reduction. But the gap between those two numbers is only about 1.8 percentage points. That is the absolute reduction, and it is the one that describes what changes for an individual.\",\n      \"on_screen\": \"Bar chart of 4.25% vs 2.46%, annotated twice: relative reduction 42%; absolute reduction 1.79 percentage points\",\n      \"claim_refs\": [\"results_table[2]\", \"results_table[3]\", \"methods\"]\n    },\n    {\n      \"beat\": \"What it means per person\",\n      \"narration\": \"Put another way, about 56 people in this low-risk group would need to take a statin for 4.1 years to prevent one first event. Both figures are true. A large relative reduction of a small risk is still a small absolute gain.\",\n      \"on_screen\": \"Icon grid of 56 figures, one highlighted; caption: number needed to treat 56 over 4.1 years\",\n      \"claim_refs\": [\"results_table[4]\", \"abstract\"]\n    },\n    {\n      \"beat\": \"Limits\",\n      \"narration\": \"Two caveats. This was a low-risk group followed for 4.1 years, so it does not tell us about higher-risk people or longer timeframes. And side effects were reported separately, so they are not weighed up here.\",\n      \"on_screen\": \"Bullet list: low-risk population; 4.1 years follow-up; adverse events reported separately\",\n      \"claim_refs\": [\"limitations\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C09",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 90,
+    "beats": [
+      {
+        "beat": "The question",
+        "narration": "If you are healthy and at low risk of heart disease, does taking a statin help? A randomised trial followed 9,842 such adults for just over four years. Half took a statin, half took a placebo.",
+        "on_screen": "Title card: 9,842 low-risk adults, 4.1 years, statin vs placebo",
+        "claim_refs": [
+          "design",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "What happened",
+        "narration": "Among the 4,921 people taking the statin, 121 had a first major cardiovascular event, such as a heart attack or stroke. That is 2.46 percent. Among the 4,921 on placebo, 209 people did, which is 4.25 percent.",
+        "on_screen": "Two-column table: Statin 121/4,921 (2.46%) | Placebo 209/4,921 (4.25%)",
+        "claim_refs": [
+          "results_table[0]",
+          "results_table[1]"
+        ]
+      },
+      {
+        "beat": "Two ways to state the same result",
+        "narration": "Here is where headlines often go wrong. Going from 4.25 percent down to 2.46 percent is a 42 percent relative reduction. But the gap between those two numbers is only about 1.8 percentage points. That is the absolute reduction, and it is the one that describes what changes for an individual.",
+        "on_screen": "Bar chart of 4.25% vs 2.46%, annotated twice: relative reduction 42%; absolute reduction 1.79 percentage points",
+        "claim_refs": [
+          "results_table[2]",
+          "results_table[3]",
+          "methods"
+        ]
+      },
+      {
+        "beat": "What it means per person",
+        "narration": "Put another way, about 56 people in this low-risk group would need to take a statin for 4.1 years to prevent one first event. Both figures are true. A large relative reduction of a small risk is still a small absolute gain.",
+        "on_screen": "Icon grid of 56 figures, one highlighted; caption: number needed to treat 56 over 4.1 years",
+        "claim_refs": [
+          "results_table[4]",
+          "abstract"
+        ]
+      },
+      {
+        "beat": "Limits",
+        "narration": "Two caveats. This was a low-risk group followed for 4.1 years, so it does not tell us about higher-risk people or longer timeframes. And side effects were reported separately, so they are not weighed up here.",
+        "on_screen": "Bullet list: low-risk population; 4.1 years follow-up; adverse events reported separately",
+        "claim_refs": [
+          "limitations"
+        ]
+      }
+    ]
+  },
+  "final_narration": "If you are healthy and at low risk of heart disease, does taking a statin help? A randomised trial followed 9,842 such adults for just over four years. Half took a statin, half took a placebo.\nAmong the 4,921 people taking the statin, 121 had a first major cardiovascular event, such as a heart attack or stroke. That is 2.46 percent. Among the 4,921 on placebo, 209 people did, which is 4.25 percent.\nHere is where headlines often go wrong. Going from 4.25 percent down to 2.46 percent is a 42 percent relative reduction. But the gap between those two numbers is only about 1.8 percentage points. That is the absolute reduction, and it is the one that describes what changes for an individual.\nPut another way, about 56 people in this low-risk group would need to take a statin for 4.1 years to prevent one first event. Both figures are true. A large relative reduction of a small risk is still a small absolute gain.\nTwo caveats. This was a low-risk group followed for 4.1 years, so it does not tell us about higher-risk people or longer timeframes. And side effects were reported separately, so they are not weighed up here.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}
