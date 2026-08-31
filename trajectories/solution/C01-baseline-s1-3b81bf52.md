@@ -1,0 +1,168 @@
+# Trajectory — C01-baseline-s1-3b81bf52
+
+- **Case:** C01
+- **Configuration:** `baseline` (baseline)
+- **Provider / model:** replay / claude-opus-5 (mode: replay)
+- **Started / finished (UTC):** 2026-08-29T22:47:14Z → 2026-08-29T22:47:14Z
+- **Model calls:** 1  •  **Wall clock:** 0.018 s
+- **Terminal status:** **ACCEPT**
+
+## Configuration
+
+```
+{
+  "config_id": "baseline",
+  "condition": "baseline",
+  "label": "One direct prompt, same model, same source, same target output",
+  "use_claim_map": false,
+  "use_designer": false,
+  "deterministic_checks": false,
+  "deterministic_owner": "code",
+  "use_verifier": false,
+  "split_observation": false,
+  "max_correction_cycles": 0,
+  "allow_progress_at_bound": true,
+  "requires_h1": false,
+  "sample": 1
+}
+```
+
+## Step 1 — role `baseline` (script)
+
+Prompt SHA-256 `7caabb1b7bfa36ed6653eed962c7003d0a07964ffdac3495032ab2a6271c07e5` • response provenance `blinded-agent-capture`
+
+<details><summary>Rendered instruction</summary>
+
+```
+You are writing a short explainer script from a research record.
+
+Audience: General public with secondary-school science literacy
+Target spoken duration: about 60 seconds.
+
+Write the script from the research record below. Make it accurate and easy to follow.
+
+Return ONLY a JSON object, with no prose before or after it, in exactly this shape:
+
+{
+  "case_id": "C01",
+  "audience": "General public with secondary-school science literacy",
+  "target_duration_s": 60,
+  "beats": [
+    {"beat": "short label", "narration": "what the narrator says",
+     "on_screen": "what is shown", "claim_refs": []}
+  ]
+}
+
+RESEARCH RECORD
+---------------
+Sleep-timing regularity and cardiometabolic risk
+
+Record
+SYN-C01
+
+Study design
+Prospective observational cohort
+
+Background
+Short sleep duration is an established correlate of cardiometabolic disease. Whether the night-to-night regularity of sleep timing carries information beyond duration has been less studied, in part because regularity requires several nights of objective recording. Wrist accelerometry in large biobank cohorts now makes this feasible at scale.
+
+Abstract
+We examined whether night-to-night regularity of sleep timing is associated with incident cardiometabolic disease. In a prospective cohort of 41,208 adults aged 40-69 at enrolment, sleep timing was recorded by wrist accelerometry over a single 7-day window. Participants were assigned a Sleep Regularity Index (SRI) from 0 (fully irregular) to 100 (perfectly regular). Over a median 6.4 years of follow-up, 1,873 participants developed a first cardiometabolic event. Compared with the most regular quintile (SRI >= 82), the least regular quintile (SRI < 58) had a higher rate of incident events (hazard ratio 1.34, 95% CI 1.18-1.52) after adjustment for age, sex, body-mass index, smoking, deprivation index, shift work and average sleep duration. The association was attenuated but persisted after further adjustment for baseline depressive symptoms (HR 1.27, 95% CI 1.11-1.45). We observed a graded relationship across quintiles (p for trend = 0.002). Sleep-timing regularity may warrant further study.
+
+Methods
+Accelerometry was worn for one 7-day period at a single time point. Outcomes were ascertained by linkage to hospital admission and death records. Sleep timing was not re-measured during follow-up. Analyses were pre-registered. Models were adjusted for age, sex, body-mass index, smoking, deprivation index, shift work and average sleep duration. Participants with prevalent cardiometabolic disease at enrolment were excluded on the basis of self-report and prior hospital coding. The Sleep Regularity Index was computed from the probability that an individual is in the same state 24 hours apart, averaged over the recording. Cox models used age as the timescale.
+
+Results
+  quintile: Q1 most regular (SRI >= 82); events: 289; hazard_ratio: 1.00 (reference)
+  quintile: Q2; events: 331; hazard_ratio: 1.06 (0.90-1.24)
+  quintile: Q3; events: 367; hazard_ratio: 1.13 (0.97-1.32)
+  quintile: Q4; events: 401; hazard_ratio: 1.22 (1.05-1.42)
+  quintile: Q5 least regular (SRI < 58); events: 485; hazard_ratio: 1.34 (1.18-1.52)
+
+Discussion
+Our findings add to a growing literature implicating circadian disruption in cardiometabolic health. The graded relationship across quintiles is consistent with a dose-response pattern, and the persistence of the estimate after adjustment for depressive symptoms argues against confounding by mood. Stabilising sleep timing is a low-cost, widely available behaviour, and public-health messaging that has focused on sleep duration may be missing a second, independent target. Trials of sleep-timing stabilisation should be a priority.
+
+Limitations
+  Sleep timing was measured once, over 7 days.
+  Follow-up outcomes came from record linkage.
+
+Conclusion
+Sleep-timing regularity showed a graded relationship with incident cardiometabolic disease in this cohort.
+
+Data availability
+Derived accelerometry variables and analysis code are ava
+… [50 more characters]
+```
+
+</details>
+
+**Structured output**
+
+```
+{
+  "case_id": "C01",
+  "audience": "General public with secondary-school science literacy",
+  "target_duration_s": 60,
+  "beats": [
+    {
+      "beat": "Hook",
+      "narration": "You have probably heard that getting enough sleep matters. But does it also matter whether you sleep at the same times every night?",
+      "on_screen": "Two week-long sleep charts side by side: one with tidy, aligned sleep blocks, one with blocks scattered at different hours.",
+      "claim_refs": ["SYN-C01/Background"]
+    },
+    {
+      "beat": "What was done",
+      "narration": "Researchers put wrist trackers on 41,208 adults aged 40 to 69, recorded one week of sleep, and scored each person's night-to-night consistency from 0 to 100. Then they followed their health records for about six years.",
+      "on_screen": "Wrist tracker icon; counters for 41,208 adults, 7 days of recording, 0-100 regularity score, ~6 years of follow-up.",
+      "claim_refs": ["SYN-C01/Abstract", "SYN-C01/Methods"]
+    },
+    {
+      "beat": "What they found",
+      "narration": "In that time, 1,873 people had a first heart or metabolic illness. The least regular fifth had about a thirty-four percent higher rate than the most regular fifth, and the rate climbed steadily across the groups in between. That held after accounting for age, weight, smoking, shift work and average sleep length.",
+      "on_screen": "Five ascending bars, most regular to least regular, labelled 1.00, 1.06, 1.13, 1.22, 1.34; caption: adjusted for sleep duration and other factors.",
+      "claim_refs": ["SYN-C01/Results", "SYN-C01/Abstract"]
+    },
+    {
+      "beat": "The catch",
+      "narration": "But this is an observational study, so it shows a pattern, not a cause. Sleep was measured only once, over a single week, and irregular sleep may simply travel alongside other things that affect health.",
+      "on_screen": "Caption: Association, not proof of cause. Icons for one 7-day snapshot and unmeasured lifestyle factors.",
+      "claim_refs": ["SYN-C01/Study design", "SYN-C01/Limitations"]
+    },
+    {
+      "beat": "Takeaway",
+      "narration": "The authors say sleep timing is now worth testing in a proper trial. Until then, a steadier bedtime costs nothing to try.",
+      "on_screen": "Text: Next step - trials of steadier sleep timing. Clock settling on a consistent bedtime.",
+      "claim_refs": ["SYN-C01/Discussion", "SYN-C01/Conclusion"]
+    }
+  ]
+}
+
+```
+
+Parsed: `{"beats": 5}`
+
+## Cycle 0
+
+**Deterministic checks:** 0 finding(s)
+
+
+**Control action taken by the runner:** `terminate:ACCEPT`
+
+> The verifier recommends. The runner decides what happens next, from a fixed set of actions. Neither can approve.
+
+## Human gate H1
+
+- State: **NOT_APPLICABLE**
+- Artifact SHA-256: `n/a`
+- Approver: —
+- This configuration has no human gate by design.
+
+## Final script
+
+```
+You have probably heard that getting enough sleep matters. But does it also matter whether you sleep at the same times every night?
+Researchers put wrist trackers on 41,208 adults aged 40 to 69, recorded one week of sleep, and scored each person's night-to-night consistency from 0 to 100. Then they followed their health records for about six years.
+In that time, 1,873 people had a first heart or metabolic illness. The least regular fifth had about a thirty-four percent higher rate than the most regular fifth, and the rate climbed steadily across the groups in between. That held after accounting for age, weight, smoking, shift work and average sleep length.
+But this is an observational study, so it shows a pattern, not a cause. Sleep was measured only once, over a single week, and irregular sleep may simply travel alongside other things that affect health.
+The authors say sleep timing is now worth testing in a proper trial. Until then, a steadier bedtime costs nothing to try.
+```
