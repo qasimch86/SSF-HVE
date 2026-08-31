@@ -1,0 +1,25 @@
+# Virtual environments / build
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.*
+credentials*
+
+# Owner working notes, not part of the submission
+.workspace/
+
+# Scratch
+tmp/

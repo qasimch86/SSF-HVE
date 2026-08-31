@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssf-hve"
+version = "0.1.0"
+description = "SSF-HVE - research paper to verified scientific video. Hackathon edition."
+requires-python = ">=3.10"
+# Runtime dependencies: none. The whole evaluation runs on the Python standard
+# library so that a judge in a clean environment can reproduce the main result
+# without a package index. See README decision register, entry 9.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==8.2.2"]
+
+[project.scripts]
+ssf-hve = "ssf_hve.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "slow: spawns a pytest subprocess to count tests; a few seconds",
+]
