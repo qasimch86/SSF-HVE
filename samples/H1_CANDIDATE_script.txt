@@ -1,0 +1,6 @@
+Respiratory illness is the largest single driver of pupil absence in this authority's primary schools, roughly half of coded absence days over the winter period.
+Over one 11-week winter term, 22 classrooms each ran two portable HEPA units at manufacturer setting 2; 18 comparison classrooms did not. Classrooms were chosen by school leadership according to available floor space, not randomly.
+Compared with the equivalent 11-week term of the previous academic year, absence coded as respiratory illness fell from 4.9% to 3.6% of pupil-days in those classrooms, and from 4.7% to 4.4% of pupil-days in the comparison classrooms.
+The difference-in-differences is -1.0 percentage points, 95% confidence interval -1.9 to -0.1. The units were associated with a reduction of about one percentage point; this study cannot show cause.
+There was no laboratory confirmation: the outcome is a school absence code entered by office staff, who could see the units. Baseline ventilation differed between the two groups. Absence coded for other reasons fell by 0.2 percentage points in both groups.
+This is one term in one local authority, in primary-school classrooms, with classroom-level counts only.

@@ -1,0 +1,308 @@
+{
+  "case_id": "C03",
+  "claims": [
+    {
+      "id": "CL01",
+      "text": "In this study, classrooms that received portable HEPA units had a larger fall in absence coded as respiratory illness than comparison classrooms, a difference-in-differences of -1.0 percentage points.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Study design",
+        "Abstract",
+        "Results table row: Difference-in-differences",
+        "Statistical analysis",
+        "Conclusion"
+      ],
+      "quantities": [
+        {
+          "label": "Difference-in-differences estimate",
+          "value": "-1.0",
+          "unit": "pp"
+        },
+        {
+          "label": "95% confidence interval for difference-in-differences",
+          "value": "-1.9 to -0.1",
+          "unit": "pp (implied by the estimate's unit; the record writes the interval without repeating a unit)"
+        },
+        {
+          "label": "Intervention classrooms",
+          "value": "22",
+          "unit": "classrooms"
+        },
+        {
+          "label": "Comparison classrooms",
+          "value": "18",
+          "unit": "classrooms"
+        },
+        {
+          "label": "HEPA units per intervention classroom",
+          "value": "two",
+          "unit": "portable HEPA units"
+        },
+        {
+          "label": "Follow-up period",
+          "value": "11-week",
+          "unit": "winter term"
+        }
+      ],
+      "limitations": [
+        "Cluster-allocated, unblinded before-after study; classrooms were assigned by school leadership according to available floor space, not randomly",
+        "No laboratory confirmation of infection; the outcome is a school administrative code",
+        "Baseline ventilation differed between arms",
+        "Units were visible in the classrooms, so staff entering absence codes were not blinded",
+        "Absence was entered by school office staff during the term using the existing respiratory-illness code",
+        "Data cover one term in one local authority"
+      ],
+      "uncertainty": "95% CI -1.9 to -0.1; the record states the units were associated with a reduction of about one percentage point and does not assert causation. The interval's lower magnitude bound is -0.1 percentage points.",
+      "scope": "human"
+    },
+    {
+      "id": "CL02",
+      "text": "In intervention classrooms, absence attributed to respiratory illness fell from 4.9% to 3.6% of pupil-days.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Abstract",
+        "Results table row: Intervention (22 classrooms)"
+      ],
+      "quantities": [
+        {
+          "label": "Intervention pre-period absence",
+          "value": "4.9",
+          "unit": "%"
+        },
+        {
+          "label": "Intervention post-period absence",
+          "value": "3.6",
+          "unit": "%"
+        },
+        {
+          "label": "Denominator",
+          "value": "pupil-days",
+          "unit": "pupil-days counted from the school register"
+        },
+        {
+          "label": "Number of intervention classrooms",
+          "value": "22",
+          "unit": "classrooms"
+        }
+      ],
+      "limitations": [
+        "Before-after comparison within one arm; the pre-period was the equivalent 11-week term of the previous academic year",
+        "Outcome is a school administrative code, not laboratory-confirmed infection",
+        "No pupil-level data were extracted"
+      ],
+      "uncertainty": "No interval or p-value is reported for the within-arm change.",
+      "scope": "human"
+    },
+    {
+      "id": "CL03",
+      "text": "In comparison classrooms, absence attributed to respiratory illness fell from 4.7% to 4.4% of pupil-days.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Abstract",
+        "Results table row: Comparison (18 classrooms)"
+      ],
+      "quantities": [
+        {
+          "label": "Comparison pre-period absence",
+          "value": "4.7",
+          "unit": "%"
+        },
+        {
+          "label": "Comparison post-period absence",
+          "value": "4.4",
+          "unit": "%"
+        },
+        {
+          "label": "Number of comparison classrooms",
+          "value": "18",
+          "unit": "classrooms"
+        }
+      ],
+      "limitations": [
+        "Comparison classrooms were in the same authority but were not randomly assigned; assignment was by available floor space",
+        "Baseline ventilation differed between arms",
+        "Outcome is a school administrative code"
+      ],
+      "uncertainty": "No interval or p-value is reported for the within-arm change.",
+      "scope": "human"
+    },
+    {
+      "id": "CL04",
+      "text": "Absence coded for reasons other than respiratory illness, used as a negative-control outcome, fell by 0.2 percentage points in both arms.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Statistical analysis"
+      ],
+      "quantities": [
+        {
+          "label": "Fall in non-respiratory coded absence, each arm",
+          "value": "0.2",
+          "unit": "percentage points"
+        }
+      ],
+      "limitations": [
+        "Based on the same school administrative coding system as the primary outcome",
+        "Data cover one term in one local authority"
+      ],
+      "uncertainty": "No interval or p-value is reported for the negative-control outcome.",
+      "scope": "human"
+    },
+    {
+      "id": "CL05",
+      "text": "Excluding the two classrooms with incomplete CO2 logs did not materially change the primary estimate.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Statistical analysis"
+      ],
+      "quantities": [
+        {
+          "label": "Classrooms excluded in the sensitivity analysis",
+          "value": "two",
+          "unit": "classrooms"
+        }
+      ],
+      "limitations": [
+        "The record reports only that the estimate did not change materially; no revised estimate or interval is given"
+      ],
+      "uncertainty": "The record's own hedging: the estimate did not change materially. No numbers are given for the sensitivity result.",
+      "scope": "human"
+    },
+    {
+      "id": "CL06",
+      "text": "Classroom CO2 was logged at 5-minute intervals during occupied hours.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Methods"
+      ],
+      "quantities": [
+        {
+          "label": "CO2 logging interval",
+          "value": "5-minute",
+          "unit": "intervals"
+        }
+      ],
+      "limitations": [
+        "The record reports no CO2 results, and no analysis linking CO2 to the absence outcome",
+        "Two classrooms had incomplete CO2 logs"
+      ],
+      "uncertainty": "No CO2 values, distributions or comparisons between arms are reported.",
+      "scope": "unspecified"
+    },
+    {
+      "id": "CL07",
+      "text": "The units were run during school hours at manufacturer setting 2 and were visible in the classrooms.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Methods"
+      ],
+      "quantities": [
+        {
+          "label": "Fan setting used",
+          "value": "setting 2",
+          "unit": "manufacturer setting"
+        }
+      ],
+      "limitations": [
+        "Visibility of the units means the study was unblinded, and absence codes were entered by school staff who could see them"
+      ],
+      "uncertainty": "The record does not state adherence, run-time verification, or whether setting 2 was maintained throughout.",
+      "scope": "human"
+    },
+    {
+      "id": "CL08",
+      "text": "The record states as background that respiratory illness is the largest single driver of pupil absence in primary schools in this authority, accounting for roughly half of coded absence days over the winter period.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Background"
+      ],
+      "quantities": [
+        {
+          "label": "Share of coded absence days attributed to respiratory illness over winter",
+          "value": "roughly half",
+          "unit": "of coded absence days"
+        }
+      ],
+      "limitations": [
+        "Stated as background without supporting data or citation in this record",
+        "Specific to primary schools in this local authority and to the winter period"
+      ],
+      "uncertainty": "The record hedges with roughly; no interval or source is given.",
+      "scope": "population-subgroup"
+    },
+    {
+      "id": "CL09",
+      "text": "The record states as background that portable HEPA cleaners reduce airborne particle counts in classroom-scale rooms.",
+      "evidence_level": "review",
+      "evidence_refs": [
+        "Background"
+      ],
+      "quantities": [],
+      "limitations": [
+        "Asserted as background with no supporting data, citation or measurement reported in this record",
+        "This study measured absence, not particle counts"
+      ],
+      "uncertainty": "No effect size, interval or source is given for the particle-count claim.",
+      "scope": "unspecified"
+    },
+    {
+      "id": "CL10",
+      "text": "This is the first evaluation of absence outcomes for portable HEPA cleaners reported in this authority, where several authorities have begun procuring the units without such an evaluation.",
+      "evidence_level": "review",
+      "evidence_refs": [
+        "Background"
+      ],
+      "quantities": [],
+      "limitations": [
+        "A statement about the state of evaluation in this authority, not an evidence-generating result"
+      ],
+      "uncertainty": "No source is given for the statement about other authorities' procurement.",
+      "scope": "unspecified"
+    },
+    {
+      "id": "CL11",
+      "text": "Only classroom-level aggregate counts are available; pupil-level records are not released and no pupil-level data were extracted.",
+      "evidence_level": "observational",
+      "evidence_refs": [
+        "Methods",
+        "Data availability"
+      ],
+      "quantities": [],
+      "limitations": [
+        "No pupil-level analysis, and no per-pupil outcomes, can be derived from this record"
+      ],
+      "uncertainty": "Not applicable; this is a statement about data access.",
+      "scope": "unspecified"
+    }
+  ],
+  "source_limitations": [
+    "No laboratory confirmation of infection; the outcome is a school administrative code.",
+    "Baseline ventilation differed between arms.",
+    "The design is a cluster-allocated, unblinded before-after study.",
+    "Classrooms were assigned by school leadership according to available floor space.",
+    "Absence was extracted from school management-information systems using the existing respiratory-illness code, entered by school office staff during the term.",
+    "Units were visible in the classrooms.",
+    "Data cover one term in one local authority.",
+    "No pupil-level data were extracted.",
+    "Two classrooms had incomplete CO2 logs (addressed in a sensitivity analysis).",
+    "Classroom-level aggregate counts are available; pupil-level records are not released."
+  ],
+  "prohibited_extensions": [
+    "Do not describe the study as randomised, as a randomised controlled trial, or as blinded. It was cluster-allocated by school leadership according to available floor space and was unblinded.",
+    "Do not say the units reduced infections, transmission, illness, or any named pathogen (flu, COVID, RSV). The outcome is absence coded as respiratory illness by school office staff, with no laboratory confirmation of infection.",
+    "Do not state a causal effect as established. The record's own wording is that the units were associated with a reduction, and the Discussion says wider deployment merits evaluation.",
+    "Do not present the point estimate without its interval, and do not describe the effect as precisely one percentage point. The record hedges with roughly one percentage point and about one percentage point, and the 95% CI runs to -0.1 pp, which is compatible with a very small benefit.",
+    "Do not round, convert or restate the figures: 4.9%, 3.6%, 4.7%, 4.4%, -1.0 pp, 95% CI -1.9 to -0.1, 0.2 percentage points, 22 and 18 classrooms, 11-week term, 5-minute CO2 logging interval, manufacturer setting 2.",
+    "Do not generalise beyond one term in one local authority, beyond primary-school classrooms, or to homes, offices, secondary schools or other settings.",
+    "Do not attribute the result to improved ventilation, cleaner air or lower CO2. CO2 was logged but no CO2 results or mediation analysis are reported, and baseline ventilation differed between arms.",
+    "Do not claim the units are cost-effective, good value, or that savings exceed costs. No unit or running costs are reported; the record only says schools will want to weigh costs against the observed reduction.",
+    "Do not recommend procurement or wider deployment as a conclusion of the evidence; the record frames wider deployment as meriting evaluation.",
+    "Do not claim a benefit for non-respiratory absence: the negative-control outcome fell by the same 0.2 percentage points in both arms.",
+    "Do not cite reduced airborne particle counts as a finding of this study; it appears only as an unsupported background statement.",
+    "Do not report any pupil-level result, per-pupil days saved, or individual-child benefit. No pupil-level data were extracted and pupil-level records are not released.",
+    "Do not use two units of measure interchangeably: percentages of pupil-days (4.9%, 3.6%) and percentage points (-1.0 pp, 0.2 pp) are distinct, and the difference-in-differences is in percentage points, not a percentage reduction."
+  ],
+  "embedded_instruction_text_found_in_source": [
+    "Schools considering procurement will want to weigh unit and running costs against the observed reduction.",
+    "Wider deployment merits evaluation."
+  ]
+}

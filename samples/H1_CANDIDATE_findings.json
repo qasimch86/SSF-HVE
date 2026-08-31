@@ -1,0 +1,114 @@
+[
+  {
+    "cycle": 0,
+    "deterministic": [],
+    "verifier": {
+      "recommendation": "EDIT",
+      "rationale": "The script is well hedged on causation, keeps the interval with the point estimate, and avoids the mechanism, procurement and pupil-level extensions, but it omits that the baseline is the previous academic year's term, which changes how the headline fall would be understood. Bounded wording changes to three beats would fix everything found.",
+      "findings": [
+        {
+          "id": "F01",
+          "severity": "MAJOR",
+          "claim_ref": "CL02",
+          "evidence_ref": "Statistical analysis",
+          "quoted_span": "Absence coded as respiratory illness fell from 4.9% to 3.6% of pupil-days in those classrooms, and from 4.7% to 4.4% of pupil-days in the comparison classrooms.",
+          "observation": "The script presents the before-and-after figures without saying what the 'before' period is. The preceding beat frames the study as 'Over one 11-week winter term', and the on-screen treatment is 'Simple before-and-after bars', so the fall reads as a change observed within the intervention term.",
+          "explanation": "The record's Statistical analysis section states that the pre-period was the equivalent 11-week term of the previous academic year, and CL02 carries this as a stated limitation. The comparison is therefore between two different school years, which is the source of the seasonal and year-to-year confounding the design cannot remove. A listener told only 'fell from 4.9% to 3.6%' inside a beat about a single term would take the baseline to be the start of that same term, and so would judge the evidence to be tighter than it is.",
+          "recommended_correction": "State the pre-period in the narration of the 'What the registers showed' beat, e.g. 'compared with the equivalent 11-week term the previous academic year', and label the 'before' bar on screen with that period."
+        },
+        {
+          "id": "F02",
+          "severity": "MINOR",
+          "claim_ref": "CL07",
+          "evidence_ref": "Abstract",
+          "quoted_span": "22 classrooms each ran two portable HEPA units at manufacturer setting 2",
+          "observation": "The dosing detail 'two portable HEPA units each' appears in the narration and on screen, but no claim in the map carries it; the beat cites CL01 and CL07, neither of which states the number of units per classroom. The narration also drops the record's qualifier that the units were run during school hours.",
+          "explanation": "The detail is faithful to the Abstract and Methods, so it is not inaccurate, but it is asserted through claims that do not contain it, and 'ran ... at manufacturer setting 2' without 'during school hours' slightly widens the described operating period beyond what CL07 states.",
+          "recommended_correction": "Either add the units-per-classroom detail to the claim map with its Abstract evidence ref and cite it, or drop the count; and restore 'during school hours' to match CL07."
+        },
+        {
+          "id": "F03",
+          "severity": "MINOR",
+          "claim_ref": "CL08",
+          "evidence_ref": "Background",
+          "quoted_span": "Respiratory illness is the largest single driver of pupil absence in this authority's primary schools, roughly half of coded absence days over the winter period.",
+          "observation": "The spoken line asserts the background prevalence in the record's own voice. The attribution that this is a background statement appears only in the on-screen note, not in the narration.",
+          "explanation": "CL08 frames this as something 'the record states as background', with the limitation that it is given without supporting data or citation. Listeners who hear the script rather than read the card receive an unsourced framing statement as an established fact about the authority.",
+          "recommended_correction": "Attribute it in the narration, e.g. 'The record says, as background, that respiratory illness is the largest single driver ...'."
+        },
+        {
+          "id": "F04",
+          "severity": "OBSERVATION",
+          "claim_ref": "CL04",
+          "evidence_ref": "Statistical analysis",
+          "quoted_span": "Absence coded for other reasons fell by 0.2 percentage points in both groups.",
+          "observation": "The figure is reported accurately and no benefit is claimed for it, but its role as a negative-control outcome is not stated in either the narration or the on-screen caption beyond the phrase 'other coded absence'.",
+          "explanation": "CL04 identifies this as a negative-control outcome. Without that framing, a governor or parent audience has no way to see why the number is being shown or that its equality across arms is the reassuring result; it risks reading as an unexplained aside in a beat about limitations.",
+          "recommended_correction": "Name it in the narration, e.g. 'As a check, absence coded for other reasons - which the units should not affect - fell by 0.2 percentage points in both groups.'"
+        }
+      ]
+    },
+    "action": "correct:cycle1"
+  },
+  {
+    "cycle": 1,
+    "deterministic": [],
+    "verifier": {
+      "recommendation": "ACCEPT",
+      "rationale": "Every figure, unit and interval matches the record, the design is described as non-random and unblinded, and no causal, mechanistic, cost, procurement, pupil-level or out-of-setting claim is made. The residual issues are attribution and traceability points at MINOR and below, which a person may choose to correct without rebuilding the script.",
+      "findings": [
+        {
+          "id": "F01",
+          "severity": "MINOR",
+          "claim_ref": "CL08",
+          "evidence_ref": "Background",
+          "quoted_span": "Respiratory illness is the largest single driver of pupil absence in this authority's primary schools, roughly half of coded absence days over the winter period.",
+          "observation": "The narration delivers this as an established fact; the qualification that it is a background assertion appears only in the on-screen note, not in the spoken line.",
+          "explanation": "CL08 carries the limitation that the statement is made as background without supporting data or citation in this record, and the source record supplies no figures or reference for it. A listener who hears the narration without reading the caption receives an unsourced framing statement as a measured finding.",
+          "recommended_correction": "Attribute it in the narration itself, e.g. 'The record states that respiratory illness is the largest single driver of pupil absence in this authority's primary schools, roughly half of coded absence days over the winter period.'"
+        },
+        {
+          "id": "F02",
+          "severity": "MINOR",
+          "claim_ref": "CL07",
+          "evidence_ref": "Methods",
+          "quoted_span": "Over one 11-week winter term, 22 classrooms each ran two portable HEPA units at manufacturer setting 2",
+          "observation": "The exposure is described as running across the 11-week term with no mention of the operating window; CL07 and the Methods specify that the units were run during school hours.",
+          "explanation": "Dropping 'during school hours' allows the line to be heard as continuous operation over the term, which is more exposure than the record documents. The figures themselves are unchanged, so the imprecision is in scope of operation rather than in any number.",
+          "recommended_correction": "Restore the stated operating window: '...each ran two portable HEPA units during school hours at manufacturer setting 2.'"
+        },
+        {
+          "id": "F03",
+          "severity": "MINOR",
+          "claim_ref": "CL01",
+          "evidence_ref": "Abstract",
+          "quoted_span": "22 classrooms each ran two portable HEPA units at manufacturer setting 2; 18 comparison classrooms did not",
+          "observation": "The 'two units each' detail appears in the source Abstract but in no claim in the map, and the 22/18 classroom counts appear only inside the evidence_refs of CL02 and CL03, which this beat does not cite; the beat cites CL01 and CL07, neither of which carries either detail.",
+          "explanation": "Both statements are faithful to the source record, so a listener is not misled, but the beat asserts content the claim map does not carry and cites claims that do not support it, so the script cannot be traced back through the map as written.",
+          "recommended_correction": "Add CL02 and CL03 to this beat's claim_refs for the classroom counts, and either add a claim covering 'two portable HEPA units each' to the map or say simply 'ran portable HEPA units' until such a claim exists."
+        },
+        {
+          "id": "F04",
+          "severity": "OBSERVATION",
+          "claim_ref": "CL04",
+          "evidence_ref": "Statistical analysis",
+          "quoted_span": "Absence coded for other reasons fell by 0.2 percentage points in both groups.",
+          "observation": "The negative-control result is placed in the beat titled 'What the number does not tell us' and is never identified as a negative control in narration or caption.",
+          "explanation": "The figure is stated correctly and in the right unit, and no benefit is claimed for non-respiratory absence. However, sitting unlabelled among the study's weaknesses, the equal 0.2 pp fall in both arms is more likely to be heard as a further shortcoming than as the specificity check the record ran it as.",
+          "recommended_correction": "Name its role, e.g. 'As a negative-control check, absence coded for other reasons fell by 0.2 percentage points in both groups.'"
+        },
+        {
+          "id": "F05",
+          "severity": "OBSERVATION",
+          "claim_ref": "CL01",
+          "evidence_ref": "Discussion",
+          "quoted_span": "The units were associated with a reduction of about one percentage point; this study cannot show cause.",
+          "observation": "The source Discussion contains advocacy-shaped text ('would be operationally meaningful across a large authority', weighing procurement costs, 'wider deployment merits evaluation') and the Background frames the study as the first evaluation where authorities are already procuring; none of this framing is carried into the script.",
+          "explanation": "This is recorded as an observation about the source rather than a defect in the script. The script keeps the record's own hedged conclusion wording, presents the point estimate with its interval, and states no causal, procurement, cost-effectiveness, mechanism, particle-count or pupil-level claim.",
+          "recommended_correction": "No change to the script; noted so the reviewer of record can see the source's persuasive framing was identified and not adopted."
+        }
+      ]
+    },
+    "action": "terminate:ACCEPT"
+  }
+]
