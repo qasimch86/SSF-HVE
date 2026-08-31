@@ -1,0 +1,162 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C03-iter-1-s1-7afaad34",
+    "case_id": "C03",
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:16Z",
+    "finished_utc": "2026-08-29T22:47:16Z",
+    "model_calls": 2,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.022,
+    "correction_cycles": 1,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "label": "Baseline prompt plus deterministic source checks and one code-driven correction",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": true,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 1,
+    "allow_progress_at_bound": false,
+    "requires_h1": true,
+    "sample": 1
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "36805b2d6d6da1dcae8c0a358db42ef7f365fd8132989c7843a3a35cd12c8f24",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: School governors and parents\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C03\",\n  \"audience\": \"School governors and parents\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nClassroom air filtration and pupil absence\n\nRecord\nSYN-C03\n\nStudy design\nCluster-allocated, unblinded before-after study\n\nBackground\nRespiratory illness is the largest single driver of pupil absence in primary schools in this authority, accounting for roughly half of coded absence days over the winter period. Portable high-efficiency particulate air (HEPA) cleaners reduce airborne particle counts in classroom-scale rooms, and several authorities have begun procuring them without an evaluation of absence outcomes. This study reports the first such evaluation in the authority.\n\nAbstract\nWe evaluated whether portable HEPA air cleaners reduce pupil absence attributed to respiratory illness. Twenty-two primary-school classrooms in one local authority received two portable HEPA units each; eighteen classrooms in the same authority continued without units. Absence attributed to respiratory illness fell from 4.9% to 3.6% of pupil-days in intervention classrooms and from 4.7% to 4.4% in comparison classrooms over an 11-week winter term, a difference-in-differences of -1.0 percentage points (95% CI -1.9 to -0.1).\n\nMethods\nClassrooms were assigned by school leadership according to available floor space. Absence was extracted from school management-information systems using the existing respiratory-illness code, entered by school office staff during the term. Units were visible in the classrooms and were run during school hours at manufacturer setting 2. Classroom CO2 was logged. Data cover one term in one local authority. Pupil-days were counted from the school register. The difference-in-differences estimate uses classroom-level clustering with robust standard errors. CO2 loggers recorded at 5-minute intervals during occupied hours. No pupil-level data were extracted.\n\nStatistical analysis\nStatistical analysis: the primary estimate is a classroom-level difference-in-differences with robust standard errors clustered by school. Pre-period was the equivalent 11-week term of the previous academic year. Sensitivity analyses excluding the two classrooms with incomplete CO2 logs did not change the estimate materially. Absence coded for reasons other than respiratory illness was examined as a negative-control outcome and fell by 0.2 percentage points in both arms.\n\nResults\n  arm: Intervention (22 classrooms); pre: 4.9%; post: 3.6%\n  arm: Comparison (18 classrooms); pre: 4.7%; post: 4.4%\n  arm: Difference-in-differences; pre: -; post: -1.0 pp (95% CI -1.9 to -0.1)\n\nDiscussion\nAir cleaning is an attractive intervention because it requires no behaviour change from pupils or staff. The effect size we observe, roughly one percentage point of pupil-days, is of a magnitude that would be operationally meaningful across a large authority. Schools considering procurement will want to weigh unit and running costs against the observed reduction. Wider deployment merits evaluation.\n\nLimitations\n  No laboratory confirmation of infection; the outcome is a school administrative code.\n  Baseline ventilation differed between arms.\n\nConclusion\nPortable HEPA units were associated with a reduction in coded respiratory absence of about one percentage point over a winter term.\n\nData availability\nClassroom-level aggregate counts are available; pupil-level records are not released.\n",
+      "response_text": "{\n  \"case_id\": \"C03\",\n  \"audience\": \"School governors and parents\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Why absence matters\",\n      \"narration\": \"Respiratory illness is the single biggest driver of pupil absence in our primary schools, accounting for roughly half of coded absence days across the winter.\",\n      \"on_screen\": \"Title: Air cleaners and pupil absence. Pie graphic: about half of winter absence days coded respiratory.\",\n      \"claim_refs\": [\"Background\"]\n    },\n    {\n      \"beat\": \"What was tried\",\n      \"narration\": \"Twenty-two classrooms in one local authority were each given two portable HEPA air cleaners, running during school hours. Eighteen classrooms in the same authority carried on as usual. Absence was tracked for one eleven-week winter term.\",\n      \"on_screen\": \"Split graphic: 22 classrooms with two HEPA units each, versus 18 classrooms without. Caption: 11-week winter term.\",\n      \"claim_refs\": [\"Abstract\", \"Methods\"]\n    },\n    {\n      \"beat\": \"What the numbers showed\",\n      \"narration\": \"In classrooms with units, respiratory absence fell from four point nine to three point six percent of pupil-days. In the comparison classrooms it fell only slightly, from four point seven to four point four. The difference works out at about one percentage point, though the plausible range runs from just under two points down to almost nothing.\",\n      \"on_screen\": \"Bar chart of before and after for both groups. Callout: difference of -1.0 percentage points, 95% confidence interval -1.9 to -0.1.\",\n      \"claim_refs\": [\"Results\", \"Abstract\"]\n    },\n    {\n      \"beat\": \"How much weight to give it\",\n      \"narration\": \"This was not a randomised trial. Schools chose which rooms got units based on available floor space, staff could see which rooms had them, ventilation already differed between the two groups, and absence came from an administrative code rather than any test for infection. It covers one term in one authority.\",\n      \"on_screen\": \"Checklist of caveats: not randomised, rooms chosen by floor space, unblinded, ventilation differed at baseline, coded absence not confirmed infection, single term and authority.\",\n      \"claim_refs\": [\"Study design\", \"Methods\", \"Limitations\"]\n    },\n    {\n      \"beat\": \"What it means for governors\",\n      \"narration\": \"A one point reduction would be operationally meaningful across a large authority, so the finding is worth taking seriously. But governors should weigh purchase and running costs against a result this uncertain, and any wider rollout deserves proper evaluation.\",\n      \"on_screen\": \"Two columns: potential benefit versus unit and running costs. Closing line: promising, not proven; evaluate before wider rollout.\",\n      \"claim_refs\": [\"Discussion\", \"Conclusion\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "index": 2,
+      "role": "a2-correction-1",
+      "kind": "script",
+      "prompt_sha256": "a77e9d88c7ffe79f588fd462bea0755cccc69a1fdc62cf9557d15dc40923cf0f",
+      "rendered_prompt": "ROLE A2 - SCRIPT DESIGNER, CORRECTION CYCLE 1 OF 1\n\nBelow is your previous script and a list of findings raised against it. Each\nfinding names the span it concerns and the correction recommended. Apply the\ncorrections. Do not argue with a finding, and do not mark anything as resolved:\nyou produce a revised script, and a separate role checks it.\n\nChange only what the findings require. Leave everything else as it was. Do not\nintroduce any new scientific assertion, and do not remove correct material that\nno finding objects to.\n\nReturn ONLY a JSON object in the same script shape as before, no prose.\n\nAPPROVED CLAIM MAP\n{\n  \"case_id\": \"C03\",\n  \"claims\": [],\n  \"source_limitations\": [],\n  \"prohibited_extensions\": [],\n  \"embedded_instruction_text_found_in_source\": []\n}\n\nPREVIOUS SCRIPT\n{\n  \"case_id\": \"C03\",\n  \"audience\": \"School governors and parents\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Why absence matters\",\n      \"narration\": \"Respiratory illness is the single biggest driver of pupil absence in our primary schools, accounting for roughly half of coded absence days across the winter.\",\n      \"on_screen\": \"Title: Air cleaners and pupil absence. Pie graphic: about half of winter absence days coded respiratory.\",\n      \"claim_refs\": [\n        \"Background\"\n      ]\n    },\n    {\n      \"beat\": \"What was tried\",\n      \"narration\": \"Twenty-two classrooms in one local authority were each given two portable HEPA air cleaners, running during school hours. Eighteen classrooms in the same authority carried on as usual. Absence was tracked for one eleven-week winter term.\",\n      \"on_screen\": \"Split graphic: 22 classrooms with two HEPA units each, versus 18 classrooms without. Caption: 11-week winter term.\",\n      \"claim_refs\": [\n        \"Abstract\",\n        \"Methods\"\n      ]\n    },\n    {\n      \"beat\": \"What the numbers showed\",\n      \"narration\": \"In classrooms with units, respiratory absence fell from four point nine to three point six percent of pupil-days. In the comparison classrooms it fell only slightly, from four point seven to four point four. The difference works out at about one percentage point, though the plausible range runs from just under two points down to almost nothing.\",\n      \"on_screen\": \"Bar chart of before and after for both groups. Callout: difference of -1.0 percentage points, 95% confidence interval -1.9 to -0.1.\",\n      \"claim_refs\": [\n        \"Results\",\n        \"Abstract\"\n      ]\n    },\n    {\n      \"beat\": \"How much weight to give it\",\n      \"narration\": \"This was not a randomised trial. Schools chose which rooms got units based on available floor space, staff could see which rooms had them, ventilation already differed between the two groups, and absence came from an administrative code rather than any test for infection. It covers one term in one authority.\",\n      \"on_screen\": \"Checklist of caveats: not randomised, rooms chosen by floor space, unblinded, ventilation differed at baseline, coded absence not confirmed infection, single term and authority.\",\n      \"claim_refs\": [\n        \"Study design\",\n        \"Methods\",\n        \"Limitations\"\n      ]\n    },\n    {\n      \"beat\": \"What it means for governors\",\n      \"narration\": \"A one point reduction would be operationally meaningful across a large authority, so the finding is worth taking seriously. But governors should weigh purchase and running costs against a result this uncertain, and any wider rollout deserves proper evaluation.\",\n      \"on_screen\": \"Two columns: potential benefit versus unit and running costs. Closing line: promising, not proven; evaluate before wider rollout.\",\n      \"claim_refs\": [\n        \"Discussion\",\n        \"Conclusion\"\n      ]\n    }\n  ]\n}\n\nFINDINGS TO ADDRESS\n[\n  {\n    \"id\": \"D01\",\n    \"check\": \"CHECK-Q\",\n    \"severity\": \"MAJOR\",\n    \"quoted_span\": \"6%\",\n    \"observation\": \"The value 6 appears in the script.\",\n    \"explanation\": \"This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.\",\n    \"recommended_correction\": \"Replace it with the value as written in the source, or remove the sentence.\",\n    \"claim_ref\": \"\",\n    \"evidence_ref\": \"\"\n  }\n]\n",
+      "response_text": "{\n  \"case_id\": \"C03\",\n  \"audience\": \"School governors and parents\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Why absence matters\",\n      \"narration\": \"Respiratory illness is the single biggest driver of pupil absence in our primary schools, accounting for roughly half of coded absence days across the winter.\",\n      \"on_screen\": \"Title: Air cleaners and pupil absence. Pie graphic: about half of winter absence days coded respiratory.\",\n      \"claim_refs\": [\n        \"Background\"\n      ]\n    },\n    {\n      \"beat\": \"What was tried\",\n      \"narration\": \"Twenty-two classrooms in one local authority were each given two portable HEPA air cleaners, running during school hours. Eighteen classrooms in the same authority carried on as usual. Absence was tracked for one eleven-week winter term.\",\n      \"on_screen\": \"Split graphic: 22 classrooms with two HEPA units each, versus 18 classrooms without. Caption: 11-week winter term.\",\n      \"claim_refs\": [\n        \"Abstract\",\n        \"Methods\"\n      ]\n    },\n    {\n      \"beat\": \"What the numbers showed\",\n      \"narration\": \"In the comparison classrooms respiratory absence fell only slightly, from four point seven to four point four. The difference works out at about one percentage point, though the plausible range runs from just under two points down to almost nothing.\",\n      \"on_screen\": \"Bar chart of before and after for both groups. Callout: difference of -1.0 percentage points, 95% confidence interval -1.9 to -0.1.\",\n      \"claim_refs\": [\n        \"Results\",\n        \"Abstract\"\n      ]\n    },\n    {\n      \"beat\": \"How much weight to give it\",\n      \"narration\": \"This was not a randomised trial. Schools chose which rooms got units based on available floor space, staff could see which rooms had them, ventilation already differed between the two groups, and absence came from an administrative code rather than any test for infection. It covers one term in one authority.\",\n      \"on_screen\": \"Checklist of caveats: not randomised, rooms chosen by floor space, unblinded, ventilation differed at baseline, coded absence not confirmed infection, single term and authority.\",\n      \"claim_refs\": [\n        \"Study design\",\n        \"Methods\",\n        \"Limitations\"\n      ]\n    },\n    {\n      \"beat\": \"What it means for governors\",\n      \"narration\": \"A one point reduction would be operationally meaningful across a large authority, so the finding is worth taking seriously. But governors should weigh purchase and running costs against a result this uncertain, and any wider rollout deserves proper evaluation.\",\n      \"on_screen\": \"Two columns: potential benefit versus unit and running costs. Closing line: promising, not proven; evaluate before wider rollout.\",\n      \"claim_refs\": [\n        \"Discussion\",\n        \"Conclusion\"\n      ]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [
+        {
+          "id": "D01",
+          "check": "CHECK-Q",
+          "severity": "MAJOR",
+          "quoted_span": "6%",
+          "observation": "The value 6 appears in the script.",
+          "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+          "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        }
+      ],
+      "verifier": null,
+      "blocking_count": 1,
+      "action": "correct:cycle1"
+    },
+    {
+      "index": 1,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C03",
+    "audience": "School governors and parents",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "Why absence matters",
+        "narration": "Respiratory illness is the single biggest driver of pupil absence in our primary schools, accounting for roughly half of coded absence days across the winter.",
+        "on_screen": "Title: Air cleaners and pupil absence. Pie graphic: about half of winter absence days coded respiratory.",
+        "claim_refs": [
+          "Background"
+        ]
+      },
+      {
+        "beat": "What was tried",
+        "narration": "Twenty-two classrooms in one local authority were each given two portable HEPA air cleaners, running during school hours. Eighteen classrooms in the same authority carried on as usual. Absence was tracked for one eleven-week winter term.",
+        "on_screen": "Split graphic: 22 classrooms with two HEPA units each, versus 18 classrooms without. Caption: 11-week winter term.",
+        "claim_refs": [
+          "Abstract",
+          "Methods"
+        ]
+      },
+      {
+        "beat": "What the numbers showed",
+        "narration": "In the comparison classrooms respiratory absence fell only slightly, from four point seven to four point four. The difference works out at about one percentage point, though the plausible range runs from just under two points down to almost nothing.",
+        "on_screen": "Bar chart of before and after for both groups. Callout: difference of -1.0 percentage points, 95% confidence interval -1.9 to -0.1.",
+        "claim_refs": [
+          "Results",
+          "Abstract"
+        ]
+      },
+      {
+        "beat": "How much weight to give it",
+        "narration": "This was not a randomised trial. Schools chose which rooms got units based on available floor space, staff could see which rooms had them, ventilation already differed between the two groups, and absence came from an administrative code rather than any test for infection. It covers one term in one authority.",
+        "on_screen": "Checklist of caveats: not randomised, rooms chosen by floor space, unblinded, ventilation differed at baseline, coded absence not confirmed infection, single term and authority.",
+        "claim_refs": [
+          "Study design",
+          "Methods",
+          "Limitations"
+        ]
+      },
+      {
+        "beat": "What it means for governors",
+        "narration": "A one point reduction would be operationally meaningful across a large authority, so the finding is worth taking seriously. But governors should weigh purchase and running costs against a result this uncertain, and any wider rollout deserves proper evaluation.",
+        "on_screen": "Two columns: potential benefit versus unit and running costs. Closing line: promising, not proven; evaluate before wider rollout.",
+        "claim_refs": [
+          "Discussion",
+          "Conclusion"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Respiratory illness is the single biggest driver of pupil absence in our primary schools, accounting for roughly half of coded absence days across the winter.\nTwenty-two classrooms in one local authority were each given two portable HEPA air cleaners, running during school hours. Eighteen classrooms in the same authority carried on as usual. Absence was tracked for one eleven-week winter term.\nIn the comparison classrooms respiratory absence fell only slightly, from four point seven to four point four. The difference works out at about one percentage point, though the plausible range runs from just under two points down to almost nothing.\nThis was not a randomised trial. Schools chose which rooms got units based on available floor space, staff could see which rooms had them, ventilation already differed between the two groups, and absence came from an administrative code rather than any test for infection. It covers one term in one authority.\nA one point reduction would be operationally meaningful across a large authority, so the finding is worth taking seriously. But governors should weigh purchase and running costs against a result this uncertain, and any wider rollout deserves proper evaluation.",
+  "h1_gate": {
+    "gate": "H1",
+    "artifact_sha256": "e42cc8a150ca07308df8e7128d76e9319bfa8275ce5c3a54b0d51d1187ce9c42",
+    "state": "BLOCKED_AWAITING_HUMAN",
+    "approver": null,
+    "approved_utc": null,
+    "note": "Production is blocked until a person approves this exact script version. No agent status can open this gate."
+  },
+  "unresolved_findings": []
+}

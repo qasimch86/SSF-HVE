@@ -1,0 +1,179 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C02-iter-1-s1-3af1cbfd",
+    "case_id": "C02",
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:16Z",
+    "finished_utc": "2026-08-29T22:47:16Z",
+    "model_calls": 2,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.024,
+    "correction_cycles": 1,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "label": "Baseline prompt plus deterministic source checks and one code-driven correction",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": true,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 1,
+    "allow_progress_at_bound": false,
+    "requires_h1": true,
+    "sample": 1
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "077d6ae88e89e2c49138d172ad5faac71c5634369d3c080ccacaad87c27eb3b2",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nSenolytic clearance of senescent cells in aged mice\n\nRecord\nSYN-C02\n\nStudy design\nRandomised preclinical study in mice\n\nBackground\nCellular senescence is a stable growth arrest accompanied by a secretory phenotype. Senescent cells accumulate with age in several tissues and their targeted removal has been reported to improve healthspan measures in rodents. Dasatinib and quercetin (D+Q) is the most widely used senolytic combination in this literature, given intermittently to allow washout.\n\nAbstract\nAccumulation of senescent cells contributes to tissue dysfunction in ageing. We tested whether intermittent administration of the senolytic combination D+Q clears senescent cells and improves physical function in aged mice. Male and female C57BL/6J mice aged 24 months (n = 96, 48 per sex) were randomised to D+Q or vehicle, dosed on 3 consecutive days every 14 days for 16 weeks. D+Q reduced p16INK4a-positive cell burden in inguinal adipose tissue by 41% relative to vehicle (p < 0.001) and improved rotarod latency by 22% (p = 0.004). Median remaining lifespan from the start of treatment increased from 21.4 to 26.9 weeks in treated animals (log-rank p = 0.01). No effect was observed on grip strength (p = 0.62).\n\nMethods\nAnimals were housed 4 per cage under a 12:12 light-dark cycle. Randomisation was performed by cage using a computer-generated sequence; outcome assessors were blinded to allocation. Doses were 5 mg/kg dasatinib and 50 mg/kg quercetin by oral gavage. Sample size was set to detect a 30% difference in p16INK4a burden at 80% power. Rotarod testing used three trials per session with the best latency retained. Survival was followed to natural death or humane endpoint. Grip strength was measured with a force transducer at 16 weeks.\n\nStatistical analysis\nStatistical analysis: group comparisons used two-sided t-tests for continuous endpoints with Holm correction across the four pre-specified measures; survival used the log-rank test. Analyses were performed by an investigator blinded to allocation. Animals lost before the 16-week timepoint were censored at the date of loss; four animals in each arm were censored for reasons unrelated to treatment. Body weight and food intake were recorded weekly and did not differ between arms.\n\nResults\n  endpoint: p16INK4a-positive cell burden, inguinal adipose; effect: -41% vs vehicle; p: <0.001\n  endpoint: Rotarod latency; effect: +22% vs vehicle; p: 0.004\n  endpoint: Median remaining lifespan; effect: 21.4 -> 26.9 weeks; p: 0.01\n  endpoint: Grip strength; effect: no difference; p: 0.62\n\nDiscussion\nSenescent-cell burden has been implicated in multiple age-related pathologies. The magnitude of the lifespan effect seen here is among the larger reported for an intermittent senolytic schedule. Because dasatinib and quercetin are both already in clinical use or widely available, the translational path for this combination is comparatively short. Further work should establish tissue coverage beyond adipose and determine whether the functional benefit generalises across measures.\n\nLimitations\n  Adipose tissue only; other tissues were not assessed.\n  A single inbred strain at a single age.\n\nConclusion\nIntermittent D+Q reduced senescent-cell burden and improved rotarod latency in 24-month-old C57BL/6J mice.\n\nData availability\nIndividual animal-level data are provided in the supplementary spreadsheet.\n",
+      "response_text": "{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Hook: zombie cells\",\n      \"narration\": \"Some cells in your body stop dividing but never quite die. They linger, pumping out inflammatory signals, and they build up as we age. Scientists call them senescent cells.\",\n      \"on_screen\": \"Animation: dividing cells; one halts, turns grey, and starts emitting signal puffs. Caption: SENESCENT CELLS\",\n      \"claim_refs\": [\"SYN-C02:background\"]\n    },\n    {\n      \"beat\": \"The experiment\",\n      \"narration\": \"Researchers took ninety-six elderly mice, twenty-four months old, and randomly gave each one either a pair of drugs called dasatinib and quercetin, or a dummy treatment. Three doses every two weeks, for sixteen weeks. The scientists measuring the results didn't know which mice got which.\",\n      \"on_screen\": \"Split screen: 96 mouse icons splitting into two groups; calendar strip marking 3 dosing days every 14 days across 16 weeks. Caption: RANDOMISED, BLINDED\",\n      \"claim_refs\": [\"SYN-C02:abstract\", \"SYN-C02:methods\"]\n    },\n    {\n      \"beat\": \"What improved\",\n      \"narration\": \"In fat tissue, senescent cells dropped by forty-one percent. On a rotating-rod balance test, treated mice hung on twenty-two percent longer. And their median remaining lifespan rose from about twenty-one weeks to nearly twenty-seven.\",\n      \"on_screen\": \"Three animated stat cards: -41% senescent cells (adipose) - +22% rotarod latency - 21.4 to 26.9 weeks median remaining life\",\n      \"claim_refs\": [\"SYN-C02:result:p16INK4a burden\", \"SYN-C02:result:rotarod latency\", \"SYN-C02:result:median remaining lifespan\"]\n    },\n    {\n      \"beat\": \"What didn't\",\n      \"narration\": \"But grip strength didn't budge at all. The benefit showed up in some measures of physical function, not every one.\",\n      \"on_screen\": \"Fourth stat card, greyed out: grip strength - no difference (p = 0.62)\",\n      \"claim_refs\": [\"SYN-C02:result:grip strength\"]\n    },\n    {\n      \"beat\": \"The caveats\",\n      \"narration\": \"And the limits matter. This was mice, not people. One inbred strain, at one age. Senescent cells were counted in fat tissue only, so we don't yet know what happened elsewhere in the body.\",\n      \"on_screen\": \"Mouse icon with a red 'not human' stamp; body diagram with only the fat depot highlighted. Caption: PRECLINICAL - ONE TISSUE - ONE STRAIN\",\n      \"claim_refs\": [\"SYN-C02:limitations\", \"SYN-C02:study_design\"]\n    },\n    {\n      \"beat\": \"Why it's watched\",\n      \"narration\": \"Still, both drugs are already available for other uses, which is why researchers are keen to find out whether any of this carries over to us.\",\n      \"on_screen\": \"Text card: Both compounds already in clinical use or widely available. Next question: does it translate?\",\n      \"claim_refs\": [\"SYN-C02:discussion\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "index": 2,
+      "role": "a2-correction-1",
+      "kind": "script",
+      "prompt_sha256": "a14dbc22f49301bf388ee75c1323efd7ec59b0e37ca57329eb46ae625b4984b2",
+      "rendered_prompt": "ROLE A2 - SCRIPT DESIGNER, CORRECTION CYCLE 1 OF 1\n\nBelow is your previous script and a list of findings raised against it. Each\nfinding names the span it concerns and the correction recommended. Apply the\ncorrections. Do not argue with a finding, and do not mark anything as resolved:\nyou produce a revised script, and a separate role checks it.\n\nChange only what the findings require. Leave everything else as it was. Do not\nintroduce any new scientific assertion, and do not remove correct material that\nno finding objects to.\n\nReturn ONLY a JSON object in the same script shape as before, no prose.\n\nAPPROVED CLAIM MAP\n{\n  \"case_id\": \"C02\",\n  \"claims\": [],\n  \"source_limitations\": [],\n  \"prohibited_extensions\": [],\n  \"embedded_instruction_text_found_in_source\": []\n}\n\nPREVIOUS SCRIPT\n{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Hook: zombie cells\",\n      \"narration\": \"Some cells in your body stop dividing but never quite die. They linger, pumping out inflammatory signals, and they build up as we age. Scientists call them senescent cells.\",\n      \"on_screen\": \"Animation: dividing cells; one halts, turns grey, and starts emitting signal puffs. Caption: SENESCENT CELLS\",\n      \"claim_refs\": [\n        \"SYN-C02:background\"\n      ]\n    },\n    {\n      \"beat\": \"The experiment\",\n      \"narration\": \"Researchers took ninety-six elderly mice, twenty-four months old, and randomly gave each one either a pair of drugs called dasatinib and quercetin, or a dummy treatment. Three doses every two weeks, for sixteen weeks. The scientists measuring the results didn't know which mice got which.\",\n      \"on_screen\": \"Split screen: 96 mouse icons splitting into two groups; calendar strip marking 3 dosing days every 14 days across 16 weeks. Caption: RANDOMISED, BLINDED\",\n      \"claim_refs\": [\n        \"SYN-C02:abstract\",\n        \"SYN-C02:methods\"\n      ]\n    },\n    {\n      \"beat\": \"What improved\",\n      \"narration\": \"In fat tissue, senescent cells dropped by forty-one percent. On a rotating-rod balance test, treated mice hung on twenty-two percent longer. And their median remaining lifespan rose from about twenty-one weeks to nearly twenty-seven.\",\n      \"on_screen\": \"Three animated stat cards: -41% senescent cells (adipose) - +22% rotarod latency - 21.4 to 26.9 weeks median remaining life\",\n      \"claim_refs\": [\n        \"SYN-C02:result:p16INK4a burden\",\n        \"SYN-C02:result:rotarod latency\",\n        \"SYN-C02:result:median remaining lifespan\"\n      ]\n    },\n    {\n      \"beat\": \"What didn't\",\n      \"narration\": \"But grip strength didn't budge at all. The benefit showed up in some measures of physical function, not every one.\",\n      \"on_screen\": \"Fourth stat card, greyed out: grip strength - no difference (p = 0.62)\",\n      \"claim_refs\": [\n        \"SYN-C02:result:grip strength\"\n      ]\n    },\n    {\n      \"beat\": \"The caveats\",\n      \"narration\": \"And the limits matter. This was mice, not people. One inbred strain, at one age. Senescent cells were counted in fat tissue only, so we don't yet know what happened elsewhere in the body.\",\n      \"on_screen\": \"Mouse icon with a red 'not human' stamp; body diagram with only the fat depot highlighted. Caption: PRECLINICAL - ONE TISSUE - ONE STRAIN\",\n      \"claim_refs\": [\n        \"SYN-C02:limitations\",\n        \"SYN-C02:study_design\"\n      ]\n    },\n    {\n      \"beat\": \"Why it's watched\",\n      \"narration\": \"Still, both drugs are already available for other uses, which is why researchers are keen to find out whether any of this carries over to us.\",\n      \"on_screen\": \"Text card: Both compounds already in clinical use or widely available. Next question: does it translate?\",\n      \"claim_refs\": [\n        \"SYN-C02:discussion\"\n      ]\n    }\n  ]\n}\n\nFINDINGS TO ADDRESS\n[\n  {\n    \"id\": \"D01\",\n    \"check\": \"CHECK-Q\",\n    \"severity\": \"MAJOR\",\n    \"quoted_span\": \"21 weeks\",\n    \"observation\": \"The value 21 appears in the script.\",\n    \"explanation\": \"This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.\",\n    \"recommended_correction\": \"Replace it with the value as written in the source, or remove the sentence.\",\n    \"claim_ref\": \"\",\n    \"evidence_ref\": \"\"\n  },\n  {\n    \"id\": \"D02\",\n    \"check\": \"CHECK-Q\",\n    \"severity\": \"MAJOR\",\n    \"quoted_span\": \"27\",\n    \"observation\": \"The value 27 appears in the script.\",\n    \"explanation\": \"This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.\",\n    \"recommended_correction\": \"Replace it with the value as written in the source, or remove the sentence.\",\n    \"claim_ref\": \"\",\n    \"evidence_ref\": \"\"\n  }\n]\n",
+      "response_text": "{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Hook: zombie cells\",\n      \"narration\": \"Some cells in your body stop dividing but never quite die. They linger, pumping out inflammatory signals, and they build up as we age. Scientists call them senescent cells.\",\n      \"on_screen\": \"Animation: dividing cells; one halts, turns grey, and starts emitting signal puffs. Caption: SENESCENT CELLS\",\n      \"claim_refs\": [\n        \"SYN-C02:background\"\n      ]\n    },\n    {\n      \"beat\": \"The experiment\",\n      \"narration\": \"Researchers took ninety-six elderly mice, twenty-four months old, and randomly gave each one either a pair of drugs called dasatinib and quercetin, or a dummy treatment. Three doses every two weeks, for sixteen weeks. The scientists measuring the results didn't know which mice got which.\",\n      \"on_screen\": \"Split screen: 96 mouse icons splitting into two groups; calendar strip marking 3 dosing days every 14 days across 16 weeks. Caption: RANDOMISED, BLINDED\",\n      \"claim_refs\": [\n        \"SYN-C02:abstract\",\n        \"SYN-C02:methods\"\n      ]\n    },\n    {\n      \"beat\": \"What improved\",\n      \"narration\": \"In fat tissue, senescent cells dropped by forty-one percent. And on a rotating-rod balance test, treated mice hung on twenty-two percent longer.\",\n      \"on_screen\": \"Two animated stat cards: -41% senescent cells (adipose) - +22% rotarod latency\",\n      \"claim_refs\": [\n        \"SYN-C02:result:p16INK4a burden\",\n        \"SYN-C02:result:rotarod latency\"\n      ]\n    },\n    {\n      \"beat\": \"What didn't\",\n      \"narration\": \"But grip strength didn't budge at all. The benefit showed up in some measures of physical function, not every one.\",\n      \"on_screen\": \"Third stat card, greyed out: grip strength - no difference (p = 0.62)\",\n      \"claim_refs\": [\n        \"SYN-C02:result:grip strength\"\n      ]\n    },\n    {\n      \"beat\": \"The caveats\",\n      \"narration\": \"And the limits matter. This was mice, not people. One inbred strain, at one age. Senescent cells were counted in fat tissue only, so we don't yet know what happened elsewhere in the body.\",\n      \"on_screen\": \"Mouse icon with a red 'not human' stamp; body diagram with only the fat depot highlighted. Caption: PRECLINICAL - ONE TISSUE - ONE STRAIN\",\n      \"claim_refs\": [\n        \"SYN-C02:limitations\",\n        \"SYN-C02:study_design\"\n      ]\n    },\n    {\n      \"beat\": \"Why it's watched\",\n      \"narration\": \"Still, both drugs are already available for other uses, which is why researchers are keen to find out whether any of this carries over to us.\",\n      \"on_screen\": \"Text card: Both compounds already in clinical use or widely available. Next question: does it translate?\",\n      \"claim_refs\": [\n        \"SYN-C02:discussion\"\n      ]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [
+        {
+          "id": "D01",
+          "check": "CHECK-Q",
+          "severity": "MAJOR",
+          "quoted_span": "21 weeks",
+          "observation": "The value 21 appears in the script.",
+          "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+          "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        },
+        {
+          "id": "D02",
+          "check": "CHECK-Q",
+          "severity": "MAJOR",
+          "quoted_span": "27",
+          "observation": "The value 27 appears in the script.",
+          "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+          "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        }
+      ],
+      "verifier": null,
+      "blocking_count": 2,
+      "action": "correct:cycle1"
+    },
+    {
+      "index": 1,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C02",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "Hook: zombie cells",
+        "narration": "Some cells in your body stop dividing but never quite die. They linger, pumping out inflammatory signals, and they build up as we age. Scientists call them senescent cells.",
+        "on_screen": "Animation: dividing cells; one halts, turns grey, and starts emitting signal puffs. Caption: SENESCENT CELLS",
+        "claim_refs": [
+          "SYN-C02:background"
+        ]
+      },
+      {
+        "beat": "The experiment",
+        "narration": "Researchers took ninety-six elderly mice, twenty-four months old, and randomly gave each one either a pair of drugs called dasatinib and quercetin, or a dummy treatment. Three doses every two weeks, for sixteen weeks. The scientists measuring the results didn't know which mice got which.",
+        "on_screen": "Split screen: 96 mouse icons splitting into two groups; calendar strip marking 3 dosing days every 14 days across 16 weeks. Caption: RANDOMISED, BLINDED",
+        "claim_refs": [
+          "SYN-C02:abstract",
+          "SYN-C02:methods"
+        ]
+      },
+      {
+        "beat": "What improved",
+        "narration": "In fat tissue, senescent cells dropped by forty-one percent. And on a rotating-rod balance test, treated mice hung on twenty-two percent longer.",
+        "on_screen": "Two animated stat cards: -41% senescent cells (adipose) - +22% rotarod latency",
+        "claim_refs": [
+          "SYN-C02:result:p16INK4a burden",
+          "SYN-C02:result:rotarod latency"
+        ]
+      },
+      {
+        "beat": "What didn't",
+        "narration": "But grip strength didn't budge at all. The benefit showed up in some measures of physical function, not every one.",
+        "on_screen": "Third stat card, greyed out: grip strength - no difference (p = 0.62)",
+        "claim_refs": [
+          "SYN-C02:result:grip strength"
+        ]
+      },
+      {
+        "beat": "The caveats",
+        "narration": "And the limits matter. This was mice, not people. One inbred strain, at one age. Senescent cells were counted in fat tissue only, so we don't yet know what happened elsewhere in the body.",
+        "on_screen": "Mouse icon with a red 'not human' stamp; body diagram with only the fat depot highlighted. Caption: PRECLINICAL - ONE TISSUE - ONE STRAIN",
+        "claim_refs": [
+          "SYN-C02:limitations",
+          "SYN-C02:study_design"
+        ]
+      },
+      {
+        "beat": "Why it's watched",
+        "narration": "Still, both drugs are already available for other uses, which is why researchers are keen to find out whether any of this carries over to us.",
+        "on_screen": "Text card: Both compounds already in clinical use or widely available. Next question: does it translate?",
+        "claim_refs": [
+          "SYN-C02:discussion"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Some cells in your body stop dividing but never quite die. They linger, pumping out inflammatory signals, and they build up as we age. Scientists call them senescent cells.\nResearchers took ninety-six elderly mice, twenty-four months old, and randomly gave each one either a pair of drugs called dasatinib and quercetin, or a dummy treatment. Three doses every two weeks, for sixteen weeks. The scientists measuring the results didn't know which mice got which.\nIn fat tissue, senescent cells dropped by forty-one percent. And on a rotating-rod balance test, treated mice hung on twenty-two percent longer.\nBut grip strength didn't budge at all. The benefit showed up in some measures of physical function, not every one.\nAnd the limits matter. This was mice, not people. One inbred strain, at one age. Senescent cells were counted in fat tissue only, so we don't yet know what happened elsewhere in the body.\nStill, both drugs are already available for other uses, which is why researchers are keen to find out whether any of this carries over to us.",
+  "h1_gate": {
+    "gate": "H1",
+    "artifact_sha256": "e2bf8da11f0a7f90ccf84c31ee7b7456d0c8d9e3a05ae870d4eec782a9ec99dc",
+    "state": "BLOCKED_AWAITING_HUMAN",
+    "approver": null,
+    "approved_utc": null,
+    "note": "Production is blocked until a person approves this exact script version. No agent status can open this gate."
+  },
+  "unresolved_findings": []
+}

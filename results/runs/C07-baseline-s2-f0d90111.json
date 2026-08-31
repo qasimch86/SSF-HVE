@@ -1,0 +1,125 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C07-baseline-s2-f0d90111",
+    "case_id": "C07",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:14Z",
+    "finished_utc": "2026-08-29T22:47:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.006,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false,
+    "sample": 2
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "2235d22ad15bf400661b50a92688bfc9c130cfed3351cce5c4f3b2bf44c5f5af",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C07\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nA proposed mechanism for an antidepressant response marker\n\nRecord\nSYN-C07\n\nStudy design\nObservational biomarker study with a proposed, untested mechanism\n\nBackground\nRoughly one third of patients with major depressive disorder do not respond to a first-line SSRI. Peripheral inflammatory markers have been repeatedly associated with poorer response, though the mechanism connecting a peripheral cytokine to central neurotransmission is not settled. Interleukin-6 is the most frequently reported of these markers and is measurable on routine platforms, which is why it was chosen here.\n\nAbstract\nBaseline peripheral interleukin-6 (IL-6) predicted response to an SSRI in a cohort of 512 adults with major depressive disorder. Participants in the highest IL-6 tertile were less likely to reach response at 12 weeks (34% versus 58%, adjusted odds ratio 0.41, 95% CI 0.27-0.63). We propose that elevated peripheral IL-6 reduces central serotonin availability by shunting tryptophan into the kynurenine pathway.\n\nMethods\nIL-6 was measured once at baseline by high-sensitivity assay. Response was a 50% reduction in HAM-D. Assays performed: high-sensitivity IL-6, HAM-D at baseline and week 12. No metabolite panel was run. IL-6 was not manipulated. Participants were recruited from four secondary-care services. SSRI choice and dose were at clinician discretion. IL-6 was assayed in duplicate from fasting samples with a lower limit of quantification of 0.15 pg/mL. Tertiles were defined within the cohort.\n\nStatistical analysis\nStatistical analysis: logistic regression adjusted for age, sex, baseline HAM-D, body-mass index and smoking status. Tertile cut-points were 1.28 and 3.14 pg/mL. A sensitivity analysis treating IL-6 as a continuous log-transformed variable gave a consistent estimate (adjusted odds ratio per doubling 0.72, 95% CI 0.61-0.85). Loss to follow-up at 12 weeks was 9% and did not differ by tertile. No correction was applied for the single pre-specified comparison.\n\nResults\n  endpoint: Response at 12 weeks, highest IL-6 tertile; value: 34%\n  endpoint: Response at 12 weeks, lowest IL-6 tertile; value: 58%\n  endpoint: Adjusted odds ratio; value: 0.41 (0.27-0.63)\n  endpoint: Kynurenine metabolites measured; value: None\n\nNote on results\nResponse rates by tertile are given in the results table. Assay panel run in this study: high-sensitivity IL-6 only.\n\nDiscussion\nPeripheral inflammation is emerging as a candidate stratification marker in depression. A practical implication is that a widely available blood assay might identify patients for whom an SSRI is a lower-yield first choice. The kynurenine account we advance offers a coherent link between the peripheral marker and central neurotransmission, and would, if borne out, explain the pattern we observe.\n\nLimitations\n  Single baseline IL-6 measurement.\n  Observational cohort.\n\nConclusion\nHigher baseline IL-6 was associated with lower SSRI response. We propose a kynurenine-pathway account of this association.\n\nData availability\nCohort data available to qualified investigators under a data-use agreement.\n",
+      "response_text": "{\n  \"case_id\": \"C07\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Hook\",\n      \"narration\": \"About one in three people with major depression don't get better on the first antidepressant they try. Could a routine blood test hint at who?\",\n      \"on_screen\": \"Title card: 'Can a blood test predict antidepressant response?' Simple icon of three figures, one highlighted.\",\n      \"claim_refs\": [\"Background: roughly one third of patients with MDD do not respond to a first-line SSRI\"]\n    },\n    {\n      \"beat\": \"The study and the finding\",\n      \"narration\": \"Researchers followed 512 adults starting an SSRI and measured interleukin-6, a marker of inflammation, once at the start. Twelve weeks later, 58 percent of those in the lowest IL-6 third had responded, compared with just 34 percent in the highest third.\",\n      \"on_screen\": \"Two bar columns: low IL-6 group 58%, high IL-6 group 34%. Caption: 512 adults, 12 weeks, adjusted odds ratio 0.41 (95% CI 0.27-0.63).\",\n      \"claim_refs\": [\"Abstract: 512 adults, 34% vs 58%, adjusted OR 0.41 (0.27-0.63)\", \"Methods: IL-6 measured once at baseline; response = 50% reduction in HAM-D\", \"Results: response by tertile; adjusted odds ratio\"]\n    },\n    {\n      \"beat\": \"The proposed mechanism\",\n      \"narration\": \"The team proposes an explanation: high IL-6 might push tryptophan, the raw material for serotonin, down a different route called the kynurenine pathway, leaving less serotonin available in the brain.\",\n      \"on_screen\": \"Animated fork in a pipeline: tryptophan splitting toward 'serotonin' and 'kynurenine', with a dashed 'PROPOSED' stamp over the diagram.\",\n      \"claim_refs\": [\"Abstract: we propose that elevated peripheral IL-6 reduces central serotonin availability via the kynurenine pathway\", \"Study design: proposed, untested mechanism\"]\n    },\n    {\n      \"beat\": \"Why that stays a hypothesis\",\n      \"narration\": \"But that is a hypothesis, not a result. No kynurenine metabolites were measured in this study, and nobody altered anyone's IL-6. Because it only observed people, inflammation could simply travel alongside whatever really drives poor response.\",\n      \"on_screen\": \"Checklist: 'Kynurenine metabolites measured: none' / 'IL-6 not manipulated' / 'Observational cohort' — each with a cross.\",\n      \"claim_refs\": [\"Results: kynurenine metabolites measured = None\", \"Methods: no metabolite panel was run; IL-6 was not manipulated\", \"Limitations: observational cohort; single baseline IL-6 measurement\"]\n    },\n    {\n      \"beat\": \"Takeaway\",\n      \"narration\": \"So: a real and reasonably strong association, measured with a widely available test, and worth following up in proper trials. Not yet something that should change anyone's prescription.\",\n      \"on_screen\": \"Closing card: 'Association, not causation. Promising marker - needs testing.'\",\n      \"claim_refs\": [\"Discussion: candidate stratification marker; widely available blood assay\", \"Conclusion: higher baseline IL-6 associated with lower SSRI response; mechanism proposed\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C07",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "Hook",
+        "narration": "About one in three people with major depression don't get better on the first antidepressant they try. Could a routine blood test hint at who?",
+        "on_screen": "Title card: 'Can a blood test predict antidepressant response?' Simple icon of three figures, one highlighted.",
+        "claim_refs": [
+          "Background: roughly one third of patients with MDD do not respond to a first-line SSRI"
+        ]
+      },
+      {
+        "beat": "The study and the finding",
+        "narration": "Researchers followed 512 adults starting an SSRI and measured interleukin-6, a marker of inflammation, once at the start. Twelve weeks later, 58 percent of those in the lowest IL-6 third had responded, compared with just 34 percent in the highest third.",
+        "on_screen": "Two bar columns: low IL-6 group 58%, high IL-6 group 34%. Caption: 512 adults, 12 weeks, adjusted odds ratio 0.41 (95% CI 0.27-0.63).",
+        "claim_refs": [
+          "Abstract: 512 adults, 34% vs 58%, adjusted OR 0.41 (0.27-0.63)",
+          "Methods: IL-6 measured once at baseline; response = 50% reduction in HAM-D",
+          "Results: response by tertile; adjusted odds ratio"
+        ]
+      },
+      {
+        "beat": "The proposed mechanism",
+        "narration": "The team proposes an explanation: high IL-6 might push tryptophan, the raw material for serotonin, down a different route called the kynurenine pathway, leaving less serotonin available in the brain.",
+        "on_screen": "Animated fork in a pipeline: tryptophan splitting toward 'serotonin' and 'kynurenine', with a dashed 'PROPOSED' stamp over the diagram.",
+        "claim_refs": [
+          "Abstract: we propose that elevated peripheral IL-6 reduces central serotonin availability via the kynurenine pathway",
+          "Study design: proposed, untested mechanism"
+        ]
+      },
+      {
+        "beat": "Why that stays a hypothesis",
+        "narration": "But that is a hypothesis, not a result. No kynurenine metabolites were measured in this study, and nobody altered anyone's IL-6. Because it only observed people, inflammation could simply travel alongside whatever really drives poor response.",
+        "on_screen": "Checklist: 'Kynurenine metabolites measured: none' / 'IL-6 not manipulated' / 'Observational cohort' — each with a cross.",
+        "claim_refs": [
+          "Results: kynurenine metabolites measured = None",
+          "Methods: no metabolite panel was run; IL-6 was not manipulated",
+          "Limitations: observational cohort; single baseline IL-6 measurement"
+        ]
+      },
+      {
+        "beat": "Takeaway",
+        "narration": "So: a real and reasonably strong association, measured with a widely available test, and worth following up in proper trials. Not yet something that should change anyone's prescription.",
+        "on_screen": "Closing card: 'Association, not causation. Promising marker - needs testing.'",
+        "claim_refs": [
+          "Discussion: candidate stratification marker; widely available blood assay",
+          "Conclusion: higher baseline IL-6 associated with lower SSRI response; mechanism proposed"
+        ]
+      }
+    ]
+  },
+  "final_narration": "About one in three people with major depression don't get better on the first antidepressant they try. Could a routine blood test hint at who?\nResearchers followed 512 adults starting an SSRI and measured interleukin-6, a marker of inflammation, once at the start. Twelve weeks later, 58 percent of those in the lowest IL-6 third had responded, compared with just 34 percent in the highest third.\nThe team proposes an explanation: high IL-6 might push tryptophan, the raw material for serotonin, down a different route called the kynurenine pathway, leaving less serotonin available in the brain.\nBut that is a hypothesis, not a result. No kynurenine metabolites were measured in this study, and nobody altered anyone's IL-6. Because it only observed people, inflammation could simply travel alongside whatever really drives poor response.\nSo: a real and reasonably strong association, measured with a widely available test, and worth following up in proper trials. Not yet something that should change anyone's prescription.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C02-baseline-s2-d2a69f19",
+    "case_id": "C02",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:14Z",
+    "finished_utc": "2026-08-29T22:47:14Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.009,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false,
+    "sample": 2
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "ac8834b0050173107e12007bc804aa10140933c4c04a35d1c0ec1edbd06df40d",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nSenolytic clearance of senescent cells in aged mice\n\nRecord\nSYN-C02\n\nStudy design\nRandomised preclinical study in mice\n\nBackground\nCellular senescence is a stable growth arrest accompanied by a secretory phenotype. Senescent cells accumulate with age in several tissues and their targeted removal has been reported to improve healthspan measures in rodents. Dasatinib and quercetin (D+Q) is the most widely used senolytic combination in this literature, given intermittently to allow washout.\n\nAbstract\nAccumulation of senescent cells contributes to tissue dysfunction in ageing. We tested whether intermittent administration of the senolytic combination D+Q clears senescent cells and improves physical function in aged mice. Male and female C57BL/6J mice aged 24 months (n = 96, 48 per sex) were randomised to D+Q or vehicle, dosed on 3 consecutive days every 14 days for 16 weeks. D+Q reduced p16INK4a-positive cell burden in inguinal adipose tissue by 41% relative to vehicle (p < 0.001) and improved rotarod latency by 22% (p = 0.004). Median remaining lifespan from the start of treatment increased from 21.4 to 26.9 weeks in treated animals (log-rank p = 0.01). No effect was observed on grip strength (p = 0.62).\n\nMethods\nAnimals were housed 4 per cage under a 12:12 light-dark cycle. Randomisation was performed by cage using a computer-generated sequence; outcome assessors were blinded to allocation. Doses were 5 mg/kg dasatinib and 50 mg/kg quercetin by oral gavage. Sample size was set to detect a 30% difference in p16INK4a burden at 80% power. Rotarod testing used three trials per session with the best latency retained. Survival was followed to natural death or humane endpoint. Grip strength was measured with a force transducer at 16 weeks.\n\nStatistical analysis\nStatistical analysis: group comparisons used two-sided t-tests for continuous endpoints with Holm correction across the four pre-specified measures; survival used the log-rank test. Analyses were performed by an investigator blinded to allocation. Animals lost before the 16-week timepoint were censored at the date of loss; four animals in each arm were censored for reasons unrelated to treatment. Body weight and food intake were recorded weekly and did not differ between arms.\n\nResults\n  endpoint: p16INK4a-positive cell burden, inguinal adipose; effect: -41% vs vehicle; p: <0.001\n  endpoint: Rotarod latency; effect: +22% vs vehicle; p: 0.004\n  endpoint: Median remaining lifespan; effect: 21.4 -> 26.9 weeks; p: 0.01\n  endpoint: Grip strength; effect: no difference; p: 0.62\n\nDiscussion\nSenescent-cell burden has been implicated in multiple age-related pathologies. The magnitude of the lifespan effect seen here is among the larger reported for an intermittent senolytic schedule. Because dasatinib and quercetin are both already in clinical use or widely available, the translational path for this combination is comparatively short. Further work should establish tissue coverage beyond adipose and determine whether the functional benefit generalises across measures.\n\nLimitations\n  Adipose tissue only; other tissues were not assessed.\n  A single inbred strain at a single age.\n\nConclusion\nIntermittent D+Q reduced senescent-cell burden and improved rotarod latency in 24-month-old C57BL/6J mice.\n\nData availability\nIndividual animal-level data are provided in the supplementary spreadsheet.\n",
+      "response_text": "{\n  \"case_id\": \"C02\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Hook: worn-out cells\",\n      \"narration\": \"As bodies age, some cells stop dividing but refuse to die. These 'senescent' cells build up in our tissues and leak signals that irritate the cells around them.\",\n      \"on_screen\": \"Animated tissue: normal cells dividing, a few turning grey and emitting signal particles\",\n      \"claim_refs\": [\"SYN-C02:background\"]\n    },\n    {\n      \"beat\": \"The experiment\",\n      \"narration\": \"Researchers gave 96 elderly mice, two years old, a drug pair called dasatinib and quercetin, or a dummy treatment. Dosing ran three days every fortnight for sixteen weeks. Mice were randomly assigned, and the scientists measuring the results didn't know which was which.\",\n      \"on_screen\": \"Two mouse groups splitting from a randomiser; calendar showing 3-day pulses every 14 days\",\n      \"claim_refs\": [\"SYN-C02:design\", \"SYN-C02:methods\"]\n    },\n    {\n      \"beat\": \"What improved\",\n      \"narration\": \"In fat tissue, senescent cells dropped by 41 percent. Treated mice lasted 22 percent longer on a rotating rod, a balance test. And median remaining lifespan rose from about 21 to 27 weeks.\",\n      \"on_screen\": \"Three result cards: -41% cell burden, +22% rotarod, 21.4 to 26.9 weeks survival\",\n      \"claim_refs\": [\"SYN-C02:result:p16-burden\", \"SYN-C02:result:rotarod\", \"SYN-C02:result:lifespan\"]\n    },\n    {\n      \"beat\": \"What didn't\",\n      \"narration\": \"But grip strength didn't budge, and only fat tissue was checked, in one mouse strain at one age.\",\n      \"on_screen\": \"Grip-strength card marked 'no change'; limitations list\",\n      \"claim_refs\": [\"SYN-C02:result:grip-strength\", \"SYN-C02:limitations\"]\n    },\n    {\n      \"beat\": \"Takeaway\",\n      \"narration\": \"So: promising, and these drugs already exist. But this is mice, not people. Human trials will have to say whether clearing old cells does anything for us.\",\n      \"on_screen\": \"Mouse icon with arrow to human icon and a question mark\",\n      \"claim_refs\": [\"SYN-C02:discussion\", \"SYN-C02:conclusion\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 5
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C02",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "Hook: worn-out cells",
+        "narration": "As bodies age, some cells stop dividing but refuse to die. These 'senescent' cells build up in our tissues and leak signals that irritate the cells around them.",
+        "on_screen": "Animated tissue: normal cells dividing, a few turning grey and emitting signal particles",
+        "claim_refs": [
+          "SYN-C02:background"
+        ]
+      },
+      {
+        "beat": "The experiment",
+        "narration": "Researchers gave 96 elderly mice, two years old, a drug pair called dasatinib and quercetin, or a dummy treatment. Dosing ran three days every fortnight for sixteen weeks. Mice were randomly assigned, and the scientists measuring the results didn't know which was which.",
+        "on_screen": "Two mouse groups splitting from a randomiser; calendar showing 3-day pulses every 14 days",
+        "claim_refs": [
+          "SYN-C02:design",
+          "SYN-C02:methods"
+        ]
+      },
+      {
+        "beat": "What improved",
+        "narration": "In fat tissue, senescent cells dropped by 41 percent. Treated mice lasted 22 percent longer on a rotating rod, a balance test. And median remaining lifespan rose from about 21 to 27 weeks.",
+        "on_screen": "Three result cards: -41% cell burden, +22% rotarod, 21.4 to 26.9 weeks survival",
+        "claim_refs": [
+          "SYN-C02:result:p16-burden",
+          "SYN-C02:result:rotarod",
+          "SYN-C02:result:lifespan"
+        ]
+      },
+      {
+        "beat": "What didn't",
+        "narration": "But grip strength didn't budge, and only fat tissue was checked, in one mouse strain at one age.",
+        "on_screen": "Grip-strength card marked 'no change'; limitations list",
+        "claim_refs": [
+          "SYN-C02:result:grip-strength",
+          "SYN-C02:limitations"
+        ]
+      },
+      {
+        "beat": "Takeaway",
+        "narration": "So: promising, and these drugs already exist. But this is mice, not people. Human trials will have to say whether clearing old cells does anything for us.",
+        "on_screen": "Mouse icon with arrow to human icon and a question mark",
+        "claim_refs": [
+          "SYN-C02:discussion",
+          "SYN-C02:conclusion"
+        ]
+      }
+    ]
+  },
+  "final_narration": "As bodies age, some cells stop dividing but refuse to die. These 'senescent' cells build up in our tissues and leak signals that irritate the cells around them.\nResearchers gave 96 elderly mice, two years old, a drug pair called dasatinib and quercetin, or a dummy treatment. Dosing ran three days every fortnight for sixteen weeks. Mice were randomly assigned, and the scientists measuring the results didn't know which was which.\nIn fat tissue, senescent cells dropped by 41 percent. Treated mice lasted 22 percent longer on a rotating rod, a balance test. And median remaining lifespan rose from about 21 to 27 weeks.\nBut grip strength didn't budge, and only fat tissue was checked, in one mouse strain at one age.\nSo: promising, and these drugs already exist. But this is mice, not people. Human trials will have to say whether clearing old cells does anything for us.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

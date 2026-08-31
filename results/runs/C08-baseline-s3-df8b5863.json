@@ -1,0 +1,130 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C08-baseline-s3-df8b5863",
+    "case_id": "C08",
+    "config_id": "baseline",
+    "condition": "baseline",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:15Z",
+    "finished_utc": "2026-08-29T22:47:15Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.007,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "baseline",
+    "condition": "baseline",
+    "label": "One direct prompt, same model, same source, same target output",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": false,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 0,
+    "allow_progress_at_bound": true,
+    "requires_h1": false,
+    "sample": 3
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "2eb93742f0dcff9c5b67bfd95ac20013bb8570575054595284f3c46d150a159f",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C08\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nImmune memory and the filing-cabinet analogy, with its stated breakdown point\n\nRecord\nSYN-C08\n\nStudy design\nReview with an explicitly bounded teaching analogy\n\nBackground\nAfter an infection resolves, a subset of antigen-specific T cells persists as a memory population capable of a faster and larger response on re-exposure. How long that population remains detectable, and how the speed of the secondary response compares with the primary, are practical questions for vaccine scheduling and for how immunity is explained to the public. This review quantifies both in a single cohort using a defined viral epitope.\n\nAbstract\nMemory T cells persist after infection and enable a faster secondary response. In this review we quantify persistence: in a cohort of 302 adults, antigen-specific memory CD8+ T cells against a defined viral epitope were detectable in 88% of participants at 5 years and in 61% at 12 years. Secondary expansion on re-exposure was 4.2-fold faster than the primary response.\n\nMethods\nDetection was by MHC-multimer staining; persistence figures are cohort-level and vary by pathogen and by individual. Peripheral blood mononuclear cells were stained with MHC class I multimers loaded with the defined epitope and analysed by flow cytometry. A participant was scored positive above a fixed frequency threshold. Secondary expansion was measured in a subset re-exposed under a controlled protocol.\n\nStatistical analysis\nStatistical analysis: detection frequencies are reported with exact binomial confidence intervals: 88% (95% CI 84 to 91) at 5 years and 61% (95% CI 55 to 67) at 12 years. The 4.2-fold secondary expansion figure is a geometric mean ratio across the re-exposed subset (n = 34, 95% CI 3.1 to 5.7). Participants contributing at both timepoints were analysed as paired observations. Assay performance was monitored with a fixed control sample across batches.\n\nResults\n  endpoint: Memory CD8+ T cells detectable at 5 years; value: 88% of participants\n  endpoint: Memory CD8+ T cells detectable at 12 years; value: 61% of participants\n  endpoint: Secondary expansion speed; value: 4.2-fold faster than primary\n\nTeaching note\n  analogy: Immune memory is sometimes introduced to students as a filing cabinet: the body keeps a folder on a pathogen it has met, so it can act faster next time.\n  note: The comparison holds for speed of the secondary response. It does not hold for retrieval or permanence: memory populations are not indexed, are not queried on demand, and decline over time, as the 5-year and 12-year detection figures show. Detectable memory cells also do not guarantee protection from disease.\n\nDiscussion\nQuantifying the persistence of antigen-specific memory populations is important both for vaccine schedule design and for public communication. Teaching analogies are valuable in the latter context provided their scope is respected.\n\nLimitations\n  Persistence figures are for one defined viral epitope and vary by pathogen and individual.\n\nConclusion\nMemory CD8+ T cells persisted for years in most participants and the secondary response expanded 4.2-fold faster than the primary response.\n\nData availability\nFlow cytometry standard files are deposited under accession SYN-C08.\n",
+      "response_text": "{\n  \"case_id\": \"C08\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"Hook\",\n      \"narration\": \"Once you've fought off an infection, your immune system doesn't just go back to how it was. It keeps something behind.\",\n      \"on_screen\": \"A virus particle fading out; a few immune cells remain glowing in the bloodstream.\",\n      \"claim_refs\": [\"SYN-C08:background\"]\n    },\n    {\n      \"beat\": \"What memory T cells are\",\n      \"narration\": \"Some of the T cells that recognised that specific germ survive as a memory population, ready to respond again.\",\n      \"on_screen\": \"Labelled animation: antigen-specific memory CD8+ T cells persisting after infection clears.\",\n      \"claim_refs\": [\"SYN-C08:background\"]\n    },\n    {\n      \"beat\": \"How long they last\",\n      \"narration\": \"In a review of 302 adults tracking one viral target, these memory cells were still detectable in 88 percent of people after five years, and in 61 percent after twelve.\",\n      \"on_screen\": \"Two bars: 5 years, 88%; 12 years, 61%. Small print: n=302, MHC-multimer staining.\",\n      \"claim_refs\": [\"SYN-C08:results:detectable_5y\", \"SYN-C08:results:detectable_12y\"]\n    },\n    {\n      \"beat\": \"How much faster\",\n      \"narration\": \"And when the immune system met that target again, it expanded 4.2 times faster than the first time round.\",\n      \"on_screen\": \"Two response curves side by side; the second rises steeply. Caption: 4.2x faster, 95% CI 3.1 to 5.7.\",\n      \"claim_refs\": [\"SYN-C08:results:secondary_expansion\"]\n    },\n    {\n      \"beat\": \"The filing cabinet, and where it breaks\",\n      \"narration\": \"People often call this a filing cabinet: the body keeps a folder on each germ. That works for speed. It breaks down after that. There's no index, nothing is looked up on demand, and the folders fade, as those five and twelve year numbers show.\",\n      \"on_screen\": \"A filing cabinet illustration; drawers dissolve, labels peel away.\",\n      \"claim_refs\": [\"SYN-C08:teaching_note\"]\n    },\n    {\n      \"beat\": \"Caveat and close\",\n      \"narration\": \"Detectable memory cells also don't guarantee you won't get ill, and these figures are for one virus target and vary from person to person. Real immune memory is faster, but far messier than a filing cabinet.\",\n      \"on_screen\": \"Text: 'Detection is not protection. One epitope; varies by pathogen and person.'\",\n      \"claim_refs\": [\"SYN-C08:teaching_note\", \"SYN-C08:limitations\", \"SYN-C08:methods\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C08",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "Hook",
+        "narration": "Once you've fought off an infection, your immune system doesn't just go back to how it was. It keeps something behind.",
+        "on_screen": "A virus particle fading out; a few immune cells remain glowing in the bloodstream.",
+        "claim_refs": [
+          "SYN-C08:background"
+        ]
+      },
+      {
+        "beat": "What memory T cells are",
+        "narration": "Some of the T cells that recognised that specific germ survive as a memory population, ready to respond again.",
+        "on_screen": "Labelled animation: antigen-specific memory CD8+ T cells persisting after infection clears.",
+        "claim_refs": [
+          "SYN-C08:background"
+        ]
+      },
+      {
+        "beat": "How long they last",
+        "narration": "In a review of 302 adults tracking one viral target, these memory cells were still detectable in 88 percent of people after five years, and in 61 percent after twelve.",
+        "on_screen": "Two bars: 5 years, 88%; 12 years, 61%. Small print: n=302, MHC-multimer staining.",
+        "claim_refs": [
+          "SYN-C08:results:detectable_5y",
+          "SYN-C08:results:detectable_12y"
+        ]
+      },
+      {
+        "beat": "How much faster",
+        "narration": "And when the immune system met that target again, it expanded 4.2 times faster than the first time round.",
+        "on_screen": "Two response curves side by side; the second rises steeply. Caption: 4.2x faster, 95% CI 3.1 to 5.7.",
+        "claim_refs": [
+          "SYN-C08:results:secondary_expansion"
+        ]
+      },
+      {
+        "beat": "The filing cabinet, and where it breaks",
+        "narration": "People often call this a filing cabinet: the body keeps a folder on each germ. That works for speed. It breaks down after that. There's no index, nothing is looked up on demand, and the folders fade, as those five and twelve year numbers show.",
+        "on_screen": "A filing cabinet illustration; drawers dissolve, labels peel away.",
+        "claim_refs": [
+          "SYN-C08:teaching_note"
+        ]
+      },
+      {
+        "beat": "Caveat and close",
+        "narration": "Detectable memory cells also don't guarantee you won't get ill, and these figures are for one virus target and vary from person to person. Real immune memory is faster, but far messier than a filing cabinet.",
+        "on_screen": "Text: 'Detection is not protection. One epitope; varies by pathogen and person.'",
+        "claim_refs": [
+          "SYN-C08:teaching_note",
+          "SYN-C08:limitations",
+          "SYN-C08:methods"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Once you've fought off an infection, your immune system doesn't just go back to how it was. It keeps something behind.\nSome of the T cells that recognised that specific germ survive as a memory population, ready to respond again.\nIn a review of 302 adults tracking one viral target, these memory cells were still detectable in 88 percent of people after five years, and in 61 percent after twelve.\nAnd when the immune system met that target again, it expanded 4.2 times faster than the first time round.\nPeople often call this a filing cabinet: the body keeps a folder on each germ. That works for speed. It breaks down after that. There's no index, nothing is looked up on demand, and the folders fade, as those five and twelve year numbers show.\nDetectable memory cells also don't guarantee you won't get ill, and these figures are for one virus target and vary from person to person. Real immune memory is faster, but far messier than a filing cabinet.",
+  "h1_gate": {
+    "gate": "H1",
+    "state": "NOT_APPLICABLE",
+    "note": "This configuration has no human gate by design."
+  },
+  "unresolved_findings": []
+}

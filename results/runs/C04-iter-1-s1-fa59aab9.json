@@ -1,0 +1,217 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C04-iter-1-s1-fa59aab9",
+    "case_id": "C04",
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:16Z",
+    "finished_utc": "2026-08-29T22:47:16Z",
+    "model_calls": 2,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.026,
+    "correction_cycles": 1,
+    "terminal_status": "HOLD",
+    "error": ""
+  },
+  "config": {
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "label": "Baseline prompt plus deterministic source checks and one code-driven correction",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": true,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 1,
+    "allow_progress_at_bound": false,
+    "requires_h1": true,
+    "sample": 1
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "b5739b135f6d7153aee061460315e4c32cb38c8f5162b14c2ba2585b363fcfa5",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: Coaches and sports-science students\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C04\",\n  \"audience\": \"Coaches and sports-science students\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nIron supplementation dose in adolescent athletes\n\nRecord\nSYN-C04\n\nStudy design\nDouble-blind randomised controlled trial\n\nBackground\nIron deficiency without anaemia is reported in 15 to 35 per cent of adolescent endurance athletes depending on the ferritin threshold used. Daily oral iron raises serum hepcidin for 24 hours or more, which blunts absorption of subsequent doses; alternate-day schedules have been proposed to exploit the intervening fall. Evidence for alternate-day dosing in adolescents is limited.\n\nAbstract\nIron deficiency without anaemia is common in adolescent endurance athletes. We randomised 214 athletes aged 15-18 with serum ferritin below 30 micrograms per litre to oral ferrous sulphate providing 60 mg elemental iron taken on alternate days, or matched placebo, for 12 weeks. The primary endpoint was change in serum ferritin at week 12. Mean serum ferritin rose by 18.4 micrograms per litre in the iron arm and by 2.1 micrograms per litre in the placebo arm, a between-group difference of 16.3 micrograms per litre (95% CI 12.9 to 19.7, p < 0.001). Haemoglobin rose by 1.9 grams per litre versus 0.4 grams per litre (between-group difference 1.5 grams per litre, 95% CI 0.2 to 2.8). Gastrointestinal adverse events were reported by 21 of 107 participants in the iron arm and 9 of 107 in the placebo arm.\n\nMethods\nDosing was 60 mg elemental iron on alternate days. Alternate-day dosing was selected to limit hepcidin-mediated absorption blockade. Treatment duration was 12 weeks. Adherence was measured by pill count and was 91%. Randomisation used permuted blocks stratified by sex and site. Participants, investigators and outcome assessors were blinded to allocation. Serum ferritin and haemoglobin were assayed at a single central laboratory at baseline and week 12. Adverse events were solicited at each visit.\n\nResults\n  endpoint: Serum ferritin change, iron arm; value: +18.4 micrograms per litre\n  endpoint: Serum ferritin change, placebo arm; value: +2.1 micrograms per litre\n  endpoint: Between-group difference, ferritin; value: 16.3 micrograms per litre (95% CI 12.9 to 19.7)\n  endpoint: Haemoglobin between-group difference; value: 1.5 grams per litre (95% CI 0.2 to 2.8)\n  endpoint: Dose; value: 60 mg elemental iron, alternate days, 12 weeks\n\nDiscussion\nAlternate-day dosing achieved a substantial rise in ferritin with a modest gastrointestinal burden. The haemoglobin change was small, as expected in a non-anaemic population. Practitioners working with adolescent endurance athletes should note that the enrolment threshold used here defines the population in which this result applies.\n\nLimitations\n  Enrolment required ferritin below 30 micrograms per litre.\n  No performance endpoint was measured.\n\nConclusion\nAlternate-day 60 mg elemental iron raised serum ferritin over 12 weeks in adolescent athletes with low ferritin. No performance outcome was assessed.\n\nData availability\nTrial registration ISRCTN-SYN-C04. Statistical analysis plan available with the registration.\n",
+      "response_text": "{\n  \"case_id\": \"C04\",\n  \"audience\": \"Coaches and sports-science students\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"The problem\",\n      \"narration\": \"Iron deficiency without anaemia shows up in fifteen to thirty-five percent of adolescent endurance athletes, depending on the ferritin cut-off you use.\",\n      \"on_screen\": \"Title card: Iron deficiency without anaemia. Stat: 15-35% of adolescent endurance athletes.\",\n      \"claim_refs\": [\"SYN-C04:background\"]\n    },\n    {\n      \"beat\": \"Why every other day\",\n      \"narration\": \"A daily iron dose pushes hepcidin up for twenty-four hours or more, which blunts absorption of the next dose. Alternate-day dosing waits for hepcidin to fall first. In adolescents, that evidence was thin.\",\n      \"on_screen\": \"Simple curve: hepcidin rises after a dose, then falls. Daily dosing versus alternate-day dosing arrows.\",\n      \"claim_refs\": [\"SYN-C04:background\", \"SYN-C04:methods:rationale\"]\n    },\n    {\n      \"beat\": \"The trial\",\n      \"narration\": \"So this double-blind randomised trial took two hundred fourteen athletes, aged fifteen to eighteen, all with ferritin below thirty micrograms per litre. Sixty milligrams of elemental iron every other day, or matched placebo, for twelve weeks. Adherence was ninety-one percent.\",\n      \"on_screen\": \"Trial card: n=214, ages 15-18, ferritin <30 ug/L, 60 mg elemental iron alternate days vs placebo, 12 weeks, adherence 91%.\",\n      \"claim_refs\": [\"SYN-C04:design\", \"SYN-C04:results:dose\", \"SYN-C04:methods:adherence\"]\n    },\n    {\n      \"beat\": \"What changed\",\n      \"narration\": \"Ferritin rose eighteen point four micrograms per litre on iron, versus two point one on placebo. That is a between-group difference of sixteen point three, confidence interval twelve point nine to nineteen point seven. Haemoglobin moved far less: a one point five gram per litre difference, as you would expect in athletes who were not anaemic.\",\n      \"on_screen\": \"Two bars, ferritin change: +18.4 vs +2.1 ug/L. Caption: difference 16.3 ug/L (95% CI 12.9-19.7). Smaller bar pair for haemoglobin: difference 1.5 g/L (95% CI 0.2-2.8).\",\n      \"claim_refs\": [\"SYN-C04:results:ferritin_iron\", \"SYN-C04:results:ferritin_placebo\", \"SYN-C04:results:ferritin_between_group\", \"SYN-C04:results:haemoglobin_between_group\", \"SYN-C04:discussion\"]\n    },\n    {\n      \"beat\": \"Tolerability\",\n      \"narration\": \"Gut side effects were real but modest: twenty-one of one hundred seven on iron, against nine of one hundred seven on placebo.\",\n      \"on_screen\": \"Icon array: 21/107 iron arm versus 9/107 placebo arm reporting gastrointestinal adverse events.\",\n      \"claim_refs\": [\"SYN-C04:abstract:adverse_events\"]\n    },\n    {\n      \"beat\": \"What it does not tell you\",\n      \"narration\": \"Bottom line for coaches: alternate-day sixty milligrams rebuilt iron stores over twelve weeks. But no performance outcome was measured, and this only speaks to athletes who started below that thirty microgram threshold.\",\n      \"on_screen\": \"Two-line summary: Rebuilds ferritin over 12 weeks. Not tested: performance. Applies to ferritin <30 ug/L only.\",\n      \"claim_refs\": [\"SYN-C04:conclusion\", \"SYN-C04:limitations\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "index": 2,
+      "role": "a2-correction-1",
+      "kind": "script",
+      "prompt_sha256": "46fe5af134684cd04f7af996e7f01bed847b4fdd8634486c4bc6846a0998e505",
+      "rendered_prompt": "ROLE A2 - SCRIPT DESIGNER, CORRECTION CYCLE 1 OF 1\n\nBelow is your previous script and a list of findings raised against it. Each\nfinding names the span it concerns and the correction recommended. Apply the\ncorrections. Do not argue with a finding, and do not mark anything as resolved:\nyou produce a revised script, and a separate role checks it.\n\nChange only what the findings require. Leave everything else as it was. Do not\nintroduce any new scientific assertion, and do not remove correct material that\nno finding objects to.\n\nReturn ONLY a JSON object in the same script shape as before, no prose.\n\nAPPROVED CLAIM MAP\n{\n  \"case_id\": \"C04\",\n  \"claims\": [],\n  \"source_limitations\": [],\n  \"prohibited_extensions\": [],\n  \"embedded_instruction_text_found_in_source\": []\n}\n\nPREVIOUS SCRIPT\n{\n  \"case_id\": \"C04\",\n  \"audience\": \"Coaches and sports-science students\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"The problem\",\n      \"narration\": \"Iron deficiency without anaemia shows up in fifteen to thirty-five percent of adolescent endurance athletes, depending on the ferritin cut-off you use.\",\n      \"on_screen\": \"Title card: Iron deficiency without anaemia. Stat: 15-35% of adolescent endurance athletes.\",\n      \"claim_refs\": [\n        \"SYN-C04:background\"\n      ]\n    },\n    {\n      \"beat\": \"Why every other day\",\n      \"narration\": \"A daily iron dose pushes hepcidin up for twenty-four hours or more, which blunts absorption of the next dose. Alternate-day dosing waits for hepcidin to fall first. In adolescents, that evidence was thin.\",\n      \"on_screen\": \"Simple curve: hepcidin rises after a dose, then falls. Daily dosing versus alternate-day dosing arrows.\",\n      \"claim_refs\": [\n        \"SYN-C04:background\",\n        \"SYN-C04:methods:rationale\"\n      ]\n    },\n    {\n      \"beat\": \"The trial\",\n      \"narration\": \"So this double-blind randomised trial took two hundred fourteen athletes, aged fifteen to eighteen, all with ferritin below thirty micrograms per litre. Sixty milligrams of elemental iron every other day, or matched placebo, for twelve weeks. Adherence was ninety-one percent.\",\n      \"on_screen\": \"Trial card: n=214, ages 15-18, ferritin <30 ug/L, 60 mg elemental iron alternate days vs placebo, 12 weeks, adherence 91%.\",\n      \"claim_refs\": [\n        \"SYN-C04:design\",\n        \"SYN-C04:results:dose\",\n        \"SYN-C04:methods:adherence\"\n      ]\n    },\n    {\n      \"beat\": \"What changed\",\n      \"narration\": \"Ferritin rose eighteen point four micrograms per litre on iron, versus two point one on placebo. That is a between-group difference of sixteen point three, confidence interval twelve point nine to nineteen point seven. Haemoglobin moved far less: a one point five gram per litre difference, as you would expect in athletes who were not anaemic.\",\n      \"on_screen\": \"Two bars, ferritin change: +18.4 vs +2.1 ug/L. Caption: difference 16.3 ug/L (95% CI 12.9-19.7). Smaller bar pair for haemoglobin: difference 1.5 g/L (95% CI 0.2-2.8).\",\n      \"claim_refs\": [\n        \"SYN-C04:results:ferritin_iron\",\n        \"SYN-C04:results:ferritin_placebo\",\n        \"SYN-C04:results:ferritin_between_group\",\n        \"SYN-C04:results:haemoglobin_between_group\",\n        \"SYN-C04:discussion\"\n      ]\n    },\n    {\n      \"beat\": \"Tolerability\",\n      \"narration\": \"Gut side effects were real but modest: twenty-one of one hundred seven on iron, against nine of one hundred seven on placebo.\",\n      \"on_screen\": \"Icon array: 21/107 iron arm versus 9/107 placebo arm reporting gastrointestinal adverse events.\",\n      \"claim_refs\": [\n        \"SYN-C04:abstract:adverse_events\"\n      ]\n    },\n    {\n      \"beat\": \"What it does not tell you\",\n      \"narration\": \"Bottom line for coaches: alternate-day sixty milligrams rebuilt iron stores over twelve weeks. But no performance outcome was measured, and this only speaks to athletes who started below that thirty microgram threshold.\",\n      \"on_screen\": \"Two-line summary: Rebuilds ferritin over 12 weeks. Not tested: performance. Applies to ferritin <30 ug/L only.\",\n      \"claim_refs\": [\n        \"SYN-C04:conclusion\",\n        \"SYN-C04:limitations\"\n      ]\n    }\n  ]\n}\n\nFINDINGS TO ADDRESS\n[\n  {\n    \"id\": \"D01\",\n    \"check\": \"CHECK-Q\",\n    \"severity\": \"MAJOR\",\n    \"quoted_span\": \"4 micrograms per litre\",\n    \"observation\": \"The value 4 appears in the script.\",\n    \"explanation\": \"This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.\",\n    \"recommended_correction\": \"Replace it with the value as written in the source, or remove the sentence.\",\n    \"claim_ref\": \"\",\n    \"evidence_ref\": \"\"\n  },\n  {\n    \"id\": \"D02\",\n    \"check\": \"CHECK-Q\",\n    \"severity\": \"MAJOR\",\n    \"quoted_span\": \"5 gram per litre\",\n    \"observation\": \"The value 5 appears in the script.\",\n    \"explanation\": \"This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.\",\n    \"recommended_correction\": \"Replace it with the value as written in the source, or remove the sentence.\",\n    \"claim_ref\": \"\",\n    \"evidence_ref\": \"\"\n  },\n  {\n    \"id\": \"D03\",\n    \"check\": \"CHECK-U\",\n    \"severity\": \"MAJOR\",\n    \"quoted_span\": \"30 microgram\",\n    \"observation\": \"The script pairs 30 with the unit 'microgram'.\",\n    \"explanation\": \"The source pairs 30 with ['micrograms per litre']. A changed unit changes the magnitude and is not audible when spoken.\",\n    \"recommended_correction\": \"Restore the unit exactly as the source states it.\",\n    \"claim_ref\": \"\",\n    \"evidence_ref\": \"\"\n  }\n]\n",
+      "response_text": "{\n  \"case_id\": \"C04\",\n  \"audience\": \"Coaches and sports-science students\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"The problem\",\n      \"narration\": \"Iron deficiency without anaemia shows up in fifteen to thirty-five percent of adolescent endurance athletes, depending on the ferritin cut-off you use.\",\n      \"on_screen\": \"Title card: Iron deficiency without anaemia. Stat: 15-35% of adolescent endurance athletes.\",\n      \"claim_refs\": [\n        \"SYN-C04:background\"\n      ]\n    },\n    {\n      \"beat\": \"Why every other day\",\n      \"narration\": \"A daily iron dose pushes hepcidin up for twenty-four hours or more, which blunts absorption of the next dose. Alternate-day dosing waits for hepcidin to fall first. In adolescents, that evidence was thin.\",\n      \"on_screen\": \"Simple curve: hepcidin rises after a dose, then falls. Daily dosing versus alternate-day dosing arrows.\",\n      \"claim_refs\": [\n        \"SYN-C04:background\",\n        \"SYN-C04:methods:rationale\"\n      ]\n    },\n    {\n      \"beat\": \"The trial\",\n      \"narration\": \"So this double-blind randomised trial took two hundred fourteen athletes, aged fifteen to eighteen, all with ferritin below thirty micrograms per litre. Sixty milligrams of elemental iron every other day, or matched placebo, for twelve weeks. Adherence was ninety-one percent.\",\n      \"on_screen\": \"Trial card: n=214, ages 15-18, ferritin <30 ug/L, 60 mg elemental iron alternate days vs placebo, 12 weeks, adherence 91%.\",\n      \"claim_refs\": [\n        \"SYN-C04:design\",\n        \"SYN-C04:results:dose\",\n        \"SYN-C04:methods:adherence\"\n      ]\n    },\n    {\n      \"beat\": \"What changed\",\n      \"narration\": \"Ferritin showed a between-group difference of sixteen point three micrograms per litre, confidence interval twelve point nine to nineteen point seven. Haemoglobin moved far less, as you would expect in athletes who were not anaemic.\",\n      \"on_screen\": \"Two bars, ferritin change: iron arm versus placebo arm, no numeric labels. Caption: difference 16.3 ug/L (95% CI 12.9-19.7). Smaller unlabelled bar pair for haemoglobin.\",\n      \"claim_refs\": [\n        \"SYN-C04:results:ferritin_between_group\",\n        \"SYN-C04:results:haemoglobin_between_group\",\n        \"SYN-C04:discussion\"\n      ]\n    },\n    {\n      \"beat\": \"Tolerability\",\n      \"narration\": \"Gut side effects were real but modest: twenty-one of one hundred seven on iron, against nine of one hundred seven on placebo.\",\n      \"on_screen\": \"Icon array: 21/107 iron arm versus 9/107 placebo arm reporting gastrointestinal adverse events.\",\n      \"claim_refs\": [\n        \"SYN-C04:abstract:adverse_events\"\n      ]\n    },\n    {\n      \"beat\": \"What it does not tell you\",\n      \"narration\": \"Bottom line for coaches: alternate-day sixty milligrams rebuilt iron stores over twelve weeks. But no performance outcome was measured, and this only speaks to athletes who started below that thirty micrograms per litre threshold.\",\n      \"on_screen\": \"Two-line summary: Rebuilds ferritin over 12 weeks. Not tested: performance. Applies to ferritin <30 ug/L only.\",\n      \"claim_refs\": [\n        \"SYN-C04:conclusion\",\n        \"SYN-C04:limitations\"\n      ]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [
+        {
+          "id": "D01",
+          "check": "CHECK-Q",
+          "severity": "MAJOR",
+          "quoted_span": "4 micrograms per litre",
+          "observation": "The value 4 appears in the script.",
+          "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+          "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        },
+        {
+          "id": "D02",
+          "check": "CHECK-Q",
+          "severity": "MAJOR",
+          "quoted_span": "5 gram per litre",
+          "observation": "The value 5 appears in the script.",
+          "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+          "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        },
+        {
+          "id": "D03",
+          "check": "CHECK-U",
+          "severity": "MAJOR",
+          "quoted_span": "30 microgram",
+          "observation": "The script pairs 30 with the unit 'microgram'.",
+          "explanation": "The source pairs 30 with ['micrograms per litre']. A changed unit changes the magnitude and is not audible when spoken.",
+          "recommended_correction": "Restore the unit exactly as the source states it.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        }
+      ],
+      "verifier": null,
+      "blocking_count": 3,
+      "action": "correct:cycle1"
+    },
+    {
+      "index": 1,
+      "deterministic_findings": [
+        {
+          "id": "D01",
+          "check": "CHECK-Q",
+          "severity": "MAJOR",
+          "quoted_span": "3 micrograms per litre",
+          "observation": "The value 3 appears in the script.",
+          "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+          "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+          "claim_ref": "",
+          "evidence_ref": ""
+        }
+      ],
+      "verifier": null,
+      "blocking_count": 1,
+      "action": "terminate:HOLD (correction limit reached, findings unresolved)"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C04",
+    "audience": "Coaches and sports-science students",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "The problem",
+        "narration": "Iron deficiency without anaemia shows up in fifteen to thirty-five percent of adolescent endurance athletes, depending on the ferritin cut-off you use.",
+        "on_screen": "Title card: Iron deficiency without anaemia. Stat: 15-35% of adolescent endurance athletes.",
+        "claim_refs": [
+          "SYN-C04:background"
+        ]
+      },
+      {
+        "beat": "Why every other day",
+        "narration": "A daily iron dose pushes hepcidin up for twenty-four hours or more, which blunts absorption of the next dose. Alternate-day dosing waits for hepcidin to fall first. In adolescents, that evidence was thin.",
+        "on_screen": "Simple curve: hepcidin rises after a dose, then falls. Daily dosing versus alternate-day dosing arrows.",
+        "claim_refs": [
+          "SYN-C04:background",
+          "SYN-C04:methods:rationale"
+        ]
+      },
+      {
+        "beat": "The trial",
+        "narration": "So this double-blind randomised trial took two hundred fourteen athletes, aged fifteen to eighteen, all with ferritin below thirty micrograms per litre. Sixty milligrams of elemental iron every other day, or matched placebo, for twelve weeks. Adherence was ninety-one percent.",
+        "on_screen": "Trial card: n=214, ages 15-18, ferritin <30 ug/L, 60 mg elemental iron alternate days vs placebo, 12 weeks, adherence 91%.",
+        "claim_refs": [
+          "SYN-C04:design",
+          "SYN-C04:results:dose",
+          "SYN-C04:methods:adherence"
+        ]
+      },
+      {
+        "beat": "What changed",
+        "narration": "Ferritin showed a between-group difference of sixteen point three micrograms per litre, confidence interval twelve point nine to nineteen point seven. Haemoglobin moved far less, as you would expect in athletes who were not anaemic.",
+        "on_screen": "Two bars, ferritin change: iron arm versus placebo arm, no numeric labels. Caption: difference 16.3 ug/L (95% CI 12.9-19.7). Smaller unlabelled bar pair for haemoglobin.",
+        "claim_refs": [
+          "SYN-C04:results:ferritin_between_group",
+          "SYN-C04:results:haemoglobin_between_group",
+          "SYN-C04:discussion"
+        ]
+      },
+      {
+        "beat": "Tolerability",
+        "narration": "Gut side effects were real but modest: twenty-one of one hundred seven on iron, against nine of one hundred seven on placebo.",
+        "on_screen": "Icon array: 21/107 iron arm versus 9/107 placebo arm reporting gastrointestinal adverse events.",
+        "claim_refs": [
+          "SYN-C04:abstract:adverse_events"
+        ]
+      },
+      {
+        "beat": "What it does not tell you",
+        "narration": "Bottom line for coaches: alternate-day sixty milligrams rebuilt iron stores over twelve weeks. But no performance outcome was measured, and this only speaks to athletes who started below that thirty micrograms per litre threshold.",
+        "on_screen": "Two-line summary: Rebuilds ferritin over 12 weeks. Not tested: performance. Applies to ferritin <30 ug/L only.",
+        "claim_refs": [
+          "SYN-C04:conclusion",
+          "SYN-C04:limitations"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Iron deficiency without anaemia shows up in fifteen to thirty-five percent of adolescent endurance athletes, depending on the ferritin cut-off you use.\nA daily iron dose pushes hepcidin up for twenty-four hours or more, which blunts absorption of the next dose. Alternate-day dosing waits for hepcidin to fall first. In adolescents, that evidence was thin.\nSo this double-blind randomised trial took two hundred fourteen athletes, aged fifteen to eighteen, all with ferritin below thirty micrograms per litre. Sixty milligrams of elemental iron every other day, or matched placebo, for twelve weeks. Adherence was ninety-one percent.\nFerritin showed a between-group difference of sixteen point three micrograms per litre, confidence interval twelve point nine to nineteen point seven. Haemoglobin moved far less, as you would expect in athletes who were not anaemic.\nGut side effects were real but modest: twenty-one of one hundred seven on iron, against nine of one hundred seven on placebo.\nBottom line for coaches: alternate-day sixty milligrams rebuilt iron stores over twelve weeks. But no performance outcome was measured, and this only speaks to athletes who started below that thirty micrograms per litre threshold.",
+  "h1_gate": {
+    "gate": "H1",
+    "artifact_sha256": "99c237e360c3d5288344f78bc1cbe9a0acc07729f659c0863f3681e49d523cf9",
+    "state": "BLOCKED_AWAITING_HUMAN",
+    "approver": null,
+    "approved_utc": null,
+    "note": "Production is blocked until a person approves this exact script version. No agent status can open this gate."
+  },
+  "unresolved_findings": [
+    {
+      "id": "D01",
+      "check": "CHECK-Q",
+      "severity": "MAJOR",
+      "quoted_span": "3 micrograms per litre",
+      "observation": "The value 3 appears in the script.",
+      "explanation": "This value does not appear anywhere in the source record. A quantity the audience could act on must be traceable to the record.",
+      "recommended_correction": "Replace it with the value as written in the source, or remove the sentence.",
+      "claim_ref": "",
+      "evidence_ref": ""
+    }
+  ]
+}

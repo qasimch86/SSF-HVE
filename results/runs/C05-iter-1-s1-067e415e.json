@@ -1,0 +1,132 @@
+{
+  "schema": "ssf-hve/run/1",
+  "meta": {
+    "run_id": "C05-iter-1-s1-067e415e",
+    "case_id": "C05",
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "provider": "replay",
+    "model": "claude-opus-5",
+    "mode": "replay",
+    "started_utc": "2026-08-29T22:47:16Z",
+    "finished_utc": "2026-08-29T22:47:16Z",
+    "model_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "wall_clock_s": 0.014,
+    "correction_cycles": 0,
+    "terminal_status": "ACCEPT",
+    "error": ""
+  },
+  "config": {
+    "config_id": "iter-1",
+    "condition": "advanced",
+    "label": "Baseline prompt plus deterministic source checks and one code-driven correction",
+    "use_claim_map": false,
+    "use_designer": false,
+    "deterministic_checks": true,
+    "deterministic_owner": "code",
+    "use_verifier": false,
+    "split_observation": false,
+    "max_correction_cycles": 1,
+    "allow_progress_at_bound": false,
+    "requires_h1": true,
+    "sample": 1
+  },
+  "steps": [
+    {
+      "index": 1,
+      "role": "baseline",
+      "kind": "script",
+      "prompt_sha256": "5d263d4ef0bce8e047adc1ee5454dbd2001aebb2fbc681303977af87221034ae",
+      "rendered_prompt": "You are writing a short explainer script from a research record.\n\nAudience: General public with secondary-school science literacy\nTarget spoken duration: about 60 seconds.\n\nWrite the script from the research record below. Make it accurate and easy to follow.\n\nReturn ONLY a JSON object, with no prose before or after it, in exactly this shape:\n\n{\n  \"case_id\": \"C05\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\"beat\": \"short label\", \"narration\": \"what the narrator says\",\n     \"on_screen\": \"what is shown\", \"claim_refs\": []}\n  ]\n}\n\nRESEARCH RECORD\n---------------\nA digital CBT app for insomnia: two endpoints, two directions\n\nRecord\nSYN-C05\n\nStudy design\nRandomised controlled trial with two pre-registered co-primary endpoints\n\nBackground\nCognitive behavioural therapy for insomnia is the recommended first-line treatment, but access is limited by therapist availability. App-delivered programmes are widely marketed. Trials to date have concentrated on symptom scales; whether symptom change is accompanied by change in daytime function is less well established, which is why both were pre-registered here.\n\nAbstract\nWe tested a six-week app-delivered cognitive behavioural therapy programme for insomnia against a sleep-hygiene control app. 640 adults with chronic insomnia were randomised 1:1. Two co-primary endpoints were pre-registered: Insomnia Severity Index (ISI) at week 8 and daytime functioning measured by the Work and Social Adjustment Scale (WSAS) at week 8. ISI improved by 6.8 points in the CBT arm versus 3.1 points in control, a between-group difference of 3.7 points (95% CI 2.9 to 4.5, p < 0.001). For WSAS: 1.2 points versus 1.0 points, between-group difference 0.2 points (95% CI -0.7 to 1.1, p = 0.66). Attrition was 14% in the CBT arm and 9% in control. At 6-month follow-up the ISI difference had narrowed to 1.9 points (95% CI 0.6 to 3.2).\n\nMethods\nBoth endpoints were pre-registered as co-primary and the trial was powered for both. Outcome measures were self-reported. Analysis was intention-to-treat with multiple imputation. Randomisation was 1:1 by an independent service. Participants could not be blinded to app content. The ISI ranges from 0 to 28 and the WSAS from 0 to 40, higher scores worse on both. Six-month follow-up was pre-specified.\n\nStatistical analysis\nStatistical analysis: both co-primary endpoints were tested at a two-sided alpha of 0.025 to preserve the family-wise error rate, and the trial was powered at 90% for each. Missing data were handled by multiple imputation under a missing-at-random assumption, with a tipping-point sensitivity analysis. Pre-specified subgroup analyses by baseline severity and by age band showed no interaction. Adherence, defined as completing at least four of six modules, was 71% in the CBT arm.\n\nResults\n  endpoint: ISI at week 8 (co-primary); cbt: -6.8; control: -3.1; difference: 3.7 (2.9 to 4.5), p<0.001\n  endpoint: WSAS daytime functioning at week 8 (co-primary); cbt: -1.2; control: -1.0; difference: 0.2 (-0.7 to 1.1), p=0.66\n  endpoint: ISI at 6 months; cbt: -; control: -; difference: 1.9 (0.6 to 3.2)\n  endpoint: Attrition; cbt: 14%; control: 9%; difference: -\n\nDiscussion\nDigital delivery of CBT for insomnia removes the principal access barrier to an effective therapy. The week-8 effect on insomnia severity is comparable to that reported for face-to-face delivery. Attenuation by 6 months is consistent with other digital mental-health interventions and suggests that booster contact may be required. Both pre-registered endpoints are reported in full in the results table.\n\nLimitations\n  Self-reported outcomes only; no actigraphy or polysomnography.\n\nConclusion\nApp-delivered CBT was compared with a sleep-hygiene control across two pre-registered co-primary endpoints at week 8.\n\nData availability\nDe-identified participant data available under a data-sharing agreement.\n",
+      "response_text": "{\n  \"case_id\": \"C05\",\n  \"audience\": \"General public with secondary-school science literacy\",\n  \"target_duration_s\": 60,\n  \"beats\": [\n    {\n      \"beat\": \"The problem\",\n      \"narration\": \"Talking therapy is the recommended first treatment for long-term insomnia, but there are never enough therapists. So can an app do the job?\",\n      \"on_screen\": \"Title: Can an app treat insomnia? Icon of a therapist's chair beside a phone.\",\n      \"claim_refs\": [\"SYN-C05:background:cbt-first-line-access-limited\"]\n    },\n    {\n      \"beat\": \"The trial\",\n      \"narration\": \"Researchers randomly assigned 640 adults with chronic insomnia to a six-week CBT app or a sleep-hygiene app. Crucially, they registered two main questions in advance: does it ease insomnia symptoms, and does it improve daytime functioning?\",\n      \"on_screen\": \"640 adults, split 1:1. Two labelled boxes: CO-PRIMARY 1 Insomnia severity (ISI); CO-PRIMARY 2 Daytime functioning (WSAS).\",\n      \"claim_refs\": [\"SYN-C05:abstract:n640-rct-1to1\", \"SYN-C05:methods:two-co-primary-prespecified\"]\n    },\n    {\n      \"beat\": \"Answer one: yes\",\n      \"narration\": \"On symptoms, the app won clearly: insomnia scores fell 3.7 points further than the control, a solid, statistically strong result.\",\n      \"on_screen\": \"ISI at week 8: difference 3.7 points, 95% CI 2.9 to 4.5, p<0.001.\",\n      \"claim_refs\": [\"SYN-C05:results:isi-week8\"]\n    },\n    {\n      \"beat\": \"Answer two: no\",\n      \"narration\": \"On daytime functioning, it didn't. The difference was 0.2 points, and the uncertainty range straddles zero, so no benefit was shown.\",\n      \"on_screen\": \"WSAS at week 8: difference 0.2 points, 95% CI -0.7 to 1.1, p=0.66.\",\n      \"claim_refs\": [\"SYN-C05:results:wsas-week8\"]\n    },\n    {\n      \"beat\": \"And it fades\",\n      \"narration\": \"By six months the symptom advantage had shrunk to 1.9 points. All outcomes were self-reported, with no sleep monitoring.\",\n      \"on_screen\": \"6 months: 3.7 down to 1.9 points. Note: self-report only, no actigraphy or polysomnography.\",\n      \"claim_refs\": [\"SYN-C05:results:isi-6month\", \"SYN-C05:limitations:self-report-only\"]\n    },\n    {\n      \"beat\": \"Bottom line\",\n      \"narration\": \"So: the app helped people sleep better on paper, but this trial did not show it helped their days. Both answers were pre-registered, and both were reported.\",\n      \"on_screen\": \"Symptoms: improved. Daily life: not shown. Both endpoints pre-registered and reported.\",\n      \"claim_refs\": [\"SYN-C05:discussion:both-endpoints-reported\"]\n    }\n  ]\n}\n",
+      "provenance": "blinded-agent-capture",
+      "ok": true,
+      "error": "",
+      "parsed_summary": {
+        "beats": 6
+      },
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ],
+  "cycles": [
+    {
+      "index": 0,
+      "deterministic_findings": [],
+      "verifier": null,
+      "blocking_count": 0,
+      "action": "terminate:ACCEPT"
+    }
+  ],
+  "claim_map": null,
+  "final_script": {
+    "case_id": "C05",
+    "audience": "General public with secondary-school science literacy",
+    "target_duration_s": 60,
+    "beats": [
+      {
+        "beat": "The problem",
+        "narration": "Talking therapy is the recommended first treatment for long-term insomnia, but there are never enough therapists. So can an app do the job?",
+        "on_screen": "Title: Can an app treat insomnia? Icon of a therapist's chair beside a phone.",
+        "claim_refs": [
+          "SYN-C05:background:cbt-first-line-access-limited"
+        ]
+      },
+      {
+        "beat": "The trial",
+        "narration": "Researchers randomly assigned 640 adults with chronic insomnia to a six-week CBT app or a sleep-hygiene app. Crucially, they registered two main questions in advance: does it ease insomnia symptoms, and does it improve daytime functioning?",
+        "on_screen": "640 adults, split 1:1. Two labelled boxes: CO-PRIMARY 1 Insomnia severity (ISI); CO-PRIMARY 2 Daytime functioning (WSAS).",
+        "claim_refs": [
+          "SYN-C05:abstract:n640-rct-1to1",
+          "SYN-C05:methods:two-co-primary-prespecified"
+        ]
+      },
+      {
+        "beat": "Answer one: yes",
+        "narration": "On symptoms, the app won clearly: insomnia scores fell 3.7 points further than the control, a solid, statistically strong result.",
+        "on_screen": "ISI at week 8: difference 3.7 points, 95% CI 2.9 to 4.5, p<0.001.",
+        "claim_refs": [
+          "SYN-C05:results:isi-week8"
+        ]
+      },
+      {
+        "beat": "Answer two: no",
+        "narration": "On daytime functioning, it didn't. The difference was 0.2 points, and the uncertainty range straddles zero, so no benefit was shown.",
+        "on_screen": "WSAS at week 8: difference 0.2 points, 95% CI -0.7 to 1.1, p=0.66.",
+        "claim_refs": [
+          "SYN-C05:results:wsas-week8"
+        ]
+      },
+      {
+        "beat": "And it fades",
+        "narration": "By six months the symptom advantage had shrunk to 1.9 points. All outcomes were self-reported, with no sleep monitoring.",
+        "on_screen": "6 months: 3.7 down to 1.9 points. Note: self-report only, no actigraphy or polysomnography.",
+        "claim_refs": [
+          "SYN-C05:results:isi-6month",
+          "SYN-C05:limitations:self-report-only"
+        ]
+      },
+      {
+        "beat": "Bottom line",
+        "narration": "So: the app helped people sleep better on paper, but this trial did not show it helped their days. Both answers were pre-registered, and both were reported.",
+        "on_screen": "Symptoms: improved. Daily life: not shown. Both endpoints pre-registered and reported.",
+        "claim_refs": [
+          "SYN-C05:discussion:both-endpoints-reported"
+        ]
+      }
+    ]
+  },
+  "final_narration": "Talking therapy is the recommended first treatment for long-term insomnia, but there are never enough therapists. So can an app do the job?\nResearchers randomly assigned 640 adults with chronic insomnia to a six-week CBT app or a sleep-hygiene app. Crucially, they registered two main questions in advance: does it ease insomnia symptoms, and does it improve daytime functioning?\nOn symptoms, the app won clearly: insomnia scores fell 3.7 points further than the control, a solid, statistically strong result.\nOn daytime functioning, it didn't. The difference was 0.2 points, and the uncertainty range straddles zero, so no benefit was shown.\nBy six months the symptom advantage had shrunk to 1.9 points. All outcomes were self-reported, with no sleep monitoring.\nSo: the app helped people sleep better on paper, but this trial did not show it helped their days. Both answers were pre-registered, and both were reported.",
+  "h1_gate": {
+    "gate": "H1",
+    "artifact_sha256": "eea95fb0f0f82603cc86bfa0540ba3f6f8c5254c9931a80d51d81c245c0864a0",
+    "state": "BLOCKED_AWAITING_HUMAN",
+    "approver": null,
+    "approved_utc": null,
+    "note": "Production is blocked until a person approves this exact script version. No agent status can open this gate."
+  },
+  "unresolved_findings": []
+}
